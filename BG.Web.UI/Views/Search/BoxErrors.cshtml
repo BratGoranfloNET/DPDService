@@ -1,0 +1,10 @@
+﻿@model EmptyViewModel
+
+<form action="@Url.Action(nameof(SearchController.BasicSearch), nameof(SearchController).RemoveControllerSuffix())" method="get" class="form">
+	<div class="input-group input-search">
+		<input type="text" class="form-control" name="query" id="query" placeholder="@SearchResources.PlaceholderLabel">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+		</span>
+	</div>
+</form>

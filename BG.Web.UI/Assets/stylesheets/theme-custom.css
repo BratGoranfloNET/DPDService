@@ -1,0 +1,101 @@
+/* Add here all your CSS customizations */
+
+.alert-warning-BG {
+    background-image: -webkit-linear-gradient(top, #ffd044 0%, #ffc000 100%);
+    background-image: -o-linear-gradient(top, #ffd044 0%, #ffc000 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd044), to(#ffc000));
+    background-image: linear-gradient(to bottom, #ffd044 0%, #ffc000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #9ea918;
+}
+
+
+.pencil-trash {
+    width:65px !important;
+}
+
+.tender-selected {
+    background-color: #fef5c0 !important;
+}
+
+.position-selected {
+     background-color:#fef5c0  !important;   
+}
+
+.lot-selected {
+     background-color:#fef5c0   !important;   
+}
+
+.contact-selected {
+    background-color: #fef5c0 !important;
+}
+
+.offer-selected {
+    background-color: #fef5c0 !important;
+}
+
+.extrapay-selected {
+    background-color: #fef5c0 !important;
+}
+
+
+.siz-selected {
+    background-color: #fef5c0 !important;
+}
+
+.sout-selected {
+    background-color: #fef5c0 !important;
+}
+
+.tag-selected {
+    background-color: #fef5c0 !important;
+}
+
+.notifications > li  :hover {
+    background: #bbc91e;
+}
+
+
+
+.BG-color1 {
+    color: #008c95 !important;
+}
+
+.BG-color2 {
+    color: #bbc91e !important;
+}
+
+body .btn-BG {
+	color: #414141;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #bbc91e ;
+	border-color: #bbc91e ;
+}
+
+body .btn-BG:hover {
+	border-color: #9ea918  !important;
+	background-color: #9ea918 ;
+}
+
+body .btn-BG:active,
+body .btn-BG:focus {
+	border-color: #9ea918  !important;
+	background-color: #9ea918 ;
+}
+
+body .btn-BG[disabled] {
+	border-color: #d2e037  !important;
+	background-color: #d2e037  ;
+}
+
+
+
+.selected {
+
+    color:#f7f7f7 !important;
+    background-color:#47a447  !important;
+    background-color:#fef5c0 !important
+      
+}
+

@@ -1,0 +1,96 @@
+﻿@model EmptyViewModel
+
+@{
+	string title = "Meteocons";
+	Model.PageLabel = title;
+}
+
+@section breadcrumb_items{
+	<li><span>Static</span></li>
+	<li><span>UI Elements</span></li>
+	<li><span>Icons</span></li>
+	<li><span>Meteocons</span></li>
+}
+
+@section page_styles{
+	<link rel="stylesheet" href="~/assets/vendor/meteocons/css/meteocons.css" />
+	<style>
+		.icons-demo-page .demo-icon-hover {
+			cursor: pointer;
+			font-size: 15px;
+		}
+		.icons-demo-page .demo-icon-hover:hover {
+			color: #111;
+		}
+		.icons-demo-page .demo-icon-hover i {
+			min-width: 40px;
+			padding-right: 15px;
+		}
+		html.dark .icons-demo-page .demo-icon-hover:hover {
+			color: #FEFEFE;
+		}
+	</style>
+}
+
+@Html.Partial("~/Views/Static/TopAlert.cshtml")
+
+<div class="icons-demo-page">
+	<section class="panel">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+				<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+			</div>
+			<h2 class="panel-title">47 icons</h2>
+		</header>
+		<div class="panel-body">
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-sunrise"></i> sunrise</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-sun"></i> sun</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-moon"></i> moon</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-sun2"></i> sun2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-windy"></i> windy</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-wind"></i> wind</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-snowflake"></i> snowflake</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloudy"></i> cloudy</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloud"></i> cloud</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-weather"></i> weather</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-weather2"></i> weather2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-weather3"></i> weather3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-lines"></i> lines</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloud2"></i> cloud2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-lightning"></i> lightning</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-lightning2"></i> lightning2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-rainy"></i> rainy</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-rainy2"></i> rainy2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-windy2"></i> windy2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-windy3"></i> windy3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-snowy"></i> snowy</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-snowy2"></i> snowy2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-snowy3"></i> snowy3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-weather4"></i> weather4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloudy2"></i> cloudy2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloud3"></i> cloud3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-lightning3"></i> lightning3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-sun3"></i> sun3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-moon2"></i> moon2</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloudy3"></i> cloudy3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloud4"></i> cloud4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloud5"></i> cloud5</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-lightning4"></i> lightning4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-rainy3"></i> rainy3</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-rainy4"></i> rainy4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-windy4"></i> windy4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-windy5"></i> windy5</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-snowy4"></i> snowy4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-snowy5"></i> snowy5</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-weather5"></i> weather5</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-cloudy4"></i> cloudy4</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-lightning5"></i> lightning5</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-thermometer"></i> thermometer</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-compass"></i> compass</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-none"></i> none</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-celsius"></i> celsius</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3"><i class="wi-fahrenheit"></i> fahrenheit</div>
+		</div>
+	</section>
+</div>

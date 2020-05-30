@@ -1,0 +1,14 @@
+﻿@model SearchViewModel
+
+<div class="search-control-wrapper">
+	<form action="@Url.Action(nameof(SearchController.BasicSearch), nameof(SearchController).RemoveControllerSuffix())" method="get">
+		<div class="form-group">
+			<div class="input-group">
+				<input type="text" name="query" id="queryResults" class="form-control" value="@Model.Query">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="submit">@SearchResources.SearchButtonLabel</button>
+				</span>
+			</div>
+		</div>
+	</form>
+</div>

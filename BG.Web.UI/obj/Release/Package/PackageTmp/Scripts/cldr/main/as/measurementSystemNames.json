@@ -1,0 +1,20 @@
+{
+  "main": {
+    "as": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12740 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "as"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "মেট্ৰিক",
+          "UK": "UK",
+          "US": "ইউ.এছ."
+        }
+      }
+    }
+  }
+}

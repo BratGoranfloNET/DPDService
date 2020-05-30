@@ -1,0 +1,100 @@
+﻿@model EventTypeIndexViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = EventTypeResources.PageLabel;
+	Model.SectionLabel = EventTypeResources.IndexSectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+	@Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+	@Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+	@Scripts.Render(EventTypeIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">@EventTypeResources.IndexHeader</h3>
+
+<p>@EventTypeResources.IndexLeadInfo</p>
+
+<p class="mt-md">
+	<a href="@Url.Action(nameof(EventTypeController.Add), nameof(EventTypeController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+		<i class="fa fa-plus mr-md"></i>@EventTypeResources.ActionLabelAdd
+	</a>
+</p>
+
+<section class="panel mt-md">
+
+	<div class="panel-body">
+
+		<table id="eventtypeTable" class="table table-hover">
+			<thead>
+                <tr>
+                    <th>#</th>
+                    <th>@EventTypeResources.Name</th>
+                    
+                    <th class="nosort"></th>
+                </tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.EventTypes)
+				{
+					var editUrl = Url.Action(nameof(EventTypeController.Edit), nameof(EventTypeController).RemoveControllerSuffix(), new { @id = item.Id });
+
+                <tr data-item-id="@item.Id" data-item-label="@item.Name">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    
+                    <td class="actions-hover actions-fade text-right">
+                        <div class="table-row-actions">
+                            <a href="#" class="btn btn-xs btn-default edit" title="@EventTypeResources.EditLabel" data-edit-url="@editUrl">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="#" class="btn btn-xs btn-default delete" title="@EventTypeResources.DeleteLabel" data-msg-success-title="@EventTypeResources.DeleteSuccessMessageTitle" data-msg-success-content="@EventTypeResources.DeleteSuccessMessageContent" data-msg-error-title="@EventTypeResources.DeleteErrorMessageTitle" data-msg-error-content="@EventTypeResources.DeleteErrorMessageContent">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+
+</section>
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="eventtypeDeleteDialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">@EventTypeResources.DeleteDialogTitle</h4>
+		</div>
+		<div class="modal-body">
+			@Html.Raw(
+                string.Format(
+                    EventTypeResources.DeleteDialogTemplateMessage,
+                    "<strong class=\"item-label\"></strong>"
+                )
+            )
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-link cancel">@LocationResources.CancelLabel</button>
+			<button type="button" class="btn btn-danger confirm">@LocationResources.ConfirmLabel</button>
+		</div>
+	</div>
+</div>

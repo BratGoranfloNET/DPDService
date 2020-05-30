@@ -1,0 +1,17 @@
+﻿<!-- Page Contents -->
+
+<div class="feedback-validation feedback-validation-panel validation-message @(ViewData.ModelState.IsValid ? "hidden" : string.Empty)">
+
+	<ul>
+
+		@foreach (var item in ViewData.ModelState)
+		{
+			foreach (var error in item.Value.Errors)
+			{
+				<li><label id="@(item.Key)-error" class="error" style="display: inline-block;" for="@item.Key">@Html.Raw(error.ErrorMessage)</label></li>
+			}
+		}
+
+	</ul>
+
+</div>

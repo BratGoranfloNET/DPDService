@@ -1,0 +1,46 @@
+﻿@model UserBoxViewModel
+
+@{
+	var profileImage = Url.Image(User.ImageBlobName, User.UserName);
+	var profileImage35x35 = Url.Image(User.ImageBlobName, User.UserName, width: 35, height: 35);
+}
+
+<!-- Render the HTML for the lock screen modal -->
+
+@Html.Action(nameof(UsersController.LockScreenModal), nameof(UsersController).RemoveControllerSuffix())
+
+<div id="userbox" class="userbox" data-screen-locked="@User.ScreenLocked.ToLowerCaseString()" data-auto-lock-minutes="@User.AutoLockScreenInMinutes">
+
+    <a href="#" data-toggle="dropdown">  
+
+
+            <figure class="profile-picture">
+                <img src="@profileImage35x35" alt="@User.UserName" class="img-circle" data-lock-picture="@profileImage" />
+            </figure>
+
+            <div class="profile-info" data-lock-name="@User.Name" data-lock-email="@User.UserName">
+                <span class="name">@User.Name</span>
+                <span class="role">@User.Email</span>
+            </div>
+
+            <i class="fa custom-caret"></i>
+
+        </a>
+
+       <div class="dropdown-menu">
+
+        <ul class="list-unstyled">
+            <li class="divider"></li>
+            <li><a role="menuitem" tabindex="-1" href="@Url.Action(nameof(UsersController.Account), nameof(UsersController).RemoveControllerSuffix())"><i class="fa fa-user"></i> @UserResources.AccountLabel</a></li>
+            @*<li><a role="menuitem" tabindex="-1" href="@Url.Action(nameof(UsersController.LockScreen), nameof(UsersController).RemoveControllerSuffix())"><i class="fa fa-lock"></i> @UserResources.LockScreenLabel</a></li>
+            <li class="divider"></li>
+            <li><a role="menuitem" tabindex="-1" href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-power-off"></i> @UserResources.LogOffLabel</a></li>*@
+        </ul>
+
+            </div>
+
+        <form method="post" action="@Url.Action(nameof(UsersController.LogOff), nameof(UsersController).RemoveControllerSuffix())" id="logoutForm">
+            @Html.AntiForgeryToken()
+        </form>
+
+</div>

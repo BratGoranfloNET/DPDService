@@ -1,0 +1,112 @@
+﻿@model StateUnitedIndexViewModel
+
+<!-- Meta -->
+
+@{
+    Model.PageLabel = "Эвенты";
+    Model.SectionLabel = "Текущие статусы";
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+    @Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+    @Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+    @Scripts.Render(StateUnitedIndexAjaxScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">Все отправления</h3>
+
+<p>С текущими статусами</p>
+
+@Html.HiddenFor(model => model.CurrStateUnitedId, new { @id = "currstateunitedid" })
+
+<section class="panel mt-md">
+
+    <div class="panel-body">
+
+        <table id="stateunitedTable" class="table table-hover">
+            <thead>
+
+                <tr>
+                   
+                    <th>История</th>
+                    
+                    <th>@StateUnitedResources.clientOrderNr</th>
+                    <th>@StateUnitedResources.clientParcelNr</th>
+                    <th>@StateUnitedResources.dpdOrderNr</th>
+                    <th>@StateUnitedResources.dpdParcelNr</th>
+                    <th>@StateUnitedResources.pickupDate</th>
+                    <th>@StateUnitedResources.planDeliveryDate</th>                   
+                    <th>@StateUnitedResources.newState</th>
+                    <th>@StateUnitedResources.transitionTime</th>
+                    <th>@StateUnitedResources.terminalCode</th>
+                    <th>@StateUnitedResources.terminalCity</th>
+                    <th>@StateUnitedResources.incidentCode</th>
+                    <th>@StateUnitedResources.incidentName</th>
+                    <th>@StateUnitedResources.consignee</th>
+                    <th>@StateUnitedResources.DeliveryAddress</th>
+                    <th>@StateUnitedResources.DeliveryCity</th>
+                    <th>@StateUnitedResources.DeliveryVariant</th>
+                    <th>@StateUnitedResources.DeliveryPointCode</th>
+                    <th>@StateUnitedResources.DeliveryInterval</th>
+                    <th>@StateUnitedResources.PickupAddress</th>
+                    <th>@StateUnitedResources.PickupCity</th>
+                    <th>@StateUnitedResources.PointCity</th>
+                    <th>@StateUnitedResources.Consignee2</th>
+                    <th>@StateUnitedResources.Consignor</th>
+                    <th>@StateUnitedResources.EventName</th>
+                    <th>@StateUnitedResources.EventReason</th>
+                    <th>@StateUnitedResources.ProblemName</th>
+                    <th>@StateUnitedResources.ReasonName</th>
+                    <th>@StateUnitedResources.RejectionReason </th>
+                    <th>@StateUnitedResources.OrderType</th>
+                    <th>@StateUnitedResources.MomentLocZone</th>              
+
+                </tr>
+            </thead>
+          
+        </table>
+
+    </div>
+
+</section>
+
+
+
+@Html.Action(nameof(StateUnitedController.ModalAjax), nameof(StateUnitedController).RemoveControllerSuffix(), new { @dpdparam = "000" })
+
+
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="stateunitedDeleteDialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">@TagResources.DeleteDialogTitle</h4>
+        </div>
+        <div class="modal-body">
+            @Html.Raw(
+                string.Format(
+                    TagResources.DeleteDialogTemplateMessage,
+                    "<strong class=\"item-label\"></strong>"
+                )
+            )
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link cancel">@LocationResources.CancelLabel</button>
+            <button type="button" class="btn btn-danger confirm">@LocationResources.ConfirmLabel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model ContactsIndexViewModel
+
+
+<div id="contactselectModalWrapper"  class="modal-block modal-block-lg mfp-hide">
+
+    <section class="panel">
+
+        <header class="panel-heading">
+            <h2 class="panel-title">Выбрать поставщика</h2>
+        </header>
+
+        <div class="panel-body">
+
+            <table id="contactselectTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Наименование</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.Contacts)
+                    {
+                        <tr id="@item.Id" data-item-id="@item.Id" data-item-label="@item.Name">
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+        
+
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="form-buttons">
+                        <div class="form-group">
+                            <div class="col-md-12 text-right">
+                                <a href="#" class="btn btn-link contactselect-modal-dismiss">@ContactResources.CancelLabel</a>
+                                <a  id="contactselect-modal-confirm"  class="btn btn-primary btn-lg mr-sm contactselect-modal-confirm22">Выбрать поставщика</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</section>
+
+</div>

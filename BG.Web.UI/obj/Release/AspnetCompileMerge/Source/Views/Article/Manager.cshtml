@@ -1,0 +1,182 @@
+﻿@model ArticleViewModel
+
+<!-- Meta -->
+
+@{
+    //var pageLabel = LocationResources.PageLabel;
+    //var indexSectionLabel = LocationResources.IndexSectionLabel;
+
+    var pageLabel = "Статьи";
+    var indexSectionLabel = "Статьи";
+
+    var headingTitle = Model.Id <= 0 ? ArticleResources.AddHeader : ArticleResources.EditHeader;
+    var headingLeadInfo = Model.Id <= 0 ? ArticleResources.AddLeadInfo : ArticleResources.EditLeadInfo;
+
+    var sectionLabel = Model.Id <= 0 ? ArticleResources.AddSectionLabel : ArticleResources.EditSectionLabel;
+
+    Model.PageLabel = pageLabel;
+    Model.SectionLabel = sectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><a href="@Url.Action(nameof(ArticleController.Index), nameof(ArticleController).RemoveControllerSuffix())">@indexSectionLabel</a></li>
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+
+@section page_styles {
+    @Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+
+}
+
+@section page_scripts {
+    @Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+
+
+@section page_scripts_init {
+    @Scripts.Render(ArticleManagerScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<form id="articleForm" method="post" class="form-horizontal form-bordered">
+
+    <section class="panel">
+
+        <header class="panel-heading">
+            <h2 class="panel-title">@headingTitle</h2>
+            <p class="panel-subtitle">@headingLeadInfo</p>
+        </header>
+
+        <div class="panel-body">
+
+            @Html.AntiForgeryToken()
+
+            @Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Panel)
+
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Id, new { @id = "ArticleId" })
+            @Html.HiddenFor(model => model.ImageBlobId, new { @id = "imageBlobIdArticle" })
+            @Html.HiddenFor(model => model.ImageBlobName, new { @id = "imageBlobNameArticle" })
+
+            @Html.Partial("Form", Model)
+
+
+        </div>
+
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 mr-none text-right">
+                    <a href="@Url.Action(nameof(ArticleController.Index), nameof(ArticleController).RemoveControllerSuffix())" class="btn btn-link">@ArticleResources.CancelLabel</a>
+                    <button id="articlesubmit" type="submit" value="Submit" class="btn btn-primary btn-lg">@ArticleResources.SaveLabel</button>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    @{
+        if (Model.Id <= 0)
+        {
+
+        }
+        else
+        {
+
+            <div class="input-group-btn">
+                <button class="btn btn-primary tagselect-modal-opener" type="button" href="#tagselectModalWrapper"><i class="fa fa-tag -plus mr-md"></i>  Добавить  &nbsp; тэг к статье</button>
+            </div>
+
+
+            <section class="panel mt-md">
+
+                <header class="panel-heading">
+                    <h2 class="panel-title">Тэги</h2>
+                    <p class="panel-subtitle">(Текущей статьи)</p>
+                </header>
+
+
+                <div class="panel-body">
+
+                    <table id="tagResultTable" class="table table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Статья</th>
+                                <th>Тэг</th>
+                                <th class="nosort"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model.TagResultViewModel as IEnumerable<TagResultViewModel>)
+                            {
+
+                                <tr data-item-id="@item.Id" data-item-label="@item.Id">
+                                    <td>@item.Id</td>
+                                    <td>@item.ArticleName</td>
+                                    <td>@item.TagName</td>
+
+                                    <td class="actions-hover actions-fade text-right">
+                                        <div class="table-row-actions">
+
+                                            <a href="#" class="btn btn-xs btn-default delete" 
+                                               title="@TagResources.DeleteLabel" 
+                                               data-msg-success-title="@TagResources.DeleteSuccessMessageTitle" 
+                                               data-msg-success-content="@TagResources.DeleteSuccessMessageContent" 
+                                               data-msg-error-title="@TagResources.DeleteErrorMessageTitle" 
+                                               data-msg-error-content="@TagResources.DeleteErrorMessageContent">
+                                                <i class="fa fa-trash-o"></i>
+                                            </a>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- Delete Dialog -->
+            <div class="modal-dialog mfp-hide" id="tagResultDeleteDialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">@ArticleResources.DeleteDialogTitle</h4>
+                    </div>
+                    <div class="modal-body">
+                        @Html.Raw(
+                                   string.Format(
+                                       ArticleResources.DeleteTagResultDialogTemplateMessage,
+                                       "<strong class=\"item-label\"></strong>"
+                                   )
+                               )
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link cancel">@LocationResources.CancelLabel</button>
+                        <button type="button" class="btn btn-danger confirm">@LocationResources.ConfirmLabel</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        }
+    }
+
+
+</form>
+
+@Html.Action(nameof(TagController.ModalSelect), nameof(TagController).RemoveControllerSuffix())

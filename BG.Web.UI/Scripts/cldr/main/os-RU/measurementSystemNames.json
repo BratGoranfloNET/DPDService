@@ -1,0 +1,21 @@
+{
+  "main": {
+    "os-RU": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12740 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "os",
+        "territory": "RU"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "Метрикон",
+          "UK": "СБ",
+          "US": "АИШ"
+        }
+      }
+    }
+  }
+}

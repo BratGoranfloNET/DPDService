@@ -1,0 +1,107 @@
+﻿@model IEnumerable<StateViewModel>
+
+
+
+<div id="stateModalWrapper" data-msg-error-title="@ContactResources.ModalErrorMessageTitle" data-msg-error-content="@ContactResources.ModalErrorMessageContent" class="modal-block modal-block-lg mfp-hide">
+
+   
+
+    <section class="panel mt-md">
+
+        <h3 class="mt-none">История статусов</h3>
+       
+
+        <div class="panel-body">
+
+            <table id="stateTable" class="table table-hover">
+                <thead>
+                    <tr>
+
+                        <th>#</th>
+                        <th>@TagResources.Name</th>
+
+                        <th>clientOrderNr</th>
+                        <th>clientParcelNr</th>
+                        <th>dpdOrderNr</th>
+                        <th>dpdParcelNr</th>
+                        <th>pickupDate</th>
+                        <th>dpdOrderReNr</th>
+                        <th>dpdParcelReNr</th>
+                        <th>isReturn</th>
+                        <th>isReturnSpecified</th>
+                        <th>planDeliveryDate</th>
+                        <th>planDeliveryDateSpecified</th>
+                        <th>newState</th>
+                        <th>transitionTime</th>
+                        <th>terminalCode</th>
+                        <th>terminalCity</th>
+                        <th>incidentCode</th>
+                        <th>incidentName</th>
+                        <th>consignee</th>
+
+                        @*<th class="nosort"></th>*@
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var editUrl = Url.Action(nameof(TagController.Edit), nameof(TagController).RemoveControllerSuffix(), new { @id = item.Id });
+
+                        <tr data-item-id="@item.Id" data-item-label="@item.Name">
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+
+                            <td>@item.clientOrderNr</td>
+                            <td>@item.clientParcelNr</td>
+                            <td>@item.dpdOrderNr</td>
+                            <td>@item.dpdParcelNr</td>
+                            <td>@item.pickupDate</td>
+                            <td>@item.dpdOrderReNr</td>
+                            <td>@item.dpdParcelReNr</td>
+                            <td>@item.isReturn</td>
+                            <td>@item.isReturnSpecified</td>
+                            <td>@item.planDeliveryDate</td>
+                            <td>@item.planDeliveryDateSpecified</td>
+                            <td>@item.newState</td>
+                            <td>@item.transitionTime</td>
+                            <td>@item.terminalCode</td>
+                            <td>@item.terminalCity</td>
+                            <td>@item.incidentCode</td>
+                            <td>@item.incidentName</td>
+                            <td>@item.consignee</td>
+
+                            @*<td class="actions-hover actions-fade text-right">
+                            <div class="table-row-actions">
+                                <a href="#" class="btn btn-xs btn-default edit" title="@TagResources.EditLabel" data-edit-url="@editUrl">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a href="#" class="btn btn-xs btn-default delete" title="@TagResources.DeleteLabel" data-msg-success-title="@TagResources.DeleteSuccessMessageTitle" data-msg-success-content="@TagResources.DeleteSuccessMessageContent" data-msg-error-title="@TagResources.DeleteErrorMessageTitle" data-msg-error-content="@TagResources.DeleteErrorMessageContent">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </div>
+                        </td>*@
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="col-md-12 text-right">
+
+                <a href="#" class="btn btn-link state-modal-dismiss">Отменить</a>
+
+            </div>
+
+        </div>
+
+
+
+        
+
+
+    </section>
+
+</div>
+
+

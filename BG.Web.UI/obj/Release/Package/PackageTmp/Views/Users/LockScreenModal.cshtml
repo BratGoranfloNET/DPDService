@@ -1,0 +1,55 @@
+﻿@model LockScreenViewModel
+
+<!-- Page Contents -->
+
+<div class="hidden">
+
+	<section id="lockScreenModalWrapper" class="body-sign body-locked body-locked-inline">
+
+		<div class="center-sign">
+
+			<div class="panel panel-sign">
+
+				<div class="panel-body">
+
+					<form id="lockScreenModalForm" action="@Url.Action(nameof(UsersController.LockScreen), nameof(UsersController).RemoveControllerSuffix())" method="post">
+
+						<div class="current-user text-center">
+							<img id="LockUserPicture" src="@Url.Image(User.ImageBlobName, User.UserName)" alt="@User.UserName" class="img-circle user-image" />
+							<h2 id="LockUserName" class="user-name text-dark m-none">@User.UserName</h2>
+							<p id="LockUserEmail" class="user-email m-none">@User.Email</p>
+						</div>
+
+						<div class="form-group mb-lg">
+							<div class="input-group input-group-icon">
+								@Html.PasswordFor(model => model.Password, new { @class = "form-control input-lg", @placeholder = UserResources.Password })
+								<span class="input-group-addon">
+									<span class="icon icon-lg">
+										<i class="fa fa-lock"></i>
+									</span>
+								</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-6">
+								<p class="mt-xs mb-none">
+									<a href="@Url.Action(nameof(UsersController.LogOff), nameof(UsersController).RemoveControllerSuffix())">@(string.Format(UserResources.UnlockScreenQuestionTemplate, User.UserName))</a>
+								</p>
+							</div>
+							<div class="col-xs-6 text-right">
+								<a class="btn btn-primary unlock-action">@UserResources.UnlockLabel</a>
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+</div>

@@ -1,0 +1,101 @@
+﻿@model LocationsIndexViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = LocationResources.PageLabel;
+	Model.SectionLabel = LocationResources.IndexSectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+	@Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+	@Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+	@Scripts.Render(LocationsIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">@LocationResources.IndexHeader</h3>
+
+<p>@LocationResources.IndexLeadInfo</p>
+
+<p class="mt-md">
+	<a href="@Url.Action(nameof(LocationsController.Add), nameof(LocationsController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+		<i class="fa fa-plus mr-md"></i>@LocationResources.ActionLabelAdd
+	</a>
+</p>
+
+<section class="panel mt-md">
+
+	<div class="panel-body">
+
+		<table id="locationsTable" class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>@LocationResources.Name</th>
+					<th>Город</th>					
+					<th class="nosort"></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.Locations)
+				{
+					var editUrl = Url.Action(nameof(LocationsController.Edit), nameof(LocationsController).RemoveControllerSuffix(), new { @id = item.Id });
+
+					<tr data-item-id="@item.Id" data-item-label="@item.Name">
+						<td>@item.Id</td>
+						<td>@item.Name</td>
+						<td>@item.City</td>
+						
+						<td class="actions-hover actions-fade text-right">
+							<div class="table-row-actions">
+								<a href="#" class="btn btn-xs btn-default edit" title="@LocationResources.EditLabel" data-edit-url="@editUrl">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a href="#" class="btn btn-xs btn-default delete" title="@LocationResources.DeleteLabel" data-msg-success-title="@LocationResources.DeleteSuccessMessageTitle" data-msg-success-content="@LocationResources.DeleteSuccessMessageContent" data-msg-error-title="@LocationResources.DeleteErrorMessageTitle" data-msg-error-content="@LocationResources.DeleteErrorMessageContent">
+									<i class="fa fa-trash-o"></i>
+								</a>
+							</div>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+
+</section>
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="locationsDeleteDialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">@LocationResources.DeleteDialogTitle</h4>
+		</div>
+		<div class="modal-body">
+			@Html.Raw(
+				string.Format(
+					LocationResources.DeleteDialogTemplateMessage,
+					"<strong class=\"item-label\"></strong>"
+				)
+			)
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-link cancel">@LocationResources.CancelLabel</button>
+			<button type="button" class="btn btn-danger confirm">@LocationResources.ConfirmLabel</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,834 @@
+﻿@model DashboardIndexViewModel
+
+<!-- Meta -->
+@{
+    /**/
+
+    /**/
+
+    Model.IsOverlayLoaderEnabled = true;
+
+    Model.PageLabel = DashboardResources.PageLabel;
+    Model.SectionLabel = DashboardResources.SectionLabel;
+
+    var datePickerFormat = Globalization.RegionCulture.DateTimeFormat.ShortDatePattern.ToLowerCaseString();
+    var timePickerMeridiem = !Globalization.Is24HoursTimeFormat;
+
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles{
+    @Styles.Render(DashboardIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts{
+    @Scripts.Render(DashboardIndexScripts.BundleVirtualPath)
+
+
+    <script src="~/assets/vendor/jquery-appear/jquery-appear.js"></script>
+    <script src="~/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+    <script src="~/assets/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/assets/vendor/flot/jquery.flot.js"></script>
+    <script src="~/assets/vendor/flot.tooltip/flot.tooltip.js"></script>
+    <script src="~/assets/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="~/assets/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="~/assets/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="~/assets/vendor/jquery-sparkline/jquery-sparkline.js"></script>
+    <script src="~/assets/vendor/raphael/raphael.js"></script>
+    <script src="~/assets/vendor/morris.js/morris.js"></script>
+    <script src="~/assets/vendor/gauge/gauge.js"></script>
+    <script src="~/assets/vendor/snap.svg/snap.svg.js"></script>
+    <script src="~/assets/vendor/liquid-meter/liquid.meter.js"></script>
+    <script src="~/assets/vendor/chartist/chartist.js"></script>
+    <script src="~/assets/vendor/jqvmap/jquery.vmap.js"></script>
+    <script src="~/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+    <script src="~/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+
+}
+
+@section page_scripts_init{
+    @Scripts.Render(DashboardIndexScriptsInit.BundleVirtualPath)
+
+    <script src="~/Scripts/dashboard/dpd.js"></script>
+
+}
+
+
+<!-- Page Contents -->
+
+<section class="panel">
+
+    <div class="panel-body" style="padding:10px !important;  margin-top:-10px !important;; background-color:#008c95">
+        <div class="col-md-6">
+            <h2 style="margin:0px !important; color:#bbc91e">DPD - СИБУР</h2>
+        </div>
+    </div>
+</section>
+
+
+@if (User.IsInRole(Role.Admin) || User.IsInRole(Role.User))
+{
+
+
+    @*<p class="mt-md">
+            <a href="@Url.Action(nameof(DashboardController.Dpd), nameof(DashboardController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-success">
+                <i class="fa fa-refresh"></i>      Обновить статусы DPD
+            </a>
+        </p>*@
+
+
+    <div class="row">
+
+
+        <div class="col-md-3">
+            @Html.LabelFor(model => model.StartDate, new { @class = "col-md-3 control-label" })
+            <div class="col-md-7">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    @Html.TextBoxFor(model => model.StartDate, "{0:d}", new { @id = "period1", @class = "form-control date-picker", @data_format = datePickerFormat })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+
+            @Html.LabelFor(model => model.EndDate, new { @class = "col-md-3 control-label" })
+            <div class="col-md-7">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    @Html.TextBoxFor(model => model.EndDate, "{0:d}", new { @id = "period2", @class = "form-control date-picker", @data_format = datePickerFormat })
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Consignors, new { @class = "col-md-4 control-label" })
+                <div class="col-md-7">
+                    @Html.DropDownListFor(model => model.ConsignorID, Model.Consignors, null, new { @id = "consignor1", @class = "form-control" })
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <div class="row">
+
+
+        <div class="col-md-3">
+
+            <button id="refresh-stat" class="btn btn-success" type="button" href="#">  <i class="fa fa-refresh mr-md"></i>Обновить статистику </button>
+
+        </div>
+
+
+
+
+        <div class="col-md-3">
+
+            @*@{ using (Html.BeginForm("Export", "Dashboard", FormMethod.Post))
+                    {
+                        <input id="export-excel" class="btn btn-primary" type="submit" value="Выгрузка в Excel" />
+                    }
+                }*@
+
+
+            <button id="export-excel" class="btn btn-success" type="button" href="#">  <i class="fa fa-file-excel-o mr-md"></i>Выгрузка в Excel </button>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    @*<p class="mt-md">
+            <a href="@Url.Action(nameof(DashboardController.DeleteAllDpd), nameof(DashboardController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-danger">
+                <i class="fa fa-trash"></i>      УДАЛИТЬ ВСЕ ВРЕМЕННЫЕ ДАННЫЕ !!! (кроме stateunited)
+            </a>
+        </p>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xl-5 col-lg-6">
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="panel-actions">
+                        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+                        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+                    </div>
+
+                    <h2 class="panel-title">Статистика</h2>
+                    <p class="panel-subtitle">@ViewBag.PeriodTitle ; Отправлений :<span style="font-size:x-large; color: #bbc91e"> @ViewBag.StatesAllCount</span></p>
+                </header>
+                <div class="panel-body">
+                    @*<section class="panel">
+                            <div class="panel-body">
+                                <div class="small-chart pull-right" id="sparklineBarDash"></div>
+                                <script type="text/javascript">
+                                    var sparklineBarDashData = [5, 6, 7, 2, 0, 4, 2, 4, 2, 0, 4, 2, 4, 2, 0, 4];
+                                </script>
+                                <div class="h4 text-weight-bold mb-none">488</div>
+                                <p class="text-xs text-muted mb-none">Average Profile Visits</p>
+                            </div>
+                        </section>*@
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentDelivered data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentDelivered</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesDeliveredCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("Delivered")</p>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentOnRoad data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentOnRoad</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesOnRoadCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("OnRoad")</p>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentDelivering data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentDelivering</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesDeliveringCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("Delivering")</p>
+                        </div>
+                    </section>
+
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentOnTerminal data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentOnTerminal</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesOnTerminalCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("OnTerminal")</p>
+                        </div>
+                    </section>
+
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentOnTerminalPickup data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentOnTerminalPickup</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesOnTerminalPickupCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("OnTerminalPickup")</p>
+                        </div>
+                    </section>
+
+
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentOnTerminalDelivery data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentOnTerminalDelivery</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesOnTerminalDeliveryCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("OnTerminalDelivery")</p>
+                        </div>
+                    </section>
+
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentReturnedFromDelivery data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentReturnedFromDelivery</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesReturnedFromDeliveryCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("ReturnedFromDelivery")</p>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentProblem data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentProblem</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.StatesProblemCount</div>
+                            <p class="text-lg text-muted mb-none">@StatusTranslator.Translate("Problem")</p>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
+                                <div class="circular-bar-chart" data-percent=@ViewBag.PercentOthersCount data-plugin-options='{ "barColor": "#2baab1", "delay": 100, "size": 50, "lineWidth": 6 }'>
+                                    <strong>Average</strong>
+                                    <label><span class="percent">@ViewBag.PercentOthersCount</span>%</label>
+                                </div>
+                            </div>
+                            <div class="h3 text-weight-bold mb-none">@ViewBag.OthersCount</div>
+                            <p class="text-lg text-muted mb-none">Ещё не определены</p>
+                        </div>
+                    </section>
+
+
+                    @*<section class="panel">
+                            <div class="panel-body">
+                                <div class="small-chart pull-right" id="sparklineLineDash"></div>
+                                <script type="text/javascript">
+                                    var sparklineLineDashData = [15, 16, 17, 19, 10, 15, 13, 12, 12, 14, 16, 17];
+                                </script>
+                                <div class="h4 text-weight-bold mb-none">89</div>
+                                <p class="text-xs text-muted mb-none">Pending Tasks</p>
+                            </div>
+                        </section>*@
+                </div>
+            </section>
+
+        </div>
+
+
+        <div class="col-md-6">
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="panel-actions">
+                        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+                        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+                    </div>
+
+                    <h2 class="panel-title">Диаграмма </h2>
+                    <p class="panel-subtitle">@ViewBag.PeriodTitle ; Отправлений :<span style="font-size:x-large; color: #bbc91e"> @ViewBag.StatesAllCount</span></p>
+                </header>
+                <div class="panel-body">
+
+                    <!-- Flot: Pie -->
+                    <div class="chart chart-md" id="flotPie"></div>
+                    <script type="text/javascript">
+
+                        var flotPieData = [{
+                            label: "Доставлено",
+                            data: [
+                                [1, @ViewBag.PercentDelivered]
+                            ],
+                            color: '#008c95'
+                            },
+
+                            {
+                            label: "В пути",
+                            data: [
+                                [1, @ViewBag.PercentOnRoad]
+                            ],
+                                color: '#bbc91e'
+                            },
+
+                            {
+                            label: "Доставляется",
+                            data: [
+                                [1, @ViewBag.PercentDelivering]
+                            ],
+                                color: '#ffc000'
+                            },
+
+                            @*{
+                                label: "OnTerminal",
+                                data: [
+                                [1, @ViewBag.PercentOnTerminal]
+                                ],
+                                color: '#b2d2d8'
+                            },
+
+                            {
+                                label: "OnTerminalPickup",
+                                data: [
+                                [1, @ViewBag.PercentOnTerminalPickup]
+                                ],
+                                color: '#008c95'
+                            },*@
+
+                            {
+                                label: "Остальные",
+                                data: [
+                                [1, @ViewBag.PercentOther]
+                                ],
+                                color: '#b2d2d8'
+                            },
+
+
+
+
+
+                        ];
+
+                            // See: Scripts/Static/uielements.charts.js for more settings.
+
+                    </script>
+
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <section class="panel">
+
+                <div class="panel-body">
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+                            <div class="chart-data-selector" id="registrationSelectorWrapper">
+                                <h2>
+                                    @DashboardResources.WeeklyRegistrationsLabel:
+                                    <strong>
+                                        <select class="form-control" id="registrationSelector">
+                                            <option value="stateunited" selected>Текущие статусы</option>
+                                            <option value="state">state</option>
+                                            <option value="eventtrackingtype">eventtrackingtype</option>
+                                            <option value="eventtrackingparameter">eventtrackingparameter</option>
+
+                                        </select>
+                                    </strong>
+                                </h2>
+
+                                <div id="registrationSelectorItems" class="chart-data-selector-items mt-sm">
+
+
+                                    <!-- stateunited -->
+                                    <div class="chart chart-sm chart-active" data-sales-rel="stateunited" id="stateunitedChart"></div>
+
+                                    <!-- state -->
+                                    <div class="chart chart-sm chart-hidden" data-sales-rel="state" id="stateChart"></div>
+
+
+                                    <!-- eventtrackingtype -->
+                                    <div class="chart chart-sm chart-hidden" data-sales-rel="eventtrackingtype" id="eventtrackingtypeChart"></div>
+
+
+                                    <!-- eventtrackingparameter -->
+                                    <div class="chart chart-sm chart-hidden" data-sales-rel="eventtrackingparameter" id="eventtrackingparameterChart"></div>
+
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <section class="panel panel-featured-left panel-featured-dark">
+                <div class="panel-body">
+                    <div class="widget-summary">
+                        <div class="widget-summary-col widget-summary-col-icon">
+                            <div class="summary-icon bg-dark">
+                                <i class="fa fa-truck"></i>
+                            </div>
+                        </div>
+
+                        <div class="widget-summary-col">
+                            <div class="summary">
+                                <h4 class="title">Текущие статусы</h4>
+                                <div class="info">
+                                    <strong class="amount amount-stateunited"></strong>
+                                </div>
+                            </div>
+                            <div class="summary-footer">
+                                <a href="@Url.Action(nameof(StateUnitedController.IndexAjax), nameof(StateUnitedController).RemoveControllerSuffix())" class="text-muted text-uppercase">@DashboardResources.ViewAllLabel</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+
+
+
+        @*<div class="col-md-3">
+
+                <section class="panel panel-featured-left panel-featured-secondary">
+                    <div class="panel-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-secondary">
+                                    <i class="fa fa-paper-plane"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">state</h4>
+                                    <div class="info">
+                                        <strong class="amount amount-state"></strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="@Url.Action(nameof(StateController.Index), nameof(StateController).RemoveControllerSuffix())" class="text-muted text-uppercase">@DashboardResources.ViewAllLabel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+
+
+        @*<div class="col-md-3">
+
+                <section class="panel panel-featured-left panel-featured-tertiary">
+                    <div class="panel-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-tertiary">
+                                    <i class="fa fa-plane"></i>
+                                </div>
+                            </div>
+
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">eventtrackingtype</h4>
+                                    <div class="info">
+                                        <strong class="amount amount-eventtrackingtype"></strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="@Url.Action(nameof(EventTrackingTypeController.Index), nameof(EventTrackingTypeController).RemoveControllerSuffix())" class="text-muted text-uppercase">@DashboardResources.ViewAllLabel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+
+
+
+        @*<div class="col-md-3">
+
+                <section class="panel panel-featured-left panel-featured-quartenary">
+                    <div class="panel-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-quartenary">
+                                    <i class="fa fa-fighter-jet"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">eventtrackingparameter</h4>
+                                    <div class="info">
+                                        <strong class="amount amount-eventtrackingparameter"></strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="@Url.Action(nameof(EventTrackingParameterController.Index), nameof(EventTrackingParameterController).RemoveControllerSuffix())" class="text-muted text-uppercase">@DashboardResources.ViewAllLabel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+
+
+
+
+
+        @*<div class="col-md-3">
+
+                <section class="panel panel-featured-left panel-featured-secondary">
+                    <div class="panel-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-secondary">
+                                    <i class="fa fa-smile-o"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">@DashboardResources.ContactsLabel</h4>
+                                    <div class="info">
+                                        <strong class="amount amount-contacts"></strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="@Url.Action(nameof(ContactsController.Index), nameof(ContactsController).RemoveControllerSuffix())" class="text-muted text-uppercase">@DashboardResources.ViewAllLabel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+
+
+    </div>
+
+
+
+    @*<p class="mt-md">
+            <a href="@Url.Action(nameof(DashboardController.Dpd), nameof(DashboardController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-success">
+                <i class="fa fa-refresh"></i>      Обновить статусы DPD
+            </a>
+        </p>*@
+
+
+
+    <div class="row">
+
+
+        @*<div class="col-md-4">
+
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">
+                            <span class="va-middle">Последние eventtrackingtype</span>
+                        </h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="content">
+                            <ul class="simple-user-list latest-eventtrackingtype">
+                                <li class="empty hidden">
+                                    <p class="text-center text-muted mt-md">@DashboardResources.NoItemsMessage</p>
+                                </li>
+                            </ul>
+                            <hr class="dotted short">
+                            <div class="text-right">
+                                <a href="@Url.Action(nameof(ArticleController.Add), nameof(ArticleController).RemoveControllerSuffix())" class="text-muted text-uppercase text-no-decoration">@DashboardResources.CreateNewLabel</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+
+
+
+        @*<div class="col-md-4">
+
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">
+                            <span class="va-middle">@DashboardResources.LatestContactsLabel</span>
+                        </h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="content">
+                            <ul class="simple-user-list latest-contacts">
+                                <li class="empty hidden">
+                                    <p class="text-center text-muted mt-md">@DashboardResources.NoItemsMessage</p>
+                                </li>
+                            </ul>
+                            <hr class="dotted short">
+                            <div class="text-right">
+                                <a href="@Url.Action(nameof(ContactsController.Add), nameof(ContactsController).RemoveControllerSuffix())" class="text-muted text-uppercase text-no-decoration">@DashboardResources.CreateNewLabel</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+        @*<div class="col-md-4">
+
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">
+                            <span class="va-middle">@DashboardResources.LatestLocationsLabel</span>
+                        </h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="content">
+                            <ul class="simple-user-list latest-locations">
+                                <li class="empty hidden">
+                                    <p class="text-center text-muted mt-md">@DashboardResources.NoItemsMessage</p>
+                                </li>
+                            </ul>
+                            <hr class="dotted short">
+                            <div class="text-right">
+                                <a href="@Url.Action(nameof(LocationsController.Add), nameof(LocationsController).RemoveControllerSuffix())" class="text-muted text-uppercase text-no-decoration">@DashboardResources.CreateNewLabel</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+        @*<div class="col-md-4">
+
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">
+                            <span class="va-middle">@DashboardResources.LatestEventsLabel</span>
+                        </h2>
+                    </header>
+                    <div class="panel-body">
+                        <div class="content">
+                            <ul class="simple-user-list latest-events">
+                                <li class="empty hidden">
+                                    <p class="text-center text-muted mt-md">@DashboardResources.NoItemsMessage</p>
+                                </li>
+                            </ul>
+                            <hr class="dotted short">
+                            <div class="text-right">
+                                <a href="@Url.Action(nameof(CalendarController.EventsAdd), nameof(CalendarController).RemoveControllerSuffix())" class="text-muted text-uppercase text-no-decoration">@DashboardResources.CreateNewLabel</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+}
+else
+{
+    @*<a href="@Url.Action(nameof(HomeController.Index), nameof(HomeController).RemoveControllerSuffix())" class="logo">
+            <img src="@Url.Content("~/contents/logo.png")" height="70" alt="@WebUIResources.DefaultPageTile" />
+        </a>*@
+
+    <style>
+        body {
+            background: #ffffff;
+            width: 100%;
+        }
+    </style>
+
+    <h1></h1>
+
+    <h2>Доступ закрыт!</h2>
+    <h3>Для получения доступа обратитесь к администратору портала!</h3>
+
+    <img src="@Url.Content("~/contents/leaf.png")" height="300" alt="-" />
+
+
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StateViewModel>
+
+
+
+<div id="stateModalWrapper" data-msg-error-title="@ContactResources.ModalErrorMessageTitle" data-msg-error-content="@ContactResources.ModalErrorMessageContent" class="modal-block modal-block-lg mfp-hide">
+
+   
+
+    <section class="panel mt-md">
+
+        <h3 class="mt-none">История статусов</h3>
+       
+
+        <div class="panel-body">
+
+            <table id="statehistoryTable" class="table table-hover">
+                <thead>
+                    <tr>
+
+                        <th>@StateUnitedResources.dpdOrderNr</th>
+                        <th>@StateUnitedResources.newState</th>
+                        <th>@StateUnitedResources.transitionTime</th>
+                        <th>@StateUnitedResources.terminalCode</th>
+                        <th>@StateUnitedResources.terminalCity</th>                        
+                    </tr>
+                </thead>
+             
+            </table>
+
+            <div class="col-md-12 text-right">
+
+                <a href="#" class="btn btn-link state-modal-dismiss">Отменить</a>
+
+            </div>
+
+        </div>
+                               
+        
+    </section>
+
+</div>
+
+

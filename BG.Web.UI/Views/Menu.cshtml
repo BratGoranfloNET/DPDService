@@ -1,0 +1,137 @@
+﻿
+<nav id="menu" class="nav-main" role="navigation">
+
+    <ul class="nav nav-main">
+
+
+        @if (User.IsInRole(Role.Admin) | User.IsInRole(Role.User))
+        {
+            <li class="@Url.MatchMenuAction(Url.Action(nameof(DashboardController.Index), nameof(DashboardController).RemoveControllerSuffix()), "nav-active")">
+                <a href="@Url.Action(nameof(DashboardController.Index), nameof(DashboardController).RemoveControllerSuffix())">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span>@DashboardResources.MenuItemLabel</span>
+                </a>
+            </li>
+        }
+
+
+
+
+        @if (User.IsInRole(Role.Admin) || User.IsInRole(Role.User))
+        {
+
+            <li class="@Url.MatchMenuAction(Url.Action(nameof(StateUnitedController.IndexAjax), nameof(StateUnitedController).RemoveControllerSuffix()), "nav-active")">
+                <a href="@Url.Action(nameof(StateUnitedController.IndexAjax), nameof(StateUnitedController).RemoveControllerSuffix())">
+                    <i class="fa fa-truck" aria-hidden="true"></i>
+                    <span>Текущие статусы</span>
+                </a>
+            </li>
+
+
+            <li class="@Url.MatchMenuAction(Url.Action(nameof(CalendarController.Index), nameof(CalendarController).RemoveControllerSuffix()), "nav-active")">
+                <a href="@Url.Action(nameof(CalendarController.Index), nameof(CalendarController).RemoveControllerSuffix())">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>@CalendarResources.MenuItemLabel</span>
+                </a>
+            </li>
+
+
+        }
+
+        @if (User.IsInRole(Role.Admin))
+        {
+            <li class="nav-parent @Url.MatchMenuAction("platform/", "nav-expanded nav-active")">
+                <a>
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                    <span>@WebUIResources.PlatformMenuItemLabel</span>
+                </a>
+                <ul class="nav nav-children">
+
+                    <li class="@Url.MatchMenuAction(Url.Action(nameof(PlatformController.Logs), nameof(PlatformController).RemoveControllerSuffix()), "nav-active")">
+                        <a href="@Url.Action(nameof(PlatformController.Logs), nameof(PlatformController).RemoveControllerSuffix())">
+                            <span>@LogResources.MenuItemLabel</span>
+                        </a>
+                    </li>
+
+
+                    <li class="@Url.MatchMenuAction(Url.Action(nameof(PlatformController.Users), nameof(PlatformController).RemoveControllerSuffix()), "nav-active")">
+                        <a href="@Url.Action(nameof(PlatformController.Users), nameof(PlatformController).RemoveControllerSuffix())">
+                            <span>@UserResources.MenuItemLabel</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-parent
+
+                @Url.MatchMenuAction("eventtracking/", "nav-expanded")
+                @Url.MatchMenuAction("eventtrackingtype/", "nav-expanded")
+                @Url.MatchMenuAction("eventtrackingparameter/", "nav-expanded")
+                @Url.MatchMenuAction("stateparcels/", "nav-expanded")
+                @Url.MatchMenuAction("state/", "nav-expanded")
+                @Url.MatchMenuAction("statehistory/", "nav-expanded")">
+
+
+                        <a>
+                            <i class="fa  fa-paper-plane-o" aria-hidden="true"></i>
+                            <span>Временные данные</span>
+                        </a>
+
+                        <ul class="nav nav-children">
+
+
+                            <li class="@Url.MatchMenuAction(Url.Action(nameof(StateParcelsController.Index), nameof(StateParcelsController).RemoveControllerSuffix()), "nav-active")">
+                                <a href="@Url.Action(nameof(StateParcelsController.Index), nameof(StateParcelsController).RemoveControllerSuffix())">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                    <span>StateParcels</span>
+                                </a>
+                            </li>
+
+                            <li class="@Url.MatchMenuAction(Url.Action(nameof(StateController.Index), nameof(StateController).RemoveControllerSuffix()), "nav-active")">
+                                <a href="@Url.Action(nameof(StateController.Index), nameof(StateController).RemoveControllerSuffix())">
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                    <span>State</span>
+                                </a>
+                            </li>
+
+                            <li class="@Url.MatchMenuAction(Url.Action(nameof(StateHistoryController.Index), nameof(StateHistoryController).RemoveControllerSuffix()), "nav-active")">
+                                <a href="@Url.Action(nameof(StateHistoryController.Index), nameof(StateHistoryController).RemoveControllerSuffix())">
+                                    <i class="fa fa-history" aria-hidden="true"></i>
+                                    <span>StateHistory</span>
+                                </a>
+                            </li>
+
+
+                            <li class="@Url.MatchMenuAction(Url.Action(nameof(EventTrackingController.Index), nameof(EventTrackingController).RemoveControllerSuffix()), "nav-active")">
+                                <a href="@Url.Action(nameof(EventTrackingController.Index), nameof(EventTrackingController).RemoveControllerSuffix())">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                    <span>EventTracking</span>
+                                </a>
+                            </li>
+
+
+
+                            <li class="@Url.MatchMenuAction(Url.Action(nameof(EventTrackingTypeController.Index), nameof(EventTrackingTypeController).RemoveControllerSuffix()), "nav-active")">
+                                <a href="@Url.Action(nameof(EventTrackingTypeController.Index), nameof(EventTrackingTypeController).RemoveControllerSuffix())">
+                                    <i class="fa fa-plane" aria-hidden="true"></i>
+                                    <span>EventTrackingType</span>
+                                </a>
+                            </li>
+
+
+                            <li class="@Url.MatchMenuAction(Url.Action(nameof(EventTrackingParameterController.IndexAjax), nameof(EventTrackingParameterController).RemoveControllerSuffix()), "nav-active")">
+                                <a href="@Url.Action(nameof(EventTrackingParameterController.IndexAjax), nameof(EventTrackingParameterController).RemoveControllerSuffix())">
+                                    <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                                    <span>EventTrackingParameter</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+        }
+
+
+    </ul>
+
+</nav>

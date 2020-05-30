@@ -1,0 +1,21 @@
+{
+  "main": {
+    "gsw-LI": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12740 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "gsw",
+        "territory": "LI"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "metrisch",
+          "UK": "UK",
+          "US": "angloamerikaanisch"
+        }
+      }
+    }
+  }
+}

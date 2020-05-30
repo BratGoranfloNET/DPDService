@@ -1,0 +1,22 @@
+
+div.panel-sign div.validation-message ul {
+	margin: -33px -33px 25px;
+	padding: 15px 20px;
+}
+
+div.feedback-validation-panel {
+	display: block;
+}
+
+div.feedback-validation-panel ul {
+	display: block;
+}
+
+ul.search-results-list {
+	max-width: 100%;
+}
+
+div.feedback-validation .alert-danger {
+	background-color: #FFEFEF;
+	border-color: #FFCBCB;
+}

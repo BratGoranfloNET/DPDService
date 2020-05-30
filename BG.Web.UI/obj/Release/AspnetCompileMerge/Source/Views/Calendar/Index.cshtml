@@ -1,0 +1,51 @@
+﻿@model CalendarIndexViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = CalendarResources.PageLabel;
+	Model.SectionLabel = CalendarResources.IndexSectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+	@Styles.Render(CalendarIndexStyles.BundleVirtualPath)
+	<link rel="stylesheet" href="@Styles.Url(CalendarIndexStylesPrint.BundleVirtualPath)" media="print" />
+}
+
+@section page_scripts {
+	@Scripts.Render(CalendarIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+	@Scripts.Render(CalendarIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<p>
+	<a class="mb-xs mt-xs mr-xs btn btn-default" href="@Url.Action(nameof(CalendarController.EventsIndex), nameof(CalendarController).RemoveControllerSuffix())">
+		<i class="fa fa-calendar-o mr-md"></i>@CalendarResources.ActionLabelManageEvent
+	</a>
+</p>
+
+<section class="panel mt-md">
+
+	<div class="panel-body">
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<div id="eventsCalendar" data-region="@Globalization.RegionCulture.Name.ToLowerCaseString()"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+</section>

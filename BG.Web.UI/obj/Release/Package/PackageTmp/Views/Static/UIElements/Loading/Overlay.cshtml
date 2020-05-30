@@ -1,0 +1,116 @@
+﻿@model EmptyViewModel
+
+@{
+	string title = "Overlay";
+	Model.PageLabel = title;
+	Model.IsOverlayLoaderEnabled = true;
+}
+
+@section breadcrumb_items{
+	<li><span>Static</span></li>
+	<li><span>UI Elements</span></li>
+	<li><span>Loading</span></li>
+	<li><span>Overlay</span></li>
+}
+
+@section page_scripts_init{
+	<script src="~/Scripts/Static/uielements.loading.overlay.js"></script>
+}
+
+@Html.Partial("~/Views/Static/TopAlert.cshtml")
+
+<h3 class="mt-none">Loading Overlay</h3>
+<p>To use the Loading Overlay for page load event you should do the following:</p>
+<p><em>Note: this is needed because javascript goes on footer and you want the overlay to be the first thing to be shown in your page.</em></p>
+
+<ol class="mb-lg">
+	<li>
+		<p>Add the class <code>loading-overlay-showing</code> to the body</p>
+	</li>
+	<li>
+		<p>Add the attribute <code>data-loading-overlay</code> to the body also</p>
+	</li>
+	<li>
+		Put this html right after opening the body tag
+
+		<div class="mb-md">
+			<code>
+				&lt;div class=&quot;loading-overlay&quot;&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;bounce-loader&quot;&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;bounce1&quot;&gt;&lt;/div&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;bounce2&quot;&gt;&lt;/div&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;bounce3&quot;&gt;&lt;/div&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+				&lt;/div&gt;
+			</code>
+		</div>
+	</li>
+</ol>
+
+<div class="row mt-lg">
+	<div class="col-md-6">
+		<section class="panel">
+			<header class="panel-heading">
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+					<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+				</div>
+
+				<h2 class="panel-title">Using on a Panel</h2>
+			</header>
+			<div class="panel-body" data-loading-overlay data-loading-overlay-options='{ "startShowing": true }' style="min-height: 150px;">
+				Content.
+			</div>
+		</section>
+	</div>
+	<div class="col-md-6">
+		<section class="panel">
+			<header class="panel-heading">
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+					<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+				</div>
+
+				<h2 class="panel-title">Custom Options</h2>
+			</header>
+			<div class="panel-body" data-loading-overlay data-loading-overlay-options='{ "startShowing": true, "css": { "backgroundColor": "#0088cc" } }' style="min-height: 150px;">
+				Content.
+			</div>
+		</section>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<section class="panel">
+			<header class="panel-heading">
+				<div class="panel-actions">
+					<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+					<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+				</div>
+
+				<h2 class="panel-title">Loading Overlay API</h2>
+			</header>
+			<div class="panel-body">
+
+				<div class="row">
+					<div class="col-md-4 center">
+						<button id="ApiShowOverlay" class="btn btn-primary mt-lg">Show Overlay</button>
+					</div>
+					<div class="col-md-4 center">
+						<div style="background-color: #FFF; border: 1px solid #DDD;  line-height: 80px; height: 80px; margin: 0 auto; text-align: center; width: 180px;" id="LoadingOverlayApi" data-loading-overlay>
+							Content
+						</div>
+					</div>
+					<div class="col-md-4 center">
+						<button id="ApiHideOverlay" class="btn btn-primary mt-lg">Hide Overlay</button>
+					</div>
+				</div>
+
+				<!--
+				See: assets/javascripts/ui-elements/examples.loading.overlay.js for usage instructions.
+				-->
+			</div>
+		</section>
+	</div>
+</div>

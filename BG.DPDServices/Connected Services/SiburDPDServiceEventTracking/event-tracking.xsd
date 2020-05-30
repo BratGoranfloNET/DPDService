@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://dpd.ru/ws/event-tracking/2016-02-15" targetNamespace="http://dpd.ru/ws/event-tracking/2016-02-15" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WSFault" type="tns:WSFault" />
+  <xs:element name="confirm" type="tns:confirm" />
+  <xs:element name="confirmResponse" type="tns:confirmResponse" />
+  <xs:element name="eventTackingResponse" type="tns:eventTackingResponse" />
+  <xs:element name="eventTrackingRequest" type="tns:eventTrackingRequest" />
+  <xs:element name="extTrackingLinkRequest" type="tns:extTrackingLinkRequest" />
+  <xs:element name="extTrackingLinkResponse" type="tns:extTrackingLinkResponse" />
+  <xs:element name="getEvents" type="tns:getEvents" />
+  <xs:element name="getEventsResponse" type="tns:getEventsResponse" />
+  <xs:element name="getTrakingOrderLink" type="tns:getTrakingOrderLink" />
+  <xs:element name="getTrakingOrderLinkResponse" type="tns:getTrakingOrderLinkResponse" />
+  <xs:complexType name="getTrakingOrderLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="trackingOrder" type="tns:extTrackingLinkRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="extTrackingLinkRequest">
+    <xs:sequence>
+      <xs:element name="auth" type="tns:auth" />
+      <xs:element name="order" type="tns:order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="auth">
+    <xs:sequence>
+      <xs:element name="clientNumber" type="xs:long" />
+      <xs:element name="clientKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="orderNumberDPD" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNumberInternal" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNumberInternalAdditional" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTrakingOrderLinkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:extTrackingLinkResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="extTrackingLinkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="link" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="request" type="tns:requestConfirm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestConfirm">
+    <xs:sequence>
+      <xs:element name="auth" type="tns:auth" />
+      <xs:element name="docId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEvents">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="request" type="tns:eventTrackingRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eventTrackingRequest">
+    <xs:sequence>
+      <xs:element name="auth" type="tns:auth" />
+      <xs:element minOccurs="0" name="dateFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="maxRowCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEventsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:eventTackingResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eventTackingResponse">
+    <xs:sequence>
+      <xs:element name="docId" type="xs:long" />
+      <xs:element name="docDate" type="xs:dateTime" />
+      <xs:element name="clientNumber" type="xs:long" />
+      <xs:element name="resultComplete" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="event" type="tns:eventType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eventType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clientOrderNr" type="xs:string" />
+      <xs:element minOccurs="0" name="clientCodeInternal" type="xs:string" />
+      <xs:element minOccurs="0" name="clientParcelNr" type="xs:string" />
+      <xs:element minOccurs="0" name="dpdOrderNr" type="xs:string" />
+      <xs:element minOccurs="0" name="dpdParcelNr" type="xs:string" />
+      <xs:element name="eventNumber" type="xs:string" />
+      <xs:element name="eventCode" type="xs:string" />
+      <xs:element name="eventName" type="xs:string" />
+      <xs:element minOccurs="0" name="reasonCode" type="xs:string" />
+      <xs:element minOccurs="0" name="reasonName" type="xs:string" />
+      <xs:element name="eventDate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parameter" type="tns:parameterType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="parameterType">
+    <xs:sequence>
+      <xs:element name="paramName" type="xs:string" />
+      <xs:element minOccurs="0" name="valueString" type="xs:string" />
+      <xs:element minOccurs="0" name="valueDecimal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valueDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="value" nillable="true" type="tns:eventTrackingUnitLoad" />
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="eventTrackingUnitLoad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="article" type="xs:string" />
+      <xs:element name="descript" type="xs:string" />
+      <xs:element minOccurs="0" name="declared_value" type="xs:string" />
+      <xs:element minOccurs="0" name="parcel_num" type="xs:string" />
+      <xs:element minOccurs="0" name="npp_amount" type="xs:string" />
+      <xs:element minOccurs="0" name="vat_percent" type="xs:int" />
+      <xs:element minOccurs="0" name="without_vat" type="xs:boolean" />
+      <xs:element name="count" type="xs:int" />
+      <xs:element minOccurs="0" name="state_name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,68 @@
+﻿@model UserViewModel
+
+<!-- Page Contents -->
+
+<div class="panel-body">
+
+	<div class="thumb-info mb-md">
+
+		<img id="thumbPreviewProfile" src="@Url.Image(Model.ImageBlobName, User.UserName)" class="rounded img-responsive" alt="@User.UserName">
+
+		<div class="thumb-info-title">
+			@*<span class="thumb-info-inner">@User.UserName</span>*@
+			<span class="thumb-info-type">@User.Name</span>
+		</div>
+
+	</div>
+
+	@*<div class="widget-toggle-expand mb-md hidden-xs">
+
+		<div class="widget-header">
+			<h6>@UserResources.ProfileCompletionLabel</h6>
+			<div class="widget-toggle">+</div>
+		</div>
+
+		<div class="widget-content-collapsed">
+			<div class="progress progress-xs light">
+				@{ var completion = Model.ProfileCompletion.ProfileCompletionPercent; }
+				<div class="progress-bar" role="progressbar" aria-valuenow="@completion" aria-valuemin="0" aria-valuemax="100" style="width: @completion%;">
+					@completion%
+				</div>
+			</div>
+		</div>
+
+		<div class="widget-content-expanded">
+
+			<ul class="simple-todo-list">
+				<li class="@(Model.ProfileCompletion.IsAccountCreated ? "completed" : string.Empty)">@UserResources.ProfileCompletionAccountLabel</li>
+				<li class="@(Model.ProfileCompletion.IsImageUploaded ? "completed" : string.Empty)">@UserResources.ProfileCompletionUpdatePictureLabel</li>
+				<li class="@(Model.ProfileCompletion.IsSocialMediaUpdated ? "completed" : string.Empty)">@UserResources.ProfileCompletionUpdateSocialMediaLabel</li>
+				<li class="@(Model.ProfileCompletion.IsBiographyUpdated ? "completed" : string.Empty)">@UserResources.ProfileCompletionUpdateBiographyLabel</li>
+			</ul>
+
+		</div>
+
+	</div>*@
+
+
+	@if (!Model.StatusMessage.IsNullOrWhiteSpace())
+	{
+		<hr class="dotted short hidden-xs">
+
+		<blockquote><p>@Model.StatusMessage</p></blockquote>
+	}
+
+	@if (Model.ProfileCompletion.IsSocialMediaUpdated)
+	{
+		<hr class="dotted short hidden-xs">
+
+		<div class="social-icons-list hidden-xs">
+			<a class="@(Model.GitHubLink.IsNullOrWhiteSpace() ? "hidden" : string.Empty)" rel="tooltip" data-placement="bottom" target="_blank" href="@Model.GitHubLink" data-original-title="GitHub"><i class="fa fa-github"></i><span>GitHub</span></a>
+			<a class="@(Model.TwitterLink.IsNullOrWhiteSpace() ? "hidden" : string.Empty)" rel="tooltip" data-placement="bottom" target="_blank" href="@Model.TwitterLink" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+			<a class="@(Model.LinkedInLink.IsNullOrWhiteSpace() ? "hidden" : string.Empty)" rel="tooltip" data-placement="bottom" target="_blank" href="@Model.LinkedInLink" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
+			<a class="@(Model.FacebookLink.IsNullOrWhiteSpace() ? "hidden" : string.Empty)" rel="tooltip" data-placement="bottom" target="_blank" href="@Model.FacebookLink" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+			<a class="@(Model.InstagramLink.IsNullOrWhiteSpace() ? "hidden" : string.Empty)" rel="tooltip" data-placement="bottom" target="_blank" href="@Model.InstagramLink" data-original-title="Instagram"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+		</div>
+	}
+
+</div>

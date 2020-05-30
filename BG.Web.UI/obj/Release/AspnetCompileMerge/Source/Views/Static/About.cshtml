@@ -1,0 +1,48 @@
+﻿@model EmptyViewModel
+
+@{
+	string title = "About";
+	Model.PageLabel = title;
+}
+
+@section breadcrumb_items{
+	<li><span>Static</span></li>
+	<li><span>About</span></li>
+}
+
+<div class="row">
+
+	<div class="col-md-12">
+
+		<section class="panel">
+			<header class="panel-heading bg-white">
+				<div class="panel-heading-icon bg-primary mt-sm">
+					<i class="fa fa-exclamation"></i>
+				</div>
+			</header>
+			<div class="panel-body">
+				<h3 class="text-weight-semibold mt-none mb-lg text-center">About Static HTML Options</h3>
+				<p class="text-center text-md">The items on this section are, as stated, <strong>static HTML elements</strong> and are included with this distribution to allow beautifull screens composition for your business.</p>
+				<p class="text-center text-md">All sample pages and out-of-the-box feature implementations that are included on the .Net Admin package are build with elements from this section and are also available on their pure HTML source.</p>
+			</div>
+		</section>
+
+	</div>
+
+</div>
+
+<div class="row text-center">
+
+	<h2>Chek it out!</h2>
+
+	<hr />
+
+	<div class="btn-group btn-group-lg btn-group-justified">
+		<a href="@Url.Action("Forms", "Static", new { view = "Basic" })" class="btn btn-lg btn-info" role="button">Forms</a>
+		<a href="@Url.Action("Tables", "Static", new { view = "Basic" })" class="btn btn-lg btn-success" role="button">Tables</a>
+		<a href="@Url.Action("UIElements", "Static", new { view = "Typography" })" class="btn btn-lg btn-dark" role="button">UI Elements</a>
+	</div>
+
+	<hr />
+
+</div>

@@ -1,0 +1,16 @@
+﻿@model SearchResultMediaViewModel
+
+@{ 
+	var item = Model;
+}
+
+<div class="col-sm-6 col-md-4 col-lg-3">
+	<div class="thumbnail">
+		<div class="thumb-preview">
+			<a class="thumb-image" href="@item.NavigationPath">
+				<img src="@Url.Image(item.Image, item.ItemLabel, 400, 400)" class="img-responsive" alt="@item.ItemLabel">
+			</a>
+		</div>
+		<h5 class="mg-title text-weight-semibold">@item.ItemLabel <small>@item.ItemSubLabel.WhenNullOrWhiteSpace(string.Empty)</small></h5>
+	</div>
+</div>

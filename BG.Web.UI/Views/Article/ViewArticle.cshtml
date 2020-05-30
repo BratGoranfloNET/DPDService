@@ -1,0 +1,138 @@
+﻿
+@{
+    Layout = "~/Views/_LayoutHome.cshtml";    
+}
+
+<div id="mobile-menu-overlay"></div>
+
+<div role="main" class="main">
+    
+    <section class="page-header">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="@Url.Action(nameof(HomeController.Index), nameof(HomeController).RemoveControllerSuffix())">Главная</a></li>
+                <li><a href="/article/all">Все статьи</a></li>
+                <li class="active">@Model.Title</li>
+            </ul>
+        </div>
+    </section>
+    
+
+    <div class="container">
+        <div class="row">           
+            <div class="col-md-12">
+                    <div class="blog-posts single-post">
+
+                        <article class="post post-large blog-single-post">
+                            
+                            <div class="post-date">
+                                <span class="day">@Model.ReleaseDateDay</span>
+                                <span class="month">@Model.ReleaseDateMonth</span>
+                            </div>
+
+                            <div class="post-content">
+
+                                <h2><a href="blog-post.html">@Model.Title</a></h2>
+
+                                <div class="post-meta">                                    
+                                    <span><i class="fa fa-comments"></i> <a href="#">0 Комментариев</a></span>
+                                </div>
+
+
+                                @MvcHtmlString.Create(HttpUtility.HtmlDecode(Model.Body))
+
+
+                                <div class="post-block post-share">
+                                    <h3 class="h4 heading-primary"><i class="fa fa-share"></i>Поделиться</h3>
+
+                                    <!-- AddThis Button BEGIN -->
+                                    <div class="addthis_toolbox addthis_default_style ">
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                        <a class="addthis_button_tweet"></a>
+                                        <a class="addthis_button_pinterest_pinit"></a>
+                                        <a class="addthis_counter addthis_pill_style"></a>
+                                    </div>
+                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+                                    <!-- AddThis Button END -->
+
+                                </div>
+
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            @*<div class="col-md-3">
+                <aside class="sidebar">
+
+                    <h4>Blog Categories</h4>
+                    <ul class="nav nav-list">
+                        <li><a href="#">All about clothing</a></li>
+                        <li><a href="#">Make-up &amp; beauty)</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Fashion trends</a></li>
+                        <li><a href="#">Haircuts &amp; hairstyles</a></li>
+                    </ul>
+
+                    <h4>Recent Posts</h4>
+                    <ul class="simple-post-list">
+                        <li>
+                            <div class="post-image">
+                                <div class="img-thumbnail">
+                                    <a href="blog-post.html">
+                                        <img src="~/Assets/img/demos/shop/blog/blog-shop-1.jpg" alt="Post">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <a href="blog-post.html">Post Format - Video</a>
+                                <div class="post-meta">
+                                    October 8, 2016
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="post-image">
+                                <div class="img-thumbnail">
+                                    <a href="blog-post.html">
+                                        <img src="~/Assets/img/demos/shop/blog/blog-shop-2.jpg" alt="Post">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-info">
+                                <a href="blog-post.html">Post Format - Image Gallery</a>
+                                <div class="post-meta">
+                                    October 8, 2016
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h4>Tagcloud</h4>
+                    <div class="tagcloud">
+                        <a href="#">Fashion</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Skirts</a>
+                        <a href="#">Dresses</a>
+                        <a href="#">Bags</a>
+                    </div>
+
+                    <h4>Compare Products</h4>
+                    <div class="sidebar-compare-products">
+                        You have no items to compare.
+                    </div>
+
+                </aside>
+            </div>*@
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+   

@@ -1,0 +1,20 @@
+{
+  "main": {
+    "ee": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12876 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "ee"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "metric",
+          "UK": "uk",
+          "US": "us"
+        }
+      }
+    }
+  }
+}

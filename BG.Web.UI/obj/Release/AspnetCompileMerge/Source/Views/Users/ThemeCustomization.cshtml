@@ -1,0 +1,85 @@
+﻿@model UserChangePasswordViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = UserResources.ChangePasswordPageLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+
+	<li><a href="@Url.Action(nameof(UsersController.Account), nameof(UsersController).RemoveControllerSuffix())">@UserResources.AccountSectionLabel</a></li>
+	<li><a href="@Url.Action(nameof(UsersController.Account), nameof(UsersController).RemoveControllerSuffix(), new { tab = UserAccountTabs.GeneralSettings.ToSlug() })">@UserResources.AccountTab3Label</a></li>
+	<li><span>@Model.PageLabel</span></li>
+
+}
+
+@section page_scripts_init {
+
+	@Scripts.Render(UserChangePasswordScriptsInit.BundleVirtualPath)
+
+}
+
+<!-- Page Contents -->
+
+<form id="changePasswordForm" method="post" action="@Url.Action(nameof(UsersController.ChangePassword), nameof(UsersController).RemoveControllerSuffix())" class="form-horizontal form-bordered">
+
+	@Html.AntiForgeryToken()
+
+	<section class="panel">
+
+		<header class="panel-heading">
+			<h2 class="panel-title">@UserResources.ChangePassword</h2>
+			<p class="panel-subtitle">@UserResources.ChangePasswordInfo</p>
+		</header>
+
+		<div class="panel-body">
+
+			@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Panel)
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Password, new { @class = "col-md-3 control-label" })
+				<div class="col-md-6">
+					@Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.NewPassword, new { @class = "col-md-3 control-label" })
+				<div class="col-md-6">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<span class="icon"><i class="fa fa-lock"></i></span>
+						</span>
+						@Html.PasswordFor(model => model.NewPassword, new { @class = "form-control" })
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.NewPasswordConfirmation, new { @class = "col-md-3 control-label" })
+				<div class="col-md-6">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<span class="icon"><i class="fa fa-lock"></i></span>
+						</span>
+						@Html.PasswordFor(model => model.NewPasswordConfirmation, new { @class = "form-control" })
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="panel-footer">
+			<div class="row">
+				<div class="col-md-offset-3 col-md-6 mr-none text-right">
+					<a href="@Url.Action(nameof(UsersController.Account), nameof(UsersController).RemoveControllerSuffix(), new { tab = UserAccountTabs.GeneralSettings.ToSlug() })" class="btn btn-link">@UserResources.CancelLabel</a>
+					<button type="submit" class="btn btn-primary btn-lg">@UserResources.SaveLabel</button>
+				</div>
+			</div>
+		</footer>
+
+	</section>
+
+</form>

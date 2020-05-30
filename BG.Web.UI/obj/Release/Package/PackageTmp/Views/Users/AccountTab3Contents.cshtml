@@ -1,0 +1,75 @@
+﻿@model UserViewModel
+
+<!-- Page Contents -->
+
+@*<h4 class="mb-xlg mt-md">@UserResources.SecurityLabel</h4>
+
+<fieldset>
+
+	<div class="form-group">
+		<div class="col-md-offset-3 col-md-8">
+			<a class="btn btn-link mb-md" href="@Url.Action(nameof(UsersController.ChangePassword), nameof(UsersController).RemoveControllerSuffix())">@UserResources.ChangePasswordLabel</a>
+		</div>
+	</div>
+
+</fieldset>
+
+<hr class="dotted small">*@
+
+@*<h4 class="mb-xlg">@UserResources.LockScreenSettingsLabel</h4>
+
+<fieldset class="mb-xlg">
+
+	<div class="form-group">
+		<div class="col-md-offset-3 col-md-6">
+			<div class="slider-primary mt-md mb-md" id="autoLockSlider">
+				@Html.HiddenFor(model => model.AutoLockScreenInMinutes)
+			</div>
+			<p>
+				@UserResources.LockScreenSettingsAutoLabel
+				<code id="autoLockOutput" data-value-template="@UserResources.LockScreenSettingsAutoValueTemplate" data-value-zero="@UserResources.LockScreenSettingsAutoValudeDisabled"></code>
+			</p>
+		</div>
+	</div>
+
+</fieldset>*@
+
+<hr class="dotted small">
+
+<h4 class="mb-xlg">@UserResources.GlobalizationLabel</h4>
+
+<fieldset class="mb-xlg">
+
+	<div class="form-group">
+		@Html.LabelFor(model => model.CurrentCultureId, new { @class = "col-md-3 control-label" })
+		<div class="col-md-8">
+			@Html.DropDownListFor(model => model.CurrentCultureId, Model.CurrentCultures, new { @class = "form-control" })
+			<div class="text-muted text-sm">@UserResources.CurrentCultureHint</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		@Html.LabelFor(model => model.CurrentUICultureId, new { @class = "col-md-3 control-label" })
+		<div class="col-md-8">
+			@Html.DropDownListFor(model => model.CurrentUICultureId, Model.CurrentUICultures, new { @class = "form-control" })
+			<div class="text-muted text-sm">@UserResources.CurrentUICultureHint</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		@Html.LabelFor(model => model.TimeZoneId, new { @class = "col-md-3 control-label" })
+		<div class="col-md-8">
+			@Html.DropDownListFor(model => model.TimeZoneId, Model.TimeZones, new { @class = "form-control" })
+			<div class="text-muted text-sm">@UserResources.TimeZoneIdHint</div>
+		</div>
+	</div>
+
+</fieldset>
+
+<div class="panel-footer">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-3 text-right">
+			<button type="submit" class="btn btn-primary">@UserResources.SaveLabel</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,176 @@
+﻿@model CalendarEventViewModel
+
+<!-- Meta -->
+
+@{ 
+	var datePickerFormat = Globalization.RegionCulture.DateTimeFormat.ShortDatePattern.ToLowerCaseString();
+	var timePickerMeridiem = !Globalization.Is24HoursTimeFormat;
+}
+
+<!-- Page Contents -->
+
+<div class="mt-lg mb-xlg">
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Color, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group color" data-plugin-colorpicker>
+                <span class="input-group-addon"><i></i></span>
+                @Html.TextBoxFor(model => model.Color, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-user"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StartDate, new { @class = "col-md-3 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+                @Html.TextBoxFor(model => model.StartDate, "{0:d}", new { @class = "form-control date-picker", @data_format = datePickerFormat })
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-clock-o"></i>
+                </span>
+                @Html.TextBoxFor(model => model.StartTime, "{0:t}", new { @class = "form-control time-picker", @data_meridiem = timePickerMeridiem.ToLowerCaseString() })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EndDate, new { @class = "col-md-3 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+                @Html.TextBoxFor(model => model.EndDate, "{0:d}", new { @class = "form-control date-picker", @data_format = datePickerFormat })
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-clock-o"></i>
+                </span>
+                @Html.TextBoxFor(model => model.EndTime, "{0:t}", new { @class = "form-control time-picker", @data_meridiem = timePickerMeridiem.ToLowerCaseString() })
+            </div>
+        </div>
+    </div>
+
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.LocationId, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input">
+                @Html.DropDownListFor(model => model.LocationId, Model.Locations, string.Empty, new { @class = "form-control" })
+                <span class="help-block">@CalendarResources.EventLocationIdHint</span>
+            </div>
+        </div>
+    </div>*@
+
+
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.ProductionId, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input">
+                @Html.DropDownListFor(model => model.ProductionId, Model.Productions, string.Empty, new { @class = "form-control" })
+
+            </div>
+        </div>
+    </div>*@
+
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.EventTypeId, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input">
+                @Html.DropDownListFor(model => model.EventTypeId, Model.EventTypes, string.Empty, new { @class = "form-control" })
+
+            </div>
+        </div>
+    </div>*@
+
+
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input">
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = 5 })
+                </div>
+            </div>
+        </div>*@
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fio, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-user"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Fio, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    @*<div class="form-group">
+        <label class="col-md-3 control-label">
+            @Html.DisplayNameFor(model => model.Images)
+            <br />
+            <span class="text-muted text-sm">Max file size @Model.ImageUploadMaxLengthInBytes.ToByteSizeLabel()</span>
+            <br />
+            <a href="#" class="add-extra-data pb-xs pr-xs upload-images-event" tabindex="0">
+                <i class="fa fa-folder-open"></i> @CalendarResources.UploadEventImagesLabel
+            </a>
+            <br />
+            <small class="uploading-status-event hidden"><i class="fa fa-spinner fa-pulse mr-xs"></i>@CalendarResources.SendingEventImagesLabel</small>
+        </label>
+        <div class="col-md-6">
+
+            <input id="imageFileInputEvent" name="imageFile" type="file" class="hidden" accept="image/*" multiple />
+
+            <div class="event-images-gallery" data-loading-msg-tpl="@CalendarResources.EventsGalleryLoadingMessageTemplate" data-loading-error-msg-tpl="@CalendarResources.EventsGalleryLoadingErrorMessageTemplate">
+
+                <div class="event-images-gallery-empty text-center mt-xlg @(Model.Images.Count > 0 ? "hidden" : string.Empty)">
+                    <span class="text-muted">No images yet.</span>
+                </div>
+
+                @foreach (var image in Model.Images)
+                {
+                    @Html.Partial("EventImage", image)
+                }
+
+            </div>
+
+        </div>
+    </div>*@
+
+
+
+
+
+</div>

@@ -1,0 +1,231 @@
+﻿Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.
+Выполняется установка сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Устанавливается служба DPDService...
+Служба DPDService успешно установлена.
+Создается исходный EventLog DPDService в журнале Application...
+Выполняется фиксация сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление сборки 'C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.InstallLog
+   assemblypath = C:\Users\IoakimanskiyTN.W501-0000000272\Desktop\Sibur.DPD_WebApp\source\Sibur.DPDWindowsService\bin\Debug\Sibur.DPDWindowsService.exe
+Выполняется удаление источника EventLog DPDService.
+Выполняется удаление службы DPDService из системы...
+Служба DPDService успешно удалена из системы.

@@ -1,0 +1,153 @@
+﻿@model StateIndexViewModel
+
+<!-- Meta -->
+
+@{
+    Model.PageLabel = "Статусы";
+    Model.SectionLabel = "История статусов";
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+    @Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+    @Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+    @Scripts.Render(TagIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">История статусов</h3>
+
+
+<div class="input-group-btn">
+
+    <a href="@Url.Action(nameof(StateUnitedController.Index), nameof(StateUnitedController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-default">
+        <i class="fa fa-arrow-left mr-md"></i>Назад к заказам
+    </a>
+
+    @*<button class="btn btn-primary lots-modal-opener" type="button" href="#lotsModalWrapper"><i class="fa fa-plus mr-md"></i>  Добавить &nbsp; лот</button>*@
+
+</div>
+
+@*<p class="mt-md">
+        <a href="@Url.Action(nameof(TagController.Add), nameof(TagController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+            <i class="fa fa-plus mr-md"></i>@TagResources.ActionLabelAdd
+        </a>
+    </p>*@
+
+<section class="panel mt-md">
+
+    <div class="panel-body">
+
+        <table id="tagTable" class="table table-hover">
+            <thead>
+                <tr>
+
+                    @*<th>#</th>
+                        <th>@TagResources.Name</th>
+
+                        <th>StateParcelsId</th>*@
+                    <th>clientOrderNr</th>
+                    <th>clientParcelNr</th>
+                    <th>dpdOrderNr</th>
+                    <th>dpdParcelNr</th>
+                    <th>pickupDate</th>
+                    <th>dpdOrderReNr</th>
+                    <th>dpdParcelReNr</th>
+                    <th>isReturn</th>
+                    <th>isReturnSpecified</th>
+                    <th>planDeliveryDate</th>
+                    <th>planDeliveryDateSpecified</th>
+                    <th>newState</th>
+                    <th>transitionTime</th>
+                    <th>terminalCode</th>
+                    <th>terminalCity</th>
+                    <th>incidentCode</th>
+                    <th>incidentName</th>
+                    <th>consignee</th>
+
+                    @*<th class="nosort"></th>*@
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.States)
+                {
+                    var editUrl = Url.Action(nameof(TagController.Edit), nameof(TagController).RemoveControllerSuffix(), new { @id = item.Id });
+
+                    <tr data-item-id="@item.Id" data-item-label="@item.Name">
+
+                        @*<td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.StateParcelsId</td>*@
+
+                        <td>@item.clientOrderNr</td>
+                        <td>@item.clientParcelNr</td>
+                        <td>@item.dpdOrderNr</td>
+                        <td>@item.dpdParcelNr</td>
+                        <td>@item.pickupDate</td>
+                        <td>@item.dpdOrderReNr</td>
+                        <td>@item.dpdParcelReNr</td>
+                        <td>@item.isReturn</td>
+                        <td>@item.isReturnSpecified</td>
+                        <td>@item.planDeliveryDate</td>
+                        <td>@item.planDeliveryDateSpecified</td>
+                        <td>@item.newState</td>
+                        <td>@item.transitionTime</td>
+                        <td>@item.terminalCode</td>
+                        <td>@item.terminalCity</td>
+                        <td>@item.incidentCode</td>
+                        <td>@item.incidentName</td>
+                        <td>@item.consignee</td>
+
+                        @*<td class="actions-hover actions-fade text-right">
+                                <div class="table-row-actions">
+                                    <a href="#" class="btn btn-xs btn-default edit" title="@TagResources.EditLabel" data-edit-url="@editUrl">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-xs btn-default delete" title="@TagResources.DeleteLabel" data-msg-success-title="@TagResources.DeleteSuccessMessageTitle" data-msg-success-content="@TagResources.DeleteSuccessMessageContent" data-msg-error-title="@TagResources.DeleteErrorMessageTitle" data-msg-error-content="@TagResources.DeleteErrorMessageContent">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
+                            </td>*@
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="tagDeleteDialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">@TagResources.DeleteDialogTitle</h4>
+        </div>
+        <div class="modal-body">
+            @Html.Raw(
+                string.Format(
+                    TagResources.DeleteDialogTemplateMessage,
+                    "<strong class=\"item-label\"></strong>"
+                )
+            )
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link cancel">@LocationResources.CancelLabel</button>
+            <button type="button" class="btn btn-danger confirm">@LocationResources.ConfirmLabel</button>
+        </div>
+    </div>
+</div>

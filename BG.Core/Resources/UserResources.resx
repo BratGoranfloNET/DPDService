@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutYourselfLabel" xml:space="preserve">
+    <value>Пару слов о себе.</value>
+    <comment>Say Something About Yourself</comment>
+  </data>
+  <data name="AccountLabel" xml:space="preserve">
+    <value>Аккаунт</value>
+    <comment>Account</comment>
+  </data>
+  <data name="AccountPageLabel" xml:space="preserve">
+    <value>Аккаунт</value>
+    <comment>Account</comment>
+  </data>
+  <data name="AccountSectionLabel" xml:space="preserve">
+    <value>Аккаунт</value>
+    <comment>Account</comment>
+  </data>
+  <data name="AccountTab1Label" xml:space="preserve">
+    <value>Обзор</value>
+    <comment>Overview</comment>
+  </data>
+  <data name="AccountTab2Label" xml:space="preserve">
+    <value>Информация о профиле</value>
+    <comment>Profile Info</comment>
+  </data>
+  <data name="AccountTab3Label" xml:space="preserve">
+    <value>Общие установки</value>
+    <comment>General Settings</comment>
+  </data>
+  <data name="ActionLabelAdd" xml:space="preserve">
+    <value>Добавть пользователя</value>
+    <comment>Add User</comment>
+  </data>
+  <data name="AddHeader" xml:space="preserve">
+    <value>Добавть пользователя</value>
+    <comment>Add User</comment>
+  </data>
+  <data name="AddLeadInfo" xml:space="preserve">
+    <value>Введите информацию для нового пользователя</value>
+    <comment>Enter the information for the new user.</comment>
+  </data>
+  <data name="AddSectionLabel" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="AutoLockScreenInMinutes" xml:space="preserve">
+    <value>Автоблокировка Экрана.</value>
+    <comment>Auto Lock Screen</comment>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>Биография</value>
+    <comment>Biography</comment>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Отменить</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+    <comment>Change Password</comment>
+  </data>
+  <data name="ChangePasswordCurrentInvalidMessage" xml:space="preserve">
+    <value>Текущий пароль не верный.</value>
+    <comment>The current passoword is not valid.</comment>
+  </data>
+  <data name="ChangePasswordInfo" xml:space="preserve">
+    <value>Пожалуйста введите необходимую информация для изменения пароля.</value>
+    <comment>Please enter the required information bellow to change your password.</comment>
+  </data>
+  <data name="ChangePasswordLabel" xml:space="preserve">
+    <value>Изменит пароль</value>
+    <comment>Change Password</comment>
+  </data>
+  <data name="ChangePasswordPageLabel" xml:space="preserve">
+    <value>Изменить пароль</value>
+    <comment>Change Password</comment>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Повторите Пароль</value>
+    <comment>Confirm Password</comment>
+  </data>
+  <data name="CurrentCultureHint" xml:space="preserve">
+    <value>Формат дат, времени и цифр.</value>
+    <comment>Date, time and numeric format.</comment>
+  </data>
+  <data name="CurrentCultureId" xml:space="preserve">
+    <value>Регион</value>
+    <comment>Region</comment>
+  </data>
+  <data name="CurrentUICultureHint" xml:space="preserve">
+    <value>Supported language translations.</value>
+  </data>
+  <data name="CurrentUICultureId" xml:space="preserve">
+    <value>Язык</value>
+    <comment>Language</comment>
+  </data>
+  <data name="EditHeader" xml:space="preserve">
+    <value>Редактировать пользователя.</value>
+    <comment>Edit User</comment>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>Редактировать</value>
+    <comment>Edit</comment>
+  </data>
+  <data name="EditLeadInfo" xml:space="preserve">
+    <value>Обновите идентификационную информацию пользователя.</value>
+    <comment>Update the user identity information.</comment>
+  </data>
+  <data name="EditSectionLabel" xml:space="preserve">
+    <value>Редактировать пользователя.</value>
+    <comment>Edit User</comment>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="EmailConfirmationCallbackErrorMessage" xml:space="preserve">
+    <value>Не получается принять ваш e-mail. Попробуйте еще.</value>
+    <comment>Unable to confirm your e-mail. Please try again.</comment>
+  </data>
+  <data name="EmailConfirmationMessageError" xml:space="preserve">
+    <value>Не получается  отправить сообщение проверки e-mail. Попробуйте еще.</value>
+    <comment>Unable to send e-mail confirmation message. Please try again.</comment>
+  </data>
+  <data name="EmailConfirmationMessageLabel" xml:space="preserve">
+    <value>Спасибо!</value>
+    <comment>Thanks!</comment>
+  </data>
+  <data name="EmailConfirmationMessageSentPageLabel" xml:space="preserve">
+    <value>Проверка Email</value>
+    <comment>Email Confirmation</comment>
+  </data>
+  <data name="EmailConfirmationMessageSubject" xml:space="preserve">
+    <value>E-Mail Проверка</value>
+    <comment>E-Mail Confirmation</comment>
+  </data>
+  <data name="EmailConfirmationMessageSuccess" xml:space="preserve">
+    <value>Сообщение о проверке был отправлен на ваш e-mail.</value>
+    <comment>A confirmation message has been sent to your e-mail address.</comment>
+  </data>
+  <data name="EmailOrUsername" xml:space="preserve">
+    <value>Имя пользователя</value>
+    <comment>E-mail or Username</comment>
+  </data>
+  <data name="FacebookLink" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="ForgotPasswordLabel" xml:space="preserve">
+    <value>Забыли пароль?</value>
+    <comment>Forgot Password?</comment>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Пол</value>
+    <comment>Gender</comment>
+  </data>
+  <data name="GitHubLink" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="GlobalizationLabel" xml:space="preserve">
+    <value>Региональные установки</value>
+    <comment>Globalization Options</comment>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ImageBlobId" xml:space="preserve">
+    <value>Картинка</value>
+    <comment>Image</comment>
+  </data>
+  <data name="InstagramLink" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Неверные имя пользователя или пароль.</value>
+    <comment>Invalid credentials.</comment>
+  </data>
+  <data name="InvalidPasswordMessage" xml:space="preserve">
+    <value>Пароль неверный.</value>
+    <comment>The password is invalid.</comment>
+  </data>
+  <data name="LeadInfo" xml:space="preserve">
+    <value>Управление пользователями.</value>
+    <comment>Manage existing users.</comment>
+  </data>
+  <data name="LinkedInLink" xml:space="preserve">
+    <value>Linked In</value>
+  </data>
+  <data name="LockScreenLabel" xml:space="preserve">
+    <value>Заблокировать экран</value>
+    <comment>Lock Screen</comment>
+  </data>
+  <data name="LockScreenSettingsAutoLabel" xml:space="preserve">
+    <value>Блокировать автоматически:</value>
+    <comment>Lock automatically:</comment>
+  </data>
+  <data name="LockScreenSettingsAutoValudeDisabled" xml:space="preserve">
+    <value>Выключено</value>
+    <comment>Disabled</comment>
+  </data>
+  <data name="LockScreenSettingsAutoValueTemplate" xml:space="preserve">
+    <value>После {interval} минут.</value>
+    <comment>e.g: After {5} minutes.</comment>
+  </data>
+  <data name="LockScreenSettingsLabel" xml:space="preserve">
+    <value>Заблокировать экран</value>
+    <comment>Lock Screen</comment>
+  </data>
+  <data name="LoginButtonLabel" xml:space="preserve">
+    <value>Вход</value>
+    <comment>Log In</comment>
+  </data>
+  <data name="LoginCallOutLabel" xml:space="preserve">
+    <value>Уже есть аккаунт ?</value>
+    <comment>Already have an account?</comment>
+  </data>
+  <data name="LoginCallOutLabel2" xml:space="preserve">
+    <value>Вспомнил?</value>
+    <comment>Remembered?</comment>
+  </data>
+  <data name="LoginCalloutLabel3" xml:space="preserve">
+    <value>Ready to</value>
+  </data>
+  <data name="LoginLabel" xml:space="preserve">
+    <value>Вход</value>
+    <comment>Log In!</comment>
+  </data>
+  <data name="LoginPageLabel" xml:space="preserve">
+    <value>Вход</value>
+    <comment>Log In</comment>
+  </data>
+  <data name="LogOffLabel" xml:space="preserve">
+    <value>Выход</value>
+    <comment>Log Off</comment>
+  </data>
+  <data name="MenuItemLabel" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="MobilePhone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя пользователя.</value>
+    <comment>Name</comment>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новый пароль</value>
+    <comment>New Password</comment>
+  </data>
+  <data name="NewPasswordConfirmation" xml:space="preserve">
+    <value>Повторите новый пароль</value>
+    <comment>New Password Confirmation</comment>
+  </data>
+  <data name="OverviewDataSuccessMessage" xml:space="preserve">
+    <value>Информация о статусе успешно обновлена.</value>
+    <comment>Status message successfully updated.</comment>
+  </data>
+  <data name="PageLabel" xml:space="preserve">
+    <value>Пользователи</value>
+    <comment>Users</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+    <comment>Password</comment>
+  </data>
+  <data name="PasswordChangeSuccessMessage" xml:space="preserve">
+    <value>Пароль успешно изменен!</value>
+    <comment>Password successfully changed!</comment>
+  </data>
+  <data name="PersonalInformationLabel" xml:space="preserve">
+    <value>Персональная Информация</value>
+    <comment>Personal Information</comment>
+  </data>
+  <data name="ProfileCompletionAccountLabel" xml:space="preserve">
+    <value>Создать аккаунт.</value>
+    <comment>Create an account.</comment>
+  </data>
+  <data name="ProfileCompletionLabel" xml:space="preserve">
+    <value>Заполненность профиля</value>
+    <comment>Profile Completion</comment>
+  </data>
+  <data name="ProfileCompletionUpdateBiographyLabel" xml:space="preserve">
+    <value>Обнофить биографию.</value>
+    <comment>Update your biography.</comment>
+  </data>
+  <data name="ProfileCompletionUpdatePictureLabel" xml:space="preserve">
+    <value>Обновить картинку.</value>
+    <comment>Update your picture.</comment>
+  </data>
+  <data name="ProfileCompletionUpdateSocialMediaLabel" xml:space="preserve">
+    <value>Обнофите инф-ю о Ваших соц. сетях.</value>
+    <comment>Update social media.</comment>
+  </data>
+  <data name="ProfileCompletionVerifyEmailLabel" xml:space="preserve">
+    <value>Проверьте ваш e-mail.</value>
+    <comment>Verify your e-mail.</comment>
+  </data>
+  <data name="ProfileDataUpdatedSuccessMessage" xml:space="preserve">
+    <value>Профиль успешно обновлен.</value>
+    <comment>Profile successfully updated.</comment>
+  </data>
+  <data name="ProfilePictureLabel" xml:space="preserve">
+    <value>Картинка пользователя</value>
+    <comment>User Picture</comment>
+  </data>
+  <data name="Realm" xml:space="preserve">
+    <value>Realm</value>
+  </data>
+  <data name="RegisterButtonLabel" xml:space="preserve">
+    <value>Зарегистрировать</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterCallOutLabel" xml:space="preserve">
+    <value>Еще не зарегистрированы?</value>
+    <comment>Don't have an account yet?</comment>
+  </data>
+  <data name="RegisterLabel" xml:space="preserve">
+    <value>Регистрация</value>
+    <comment>Register!</comment>
+  </data>
+  <data name="RegisterPageLabel" xml:space="preserve">
+    <value>Регистрация</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запомнить меня</value>
+    <comment>Remember me</comment>
+  </data>
+  <data name="ResetPasswordButtonLabel" xml:space="preserve">
+    <value>Сбросить!</value>
+    <comment>Reset!</comment>
+  </data>
+  <data name="ResetPasswordGeneralErrorMessage" xml:space="preserve">
+    <value>Invalid reset token. Please request a new one.</value>
+  </data>
+  <data name="ResetPasswordInformation" xml:space="preserve">
+    <value>Введите ваш e-mail для получения инструкции по сбросу пароля.</value>
+    <comment>Enter your e-mail bellow to receive password reset instructions.</comment>
+  </data>
+  <data name="ResetPasswordMessageSubject" xml:space="preserve">
+    <value>Сбросить Пароль</value>
+    <comment>Reset Password</comment>
+  </data>
+  <data name="ResetPasswordPageLabel" xml:space="preserve">
+    <value>Сброс Пароля</value>
+    <comment>Reset Password</comment>
+  </data>
+  <data name="ResetPasswordSuccessLabel" xml:space="preserve">
+    <value>Успешно!</value>
+    <comment>Success!</comment>
+  </data>
+  <data name="ResetPasswordSuccessMessage" xml:space="preserve">
+    <value>Инструкция для сброса пароля отправлена.</value>
+    <comment>Password reset instructions were sent.</comment>
+  </data>
+  <data name="SaveLabel" xml:space="preserve">
+    <value>Сохранить</value>
+    <comment>Save</comment>
+  </data>
+  <data name="SectionLabel" xml:space="preserve">
+    <value>Пользователи</value>
+    <comment>Users</comment>
+  </data>
+  <data name="SecurityLabel" xml:space="preserve">
+    <value>Безопасность</value>
+    <comment>Security</comment>
+  </data>
+  <data name="SettingsDataUpdatedSuccessMessage" xml:space="preserve">
+    <value>Установки аккаунта успешно обновлены.</value>
+    <comment>Account settings successfully updated.</comment>
+  </data>
+  <data name="SocialMediaProfilesLabel" xml:space="preserve">
+    <value>Social Media Profile Links</value>
+  </data>
+  <data name="StatusMessage" xml:space="preserve">
+    <value>Статус</value>
+    <comment>Status Message</comment>
+  </data>
+  <data name="StatusMessageUpdateLabel" xml:space="preserve">
+    <value>опубликовать</value>
+    <comment>post</comment>
+  </data>
+  <data name="StatusSettingsHint" xml:space="preserve">
+    <value>Информация о статусе</value>
+    <comment>What's on your mind?</comment>
+  </data>
+  <data name="StatusSettingsLabel" xml:space="preserve">
+    <value>Статус</value>
+    <comment>Status</comment>
+  </data>
+  <data name="TermsOfUse" xml:space="preserve">
+    <value>Условиями</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="TermsOfUseSentenceTemplate" xml:space="preserve">
+    <value>Я согласен с  {0}.</value>
+    <comment>e.g: I agree with the {&lt;a class=\"terms-dialog-action\" href=\"#terms-dialog-content\"&gt;terms of use&lt;/a&gt;}.</comment>
+  </data>
+  <data name="TimeZoneId" xml:space="preserve">
+    <value>Временная Зона</value>
+    <comment>Time Zone</comment>
+  </data>
+  <data name="TimeZoneIdHint" xml:space="preserve">
+    <value>Ваша временная зона</value>
+    <comment>Specify the time zone you are currently in.</comment>
+  </data>
+  <data name="TwitterLink" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="UnlockLabel" xml:space="preserve">
+    <value>Разблокировать</value>
+    <comment>Unlock</comment>
+  </data>
+  <data name="UnlockScreenQuestionTemplate" xml:space="preserve">
+    <value>Вы не {0}?</value>
+    <comment>e.g. Not Johnny5?</comment>
+  </data>
+  <data name="UploadErrorMessageTitle" xml:space="preserve">
+    <value>Ошибка Загрузки!</value>
+    <comment>Upload Error!</comment>
+  </data>
+  <data name="UploadImageLabel" xml:space="preserve">
+    <value>Загрузить картинку</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="UploadSendingLabel" xml:space="preserve">
+    <value>Загружаю...</value>
+    <comment>Sending...</comment>
+  </data>
+  <data name="UserEditSuccessMessage" xml:space="preserve">
+    <value>Пользователь успешно обновлен.</value>
+    <comment>User successfully updated.</comment>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Логин.</value>
+    <comment>User Name</comment>
+  </data>
+  <data name="UserNameHint" xml:space="preserve">
+    <value>Только буквы и цифры, начинается с буквы.</value>
+    <comment>Only letters and numbers starting with a letter. Ex.: Johnny5</comment>
+  </data>
+</root>

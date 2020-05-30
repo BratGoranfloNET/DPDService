@@ -1,0 +1,76 @@
+﻿@model PlatformUserViewModel
+
+<!-- Meta -->
+
+@{
+	var pageLabel = UserResources.PageLabel;
+	var indexSectionLabel = UserResources.SectionLabel;
+
+	var headingTitle = Model.Id <= 0 ? UserResources.AddHeader : UserResources.EditHeader;
+	var headingLeadInfo = Model.Id <= 0 ? UserResources.AddLeadInfo : UserResources.EditLeadInfo;
+
+	var sectionLabel = Model.Id <= 0 ? UserResources.AddSectionLabel : UserResources.EditSectionLabel;
+
+	Model.PageLabel = pageLabel;
+	Model.SectionLabel = sectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><a href="@Url.Action(nameof(PlatformController.Users), nameof(PlatformController).RemoveControllerSuffix())">@indexSectionLabel</a></li>
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_scripts_init {
+	@Scripts.Render(PlatformUsersManagerScriptsInit.BundleVirtualPath)
+}
+
+
+@section page_styles {
+   
+    <link href="~/assets/vendor/lou-multi-select/css/multi-select.dist.css" rel="stylesheet" />
+}
+
+@section page_scripts {
+    
+    <script src="~/assets/vendor/lou-multi-select/js/jquery.multi-select.js"></script>
+}
+
+<!-- Page Contents -->
+
+<form id="usersForm" method="post" class="form-horizontal form-bordered">
+
+	<section class="panel">
+
+		<header class="panel-heading">
+			<h2 class="panel-title">@headingTitle</h2>
+			<p class="panel-subtitle">@headingLeadInfo</p>
+		</header>
+
+		<div class="panel-body">
+
+			@Html.AntiForgeryToken()
+
+			@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Panel)
+
+			@Html.HiddenFor(model => model.Id)
+			@Html.HiddenFor(model => model.ImageBlobId, new { @id = "imageBlobIdLocation" })
+			@Html.HiddenFor(model => model.ImageBlobName, new { @id = "imageBlobNameLocation" })
+
+			@Html.Partial("UsersForm", Model)
+
+		</div>
+
+		<footer class="panel-footer">
+			<div class="row">
+				<div class="col-md-offset-3 col-md-6 mr-none text-right">
+					<a href="@Url.Action(nameof(PlatformController.Users), nameof(PlatformController).RemoveControllerSuffix())" class="btn btn-link">@UserResources.CancelLabel</a>
+					<button type="submit" class="btn btn-primary btn-lg">@UserResources.SaveLabel</button>
+				</div>
+			</div>
+		</footer>
+
+	</section>
+
+</form>

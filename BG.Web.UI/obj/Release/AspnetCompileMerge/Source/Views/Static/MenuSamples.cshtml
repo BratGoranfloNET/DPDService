@@ -1,0 +1,195 @@
+﻿
+<li class="nav-parent @Url.MatchMenuAction("static/", "nav-expanded")">
+	<a>
+		<i class="fa fa-align-left" aria-hidden="true"></i>
+		<span>Static HTML Options</span>
+	</a>
+	<ul class="nav nav-children">
+
+		<li class="@Url.MatchMenuAction(@Url.Action("About", "Static"), "nav-active")">
+			<a href="@Url.Action("About", "Static")">
+				About
+			</a>
+		</li>
+
+		<li class="@Url.MatchMenuAction(@Url.Action("Dashboard", "Static"), "nav-active")">
+			<a href="@Url.Action("Dashboard", "Static")">
+				Dashboard
+			</a>
+		</li>
+
+		<li class="@Url.MatchMenuAction(@Url.Action("Invoice", "Static"), "nav-active")">
+			<a href="@Url.Action("Invoice", "Static")">
+				Invoice
+			</a>
+		</li>
+
+		<li class="@Url.MatchMenuAction(@Url.Action("Timeline", "Static"), "nav-active")">
+			<a href="@Url.Action("Timeline", "Static")">
+				Timeline
+			</a>
+		</li>
+
+		<!-- start: forms -->
+		<li class="nav-parent @Url.MatchMenuAction("static/forms/", "nav-expanded")">
+
+			<a><span>Forms</span></a>
+
+			<ul class="nav nav-children">
+				<li class="@Url.MatchMenuAction(@Url.Action("Forms", "Static", new { view = "Basic" }), "nav-active")">
+					<a href="@Url.Action("Forms", "Static", new { view = "Basic" })">
+						Basic
+					</a>
+				</li>
+				<li class="@Url.MatchMenuAction(@Url.Action("Forms", "Static", new { view = "Advanced" }), "nav-active")">
+					<a href="@Url.Action("Forms", "Static", new { view = "Advanced" })">
+						Advanced
+					</a>
+				</li>
+				<li class="@Url.MatchMenuAction(@Url.Action("Forms", "Static", new { view = "Validation" }), "nav-active")">
+					<a href="@Url.Action("Forms", "Static", new { view = "Validation" })">
+						Validation
+					</a>
+				</li>
+				<li class="@Url.MatchMenuAction(@Url.Action("Forms", "Static", new { view = "Layouts" }), "nav-active")">
+					<a href="@Url.Action("Forms", "Static", new { view = "Layouts" })">
+						Layouts
+					</a>
+				</li>
+				<li class="@Url.MatchMenuAction(@Url.Action("Forms", "Static", new { view = "Wizard" }), "nav-active")">
+					<a href="@Url.Action("Forms", "Static", new { view = "Wizard" })">
+						Wizard
+					</a>
+				</li>
+			</ul>
+
+		</li>
+		<!-- end: forms -->
+		<!-- start: tables -->
+		<li class="@Url.MatchMenuAction(@Url.Action("Tables", "Static", new { view = "Basic" }), "nav-active")">
+			<a href="@Url.Action("Tables", "Static", new { view = "Basic" })">
+				Tables
+			</a>
+		</li>
+		<!-- end: tables -->
+		<!-- start: ui elements -->
+		<li class="nav-parent @Url.MatchMenuAction("static/uielements/", "nav-expanded")">
+
+			<a><span>UI Elements</span></a>
+
+			<ul class="nav nav-children">
+
+				<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Typography" }), "nav-active")">
+					<a href="@Url.Action("UIElements", "Static", new { view = "Typography" })">
+						Typography
+					</a>
+				</li>
+
+				<!-- start: ui elements/icons -->
+				<li class="nav-parent @Url.MatchMenuAction("static/uielements/icons", "nav-expanded")">
+
+					<a>Icons</a>
+
+					<ul class="nav nav-children">
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Icons/Elusive" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Icons/Elusive" })">
+								Elusive
+							</a>
+						</li>
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Icons/FontAwesome" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Icons/FontAwesome" })">
+								Font Awesome
+							</a>
+						</li>
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Icons/Glyphicons" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Icons/Glyphicons" })">
+								Glyphicons
+							</a>
+						</li>
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Icons/Lineicons" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Icons/Lineicons" })">
+								Line Icons
+							</a>
+						</li>
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Icons/Meteocons" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Icons/Meteocons" })">
+								Meteocons
+							</a>
+						</li>
+					</ul>
+				</li>
+				<!-- end: ui elements/icons -->
+
+				@{
+					var items = new List<string>() {
+						"Tabs", "Panels", "Widgets",
+						"Portlets", "Buttons", "Alerts", "Notifications",
+						"Modals", "Lightbox", "Progress Bars", "Sliders", "Carousels",
+						"Accordions", "Nestable", "Tree View", "Scrollable", "Grid System", "Charts"
+					};
+				}
+
+				@foreach (var item in items)
+				{
+					var view = item.Replace(" ", string.Empty);
+
+					<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view }), "nav-active")">
+						<a href="@Url.Action("UIElements", "Static", new { view })">
+							@item
+						</a>
+					</li>
+				}
+
+				<!-- start: ui elements/animations -->
+				<li class="nav-parent @Url.MatchMenuAction("static/uielements/animations", "nav-expanded")">
+
+					<a>Animations</a>
+
+					<ul class="nav nav-children">
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Animations/Appear" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Animations/Appear" })">
+								Appear
+							</a>
+						</li>
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Animations/Hover" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Animations/Hover" })">
+								Hover
+							</a>
+						</li>
+					</ul>
+				</li>
+				<!-- end: ui elements/animations -->
+				<!-- start: ui elements/loading -->
+				<li class="nav-parent @Url.MatchMenuAction("static/uielements/loading", "nav-expanded")">
+
+					<a>Loading</a>
+
+					<ul class="nav nav-children">
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Loading/Overlay" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Loading/Overlay" })">
+								Overlay
+							</a>
+						</li>
+						<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Loading/Progress" }), "nav-active")">
+							<a href="@Url.Action("UIElements", "Static", new { view = "Loading/Progress" })">
+								Progress
+							</a>
+						</li>
+					</ul>
+				</li>
+				<!-- end: ui elements/loading -->
+
+				<li class="@Url.MatchMenuAction(@Url.Action("UIElements", "Static", new { view = "Extra" }), "nav-active")">
+					<a href="@Url.Action("UIElements", "Static", new { view = "Extra" })">
+						Extra
+					</a>
+				</li>
+
+			</ul>
+
+		</li>
+		<!-- end: ui elements -->
+
+	</ul>
+</li>
+

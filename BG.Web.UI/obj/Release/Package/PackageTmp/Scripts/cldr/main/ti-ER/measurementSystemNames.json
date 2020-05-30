@@ -1,0 +1,21 @@
+{
+  "main": {
+    "ti-ER": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12799 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "ti",
+        "territory": "ER"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "Metric",
+          "UK": "UK",
+          "US": "US"
+        }
+      }
+    }
+  }
+}

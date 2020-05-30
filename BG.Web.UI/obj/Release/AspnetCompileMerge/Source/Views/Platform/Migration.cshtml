@@ -1,0 +1,60 @@
+﻿@model BaseViewModel
+
+<!-- Meta -->
+
+@{
+//Model.HasToolbar = true;
+
+//Model.PageLabel = "SQL Миграция";
+//Model.SectionLabel = "SQL Миграция";
+
+//var dateTimeFormat = Globalization.RegionCulture.DateTimeFormat;
+//var logDatePattern = $"{dateTimeFormat.ShortDatePattern} {dateTimeFormat.LongTimePattern}";
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>Миграция</span></li>
+}
+
+@section page_scripts_init {
+    @*@Scripts.Render(PlatformLogsScriptsInit.BundleVirtualPath)*@
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">Миграция SQL</h3>
+
+
+<div class="alert alert-danger text-center">
+    <h4>Внимание!</h4> <strong>Миграция базы MS-SQL</strong> Добавит в текущую базу данных  из экспортной содержание всех таблиц.
+    <br />
+    <strong>ВОЗМОЖНО ЗАДВОЕНИЕ ДАННЫХ !!!</strong>
+</div>
+
+<hr />
+
+
+<div class="row">
+    <div class="col-md-6">
+
+
+        <button type="button"
+                class="mb-xs mt-xs mr-xs btn btn-lg btn-danger">
+            <i class="fa fa-fighter-jet"></i>
+            <a style="color:#f7f7f7" href="@Url.Action(nameof(PlatformController.MigrationStart), nameof(PlatformController).RemoveControllerSuffix())">
+                Поехали !
+
+        </button>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+

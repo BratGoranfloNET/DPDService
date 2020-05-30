@@ -1,0 +1,599 @@
+﻿@model EmptyViewModel
+
+@{
+	string title = "Line Icons";
+	Model.PageLabel = title;
+}
+
+@section breadcrumb_items{
+	<li><span>Static</span></li>
+	<li><span>UI Elements</span></li>
+	<li><span>Icons</span></li>
+	<li><span>Line Icons</span></li>
+}
+
+@section page_styles{
+	<link rel="stylesheet" href="~/assets/vendor/simple-line-icons/css/simple-line-icons.css" />
+	<style>
+		.icons-demo-page .demo-icon-hover {
+			cursor: pointer;
+			font-size: 15px;
+		}
+		.icons-demo-page .demo-icon-hover:hover {
+			color: #111;
+		}
+		.icons-demo-page .demo-icon-hover i {
+			min-width: 40px;
+			padding-right: 15px;
+		}
+		html.dark .icons-demo-page .demo-icon-hover:hover {
+			color: #FEFEFE;
+		}
+	</style>
+}
+
+@Html.Partial("~/Views/Static/TopAlert.cshtml")
+
+<div class="icons-demo-page">
+	<section class="panel">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+				<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+			</div>
+
+			<h2 class="panel-title">183 icons</h2>
+		</header>
+		<div class="panel-body">
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-user"></i> user
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-people"></i> people
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-user-female"></i> user-female
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-user-follow"></i> user-follow
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-user-following"></i> user-following
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-user-unfollow"></i> user-unfollow
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-login"></i> login
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-logout"></i> logout
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-emotsmile"></i> emotsmile
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-phone"></i> phone
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-call-end"></i> call-end
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-call-in"></i> call-in
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-call-out"></i> call-out
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-map"></i> map
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-location-pin"></i> location-pin
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-direction"></i> direction
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-directions"></i> directions
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-compass"></i> compass
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-layers"></i> layers
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-menu"></i> menu
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-list"></i> list
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-options-vertical"></i> options-vertical
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-options"></i> options
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-down"></i> arrow-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-left"></i> arrow-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-right"></i> arrow-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-up"></i> arrow-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-up-circle"></i> arrow-up-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-left-circle"></i> arrow-left-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-right-circle"></i> arrow-right-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-arrow-down-circle"></i> arrow-down-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-check"></i> check
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-clock"></i> clock
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-plus"></i> plus
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-close"></i> close
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-trophy"></i> trophy
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-screen-smartphone"></i> screen-smartphone
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-screen-desktop"></i> screen-desktop
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-plane"></i> plane
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-notebook"></i> notebook
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-mustache"></i> mustache
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-mouse"></i> mouse
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-magnet"></i> magnet
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-energy"></i> energy
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-disc"></i> disc
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-cursor"></i> cursor
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-cursor-move"></i> cursor-move
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-crop"></i> crop
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-chemistry"></i> chemistry
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-speedometer"></i> speedometer
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-shield"></i> shield
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-screen-tablet"></i> screen-tablet
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-magic-wand"></i> magic-wand
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-hourglass"></i> hourglass
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-graduation"></i> graduation
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-ghost"></i> ghost
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-game-controller"></i> game-controller
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-fire"></i> fire
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-eyeglass"></i> eyeglass
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-envelope-open"></i> envelope-open
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-envolope-letter"></i> envolope-letter
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-bell"></i> bell
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-badge"></i> badge
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-anchor"></i> anchor
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-wallet"></i> wallet
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-vector"></i> vector
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-speech"></i> speech
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-puzzle"></i> puzzle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-printer"></i> printer
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-present"></i> present
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-playlist"></i> playlist
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-pin"></i> pin
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-picture"></i> picture
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-handbag"></i> handbag
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-globe-alt"></i> globe-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-globe"></i> globe
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-folder-alt"></i> folder-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-folder"></i> folder
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-film"></i> film
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-feed"></i> feed
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-drop"></i> drop
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-drawar"></i> drawar
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-docs"></i> docs
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-doc"></i> doc
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-diamond"></i> diamond
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-cup"></i> cup
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-calculator"></i> calculator
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-bubbles"></i> bubbles
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-briefcase"></i> briefcase
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-book-open"></i> book-open
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-basket-loaded"></i> basket-loaded
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-basket"></i> basket
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-bag"></i> bag
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-action-undo"></i> action-undo
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-action-redo"></i> action-redo
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-wrench"></i> wrench
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-umbrella"></i> umbrella
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-trash"></i> trash
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-tag"></i> tag
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-support"></i> support
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-frame"></i> frame
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-size-fullscreen"></i> size-fullscreen
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-size-actual"></i> size-actual
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-shuffle"></i> shuffle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-share-alt"></i> share-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-share"></i> share
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-rocket"></i> rocket
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-question"></i> question
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-pie-chart"></i> pie-chart
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-pencil"></i> pencil
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-note"></i> note
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-loop"></i> loop
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-home"></i> home
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-grid"></i> grid
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-graph"></i> graph
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-microphone"></i> microphone
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-music-tone-alt"></i> music-tone-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-music-tone"></i> music-tone
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-earphones-alt"></i> earphones-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-earphones"></i> earphones
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-equalizer"></i> equalizer
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-like"></i> like
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-dislike"></i> dislike
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-control-start"></i> control-start
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-control-rewind"></i> control-rewind
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-control-play"></i> control-play
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-control-pause"></i> control-pause
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-control-forward"></i> control-forward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-control-end"></i> control-end
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-volume-1"></i> volume-1
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-volume-2"></i> volume-2
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-volume-off"></i> volume-off
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-calender"></i> calender
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-bulb"></i> bulb
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-chart"></i> chart
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-ban"></i> ban
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-bubble"></i> bubble
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-camrecorder"></i> camrecorder
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-camera"></i> camera
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-cloud-download"></i> cloud-download
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-cloud-upload"></i> cloud-upload
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-envolope"></i> envolope
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-eye"></i> eye
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-flag"></i> flag
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-heart"></i> heart
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-info"></i> info
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-key"></i> key
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-link"></i> link
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-lock"></i> lock
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-lock-open"></i> lock-open
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-magnifier"></i> magnifier
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-magnifier-add"></i> magnifier-add
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-magnifier-remove"></i> magnifier-remove
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-paper-clip"></i> paper-clip
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-paper-plane"></i> paper-plane
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-power"></i> power
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-refresh"></i> refresh
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-reload"></i> reload
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-settings"></i> settings
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-star"></i> star
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-symble-female"></i> symble-female
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-symbol-male"></i> symbol-male
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-target"></i> target
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-credit-card"></i> credit-card
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-paypal"></i> paypal
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-tumblr"></i> social-tumblr
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-twitter"></i> social-twitter
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-facebook"></i> social-facebook
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-instagram"></i> social-instagram
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-linkedin"></i> social-linkedin
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-pintarest"></i> social-pintarest
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-github"></i> social-github
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-gplus"></i> social-gplus
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-reddit"></i> social-reddit
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-skype"></i> social-skype
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-dribbble"></i> social-dribbble
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-behance"></i> social-behance
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-foursqare"></i> social-foursqare
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-soundcloud"></i> social-soundcloud
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-spotify"></i> social-spotify
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-stumbleupon"></i> social-stumbleupon
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-youtube"></i> social-youtube
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="icons icon-social-dropbox"></i> social-dropbox
+			</div>
+		</div>
+	</section>
+</div>

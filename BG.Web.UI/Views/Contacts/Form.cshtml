@@ -1,0 +1,113 @@
+﻿@model ContactViewModel
+
+<!-- Meta -->
+
+@{
+	var viewMode = Model.ViewMode;
+	var datePickerFormat = Globalization.RegionCulture.DateTimeFormat.ShortDatePattern.ToLowerCaseString();
+}
+
+<!-- Page Contents -->
+
+@Html.HiddenFor(model => model.ViewMode)
+
+<div class="mt-lg mb-xlg">
+
+    @if (viewMode == ContactViewModes.Full || viewMode == ContactViewModes.SimpleWithPicture)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                @Html.DisplayNameFor(model => model.ImageBlobId)
+                <br />
+                <span class="text-muted text-sm">Max file size @Model.ImageUploadMaxLengthInBytes.ToByteSizeLabel()</span>
+                <br />
+                <a href="#" class="add-extra-data pb-xs pr-xs upload-image-contact" tabindex="0">
+                    <i class="fa fa-folder-open mr-sm"></i>@ContactResources.UploadImageLabel
+                </a>
+                <br />
+                <small class="uploading-status-contact hidden"><i class="fa fa-spinner fa-pulse mr-xs"></i>@ContactResources.UploadSendingLabel</small>
+            </label>
+            <div class="col-md-6">
+                <input id="imageFileInputContact" name="imageFile" type="file" class="hidden" accept="image/*" data-msg-error-title="@ContactResources.UploadErrorMessageTitle" />
+                <img id="thumbPreviewContact" class="img-responsive" src="@Url.Image(Model.ImageBlobName, Model.Name, width: 160, height: 182)" />
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-user"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @autofocus = "autofocus" })
+            </div>
+        </div>
+    </div>
+
+    @if (viewMode == ContactViewModes.Full || viewMode == ContactViewModes.SimpleWithPicture)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FullName, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="icon"><i class="fa fa-circle-o"></i></span>
+                    </span>
+                    @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+    }
+      
+
+   
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email1, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-at"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Email1, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone1, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-phone"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Phone1, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+     
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input">
+                    @Html.TextAreaFor(model => model.Address, new { @class = "form-control", @rows = 5 })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Notes, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input">
+                    @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", @rows = 5 })
+                </div>
+            </div>
+        </div>
+
+
+</div>

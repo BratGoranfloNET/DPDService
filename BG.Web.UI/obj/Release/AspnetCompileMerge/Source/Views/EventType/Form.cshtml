@@ -1,0 +1,46 @@
+﻿@model EventTypeViewModel
+
+<!-- Page Contents -->
+
+<div class="mt-lg mb-xlg">
+
+
+    @*<div class="form-group">
+            <label class="col-md-3 control-label">
+                @Html.DisplayNameFor(model => model.ImageBlobId)
+                <br />
+                <span class="text-muted text-sm">Max file eventtypee @Model.ImageUploadMaxLengthInBytes.ToByteEventTypeeLabel()</span>
+                <br />
+                <a href="#" class="add-extra-data pb-xs pr-xs upload-image-eventtype" tabindex="0">
+                    <i class="fa fa-folder-open"></i> @EventTypeResources.UploadImageLabel
+                </a>
+                <br />
+                <small class="uploading-status-eventtype hidden"><i class="fa fa-spinner fa-pulse mr-xs"></i>@EventTypeResources.UploadSendingLabel</small>
+            </label>
+            <div class="col-md-6">
+                <input id="imageFileInputEventType" name="imageFile" type="file" class="hidden" accept="image/*" data-msg-error-title="@LocationResources.UploadErrorMessageTitle" />
+                <img id="thumbPreviewEventType" class="img-responsive" src="@Url.Image(Model.ImageBlobName, Model.Name, width: 160, height: 182)" />
+            </div>
+        </div>*@
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-check-circle"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+   
+
+    
+
+
+
+</div>

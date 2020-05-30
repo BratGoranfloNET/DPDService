@@ -1,0 +1,20 @@
+{
+  "main": {
+    "ckb": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12784 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "ckb"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "Metric",
+          "UK": "UK",
+          "US": "US"
+        }
+      }
+    }
+  }
+}

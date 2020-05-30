@@ -1,0 +1,20 @@
+{
+  "main": {
+    "kkj": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12740 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "kkj"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "Metric",
+          "UK": "UK",
+          "US": "US"
+        }
+      }
+    }
+  }
+}

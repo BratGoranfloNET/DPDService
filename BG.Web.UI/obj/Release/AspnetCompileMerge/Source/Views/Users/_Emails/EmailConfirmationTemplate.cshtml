@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+@{
+	Layout = "~/Views/_LayoutEmail.cshtml";
+}
+
+<table>
+	<tr>
+		<td width="100%" valign="top">
+			<p>@Model.Name,</p>
+			<p>Please click on the link bellow to confirm your e-mail address:</p>
+			<p><a href="@Model.Link">@Model.Link</a></p>
+			<p>If you did not requested this e-mail, please ignore this message and no action will be taken.</p>
+			<p>Best regards.</p>
+		</td>
+	</tr>
+</table>

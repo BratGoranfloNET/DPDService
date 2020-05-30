@@ -1,0 +1,66 @@
+﻿@model PlatformUserViewModel
+
+<!-- Page Contents -->
+
+<div class="mt-lg mb-xlg">
+
+    @if (Model.ImageBlobId.HasValue)
+    {
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                @Html.DisplayNameFor(model => model.ImageBlobId)
+            </label>
+            <div class="col-md-6">
+                <img class="img-responsive" src="@Url.Image(Model.ImageBlobName, Model.Name, width: 160, height: 182)" />
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">@UserResources.Id</label>
+        <div class="col-lg-6">
+            <p class="form-control-static">@Model.Id</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">@UserResources.UserName</label>
+        <div class="col-lg-6">
+            <p class="form-control-static">@Model.UserName</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">@UserResources.Name</label>
+        <div class="col-lg-6">
+            <p class="form-control-static">@Model.Name</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">@UserResources.Email</label>
+        <div class="col-lg-6">
+            <p class="form-control-static">@Model.Email</p>
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Roles, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.ListBoxFor(model => model.Roles, Model.RoleOptions, new { @class = "form-control" })
+            </div>
+      </div>*@
+
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label">
+            @Html.DisplayNameFor(model => model.Roles) <span class="required" aria-required="true"></span>
+        </label>
+        <div class="col-sm-7">
+            @Html.ListBoxFor(model => model.Roles, Model.RoleOptions, new { @class = "form-control", @id = "sampleMulti" })
+        </div>
+    </div>
+
+
+
+</div>

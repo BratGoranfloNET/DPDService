@@ -1,0 +1,59 @@
+﻿@model EventTrackingParameterIndexViewModel
+
+<!-- Meta -->
+
+@{
+    Model.PageLabel = "Эвенты";
+    Model.SectionLabel = "Запросы на обновление статусов";
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+    @Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+    @Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+    @Scripts.Render(EventTrackingParameterIndexAjaxScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+    <h3 class="mt-none">EventTrackingParameter</h3>
+
+    <p>EventTrackingParameter</p>
+
+<section class="panel mt-md">
+
+    <div class="panel-body">
+
+        <table id="eventTable" class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>EventTrackingTypeId</th>
+                    <th>paramName</th>
+                    <th>valueString</th>
+                    <th>valueDecimal</th>
+                    <th>valueDecimalSpecified</th>
+                    <th>valueDateTime</th>
+                    <th>valueDateTimeSpecified</th>
+                    <th>type</th>
+                </tr>
+            </thead>
+            
+        </table>
+
+    </div>
+
+</section>

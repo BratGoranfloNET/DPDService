@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D85D21E9-E1A7-4A7E-B60F-BDB8DD5E1C52}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sibur.Services</RootNamespace>
+    <AssemblyName>Sibur.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.3.0, Culture=neutral, PublicKeyToken=5692a4ecdffbe736, processorArchitecture=MSIL">
+      <HintPath>..\packages\ValueInjecter.3.1.3\lib\net45\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Email\SendEmail.cs" />
+    <Compile Include="Globalization\GetTimeZones.cs" />
+    <Compile Include="Globalization\GetLanguageCultures.cs" />
+    <Compile Include="Globalization\GetRegionCultures.cs" />
+    <Compile Include="Globalization\__GlobalizationServices.cs" />
+    <Compile Include="Globalization\Interfaces\IGlobalizationServices.cs" />
+    <Compile Include="Image\Upload.cs" />
+    <Compile Include="Image\Dtos\DefaultImage.cs" />
+    <Compile Include="Image\BuildUrl.cs" />
+    <Compile Include="Image\GetStream.cs" />
+    <Compile Include="Image\_Properties.cs" />
+    <Compile Include="IStoragePathBuilder.cs" />
+    <Compile Include="Image\__ImageService.cs" />
+    <Compile Include="Image\Interfaces\IImageService.cs" />
+    <Compile Include="Email\Dtos\Email.cs" />
+    <Compile Include="Email\__EmailService.cs" />
+    <Compile Include="Email\Dtos\EmailServiceSettings.cs" />
+    <Compile Include="Email\Interfaces\IEmailService.cs" />
+    <Compile Include="DefaultStoragePathBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\Dtos\SearchResults.cs" />
+    <Compile Include="Search\Search.cs" />
+    <Compile Include="Search\__SearchService.cs" />
+    <Compile Include="Search\Interfaces\ISearchService.cs" />
+    <Compile Include="ServiceException.cs" />
+    <Compile Include="Timeline\Interfaces\ITimelineService.cs" />
+    <Compile Include="Timeline\RegisterActivity.cs" />
+    <Compile Include="Timeline\__TimelineService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Timeline\Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BG.Core\BG.Core.csproj">
+      <Project>{de65e9db-c6c8-4740-a8dd-5ae72dab560b}</Project>
+      <Name>BG.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BG.Data\BG.Data.csproj">
+      <Project>{c19a6edc-23be-46a9-bf19-1024d5421a5d}</Project>
+      <Name>BG.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,28 @@
+﻿@model ValidationSummaryViewModel
+
+<!-- Meta -->
+
+@{
+	var context = Model.Layout == WebUILayouts.Auth ? "user" : "lead";
+	var hiddenClass = Model.ModelStateDictionary.IsValid ? "hidden" : string.Empty;
+}
+
+<!-- Page Contents -->
+
+<div class="validation-message validation-message-@context @hiddenClass" data-valmsg-summary="true">
+
+	<ul style="display: block;">
+
+		<li style="display:none;"></li>
+
+		@foreach (var item in Model.ModelStateDictionary)
+		{
+			foreach (var error in item.Value.Errors)
+			{
+				<li><label id="@(item.Key)-error" class="error" style="display: inline-block;" for="@item.Key">@Html.Raw(error.ErrorMessage)</label></li>
+			}
+		}
+
+	</ul>
+
+</div>

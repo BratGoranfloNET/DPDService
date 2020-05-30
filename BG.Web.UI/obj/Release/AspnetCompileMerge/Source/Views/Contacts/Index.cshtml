@@ -1,0 +1,107 @@
+﻿@model ContactsIndexViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = ContactResources.PageLabel;
+	Model.SectionLabel = ContactResources.IndexSectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+	@Styles.Render(ContactsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+	@Scripts.Render(ContactsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+	@Scripts.Render(ContactsIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">@ContactResources.IndexHeader</h3>
+
+<p>@ContactResources.IndexLeadInfo</p>
+
+<p class="mt-md">
+	<a href="@Url.Action(nameof(ContactsController.Add), nameof(ContactsController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+		<i class="fa fa-plus mr-md"></i>@ContactResources.ActionLabelAdd
+	</a>
+</p>
+
+<section class="panel mt-md">
+
+	<div class="panel-body">
+
+		<table id="contactsTable" class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>@ContactResources.Name</th>
+					<th>@ContactResources.Type</th>
+					@*<th>@ContactResources.Gender</th>*@
+					<th>@ContactResources.Address</th>
+					<th>@ContactResources.Phone1</th>
+					<th>@ContactResources.Notes</th>
+					<th class="nosort"></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.Contacts)
+				{
+					var editUrl = Url.Action(nameof(ContactsController.Edit), nameof(ContactsController).RemoveControllerSuffix(), new { @id = item.Id });
+
+					<tr data-item-id="@item.Id" data-item-label="@item.Name">
+						<td>@item.Id</td>
+						<td>@item.Name</td>
+						<td>@item.Type.GetDisplayName()</td>
+						@*<td>@item.Gender.GetDisplayName()</td>*@
+						<td>@item.Address</td>
+						<td>@item.Phone1</td>
+						<td>@item.Notes.Truncate(100)</td>
+						<td class="actions-hover actions-fade text-right">
+							<div class="table-row-actions">
+								<a href="#" class="btn btn-xs btn-default edit" title="@ContactResources.EditLabel" data-edit-url="@editUrl">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a href="#" class="btn btn-xs btn-default delete" title="@ContactResources.DeleteLabel" data-msg-success-title="@ContactResources.DeleteSuccessMessageTitle" data-msg-success-content="@ContactResources.DeleteSuccessMessageContent" data-msg-error-title="@ContactResources.DeleteErrorMessageTitle" data-msg-error-content="@ContactResources.DeleteErrorMessageContent">
+									<i class="fa fa-trash-o"></i>
+								</a>
+							</div>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+</section>
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="contactsDeleteDialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">@ContactResources.DeleteDialogTitle</h4>
+		</div>
+		<div class="modal-body">
+			@Html.Raw(
+				string.Format(
+					ContactResources.DeleteDialogTemplateMessage,
+					"<strong class=\"item-label\"></strong>"
+				)
+			)
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-link cancel">@ContactResources.CancelLabel</button>
+			<button type="button" class="btn btn-danger confirm">@ContactResources.ConfirmLabel</button>
+		</div>
+	</div>
+</div>

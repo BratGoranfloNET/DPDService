@@ -1,0 +1,112 @@
+﻿@model ArticleIndexViewModel
+
+<!-- Meta -->
+
+@{
+    Model.PageLabel = "Статьи";
+    Model.SectionLabel = "Статьи";
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+    @Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+    @Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+    @Scripts.Render(ArticleIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">@ArticleResources.IndexHeader</h3>
+
+@*<p>@ArticleResources.IndexLeadInfo</p>*@
+
+
+
+<p class="mt-md">
+    <a href="@Url.Action(nameof(ArticleController.Add), nameof(ArticleController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+        <i class="fa fa-plus mr-md"></i>@ArticleResources.ActionLabelAdd
+    </a>
+</p>
+
+
+
+<section class="panel mt-md">
+
+    <div class="panel-body">
+
+        <table id="articleTable" class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Заголовок</th>
+                   
+                    <th>Дата создания</th>
+
+                    <th class="nosort"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Articles)
+                {
+                    var editUrl = Url.Action(nameof(ArticleController.Edit), nameof(ArticleController).RemoveControllerSuffix(), new { @id = item.Id });
+
+                <tr data-item-id="@item.Id" data-item-label="@item.Title">
+
+                    <td>@item.Id</td>
+
+                    <td>@item.Title</td>
+                    
+                    <td>@item.UTCCreation</td>                 
+
+                    <td class="actions-hover actions-fade text-right">
+                        <div class="table-row-actions">
+                            <a href="#" class="btn btn-xs btn-default edit" title="@ArticleResources.EditLabel" data-edit-url="@editUrl">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="#" class="btn btn-xs btn-default delete" title="@ArticleResources.DeleteLabel" data-msg-success-title="@ArticleResources.DeleteSuccessMessageTitle" data-msg-success-content="@ArticleResources.DeleteSuccessMessageContent" data-msg-error-title="@ArticleResources.DeleteErrorMessageTitle" data-msg-error-content="@ArticleResources.DeleteErrorMessageContent">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="articleDeleteDialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">@ArticleResources.DeleteDialogTitle</h4>
+        </div>
+        <div class="modal-body">
+            @Html.Raw(
+                     string.Format(
+                         ArticleResources.DeleteDialogTemplateMessage,
+                         "<strong class=\"item-label\"></strong>"
+                     )
+                 )
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link cancel">@ArticleResources.CancelLabel</button>
+            <button type="button" class="btn btn-danger confirm">@ArticleResources.ConfirmLabel</button>
+        </div>
+    </div>
+</div>

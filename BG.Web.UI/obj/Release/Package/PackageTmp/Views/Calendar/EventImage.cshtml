@@ -1,0 +1,51 @@
+﻿@model CalendarEventImageViewModel
+
+@{
+	var pictureUrl = Url.Image(Model.ImageBlobName, Model.ImageLabel);
+	var pictureThumbUrl = Url.Image(Model.ImageBlobName, Model.ImageLabel, width: 250, height: 250);
+}
+
+<div class="event-image-wrapper">
+
+	<div class="row mb-lg">
+
+		<div class="col-md-12">
+
+			<div class="col-md-5">
+
+				<a class="event-gallery-item" href="@pictureUrl" title="@Model.ImageLabel">
+					<img class="img-responsive img-thumbnail" src="@pictureThumbUrl">
+				</a>
+
+			</div>
+
+			<div class="col-md-7">
+
+				@Html.HiddenFor(model => model.ImageBlobId)
+				@Html.HiddenFor(model => model.ImageBlobName)
+
+				<div class="form-group form-group-sm">
+					@Html.LabelFor(model => model.ImageLabel)
+					@Html.TextBoxFor(model => model.ImageLabel, new { @class = "form-control" })
+				</div>
+
+				<div class="form-group form-group-sm">
+					@Html.LabelFor(model => model.ImageDescription)
+					@Html.TextAreaFor(model => model.ImageDescription, new { @class = "form-control", @rows = 3 })
+				</div>
+
+				<div class="form-group form-group-sm">
+					<a href="#" class="btn-link text-danger delete-image-event" data-confirmation-ok-lbl="@CalendarResources.EventImageDeleteConfirmLabel" data-confirmation-cancel-lbl="@CalendarResources.EventImageDeleteCancelLabel" data-confirmation-title-msg="@CalendarResources.EventImageDeleteTitle">
+						<i class="fa fa-trash"></i> @CalendarResources.EventImageDelete
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<hr class="mr-xlg ml-xlg" />
+
+</div>

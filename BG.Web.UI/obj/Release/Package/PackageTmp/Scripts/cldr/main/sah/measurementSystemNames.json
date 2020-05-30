@@ -1,0 +1,20 @@
+{
+  "main": {
+    "sah": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12787 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "sah"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "Мэтриичэскэй",
+          "UK": "Ааҥыллыы",
+          "US": "Эмиэрикэлии"
+        }
+      }
+    }
+  }
+}

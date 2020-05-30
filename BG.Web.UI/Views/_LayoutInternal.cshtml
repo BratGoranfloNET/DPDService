@@ -1,0 +1,173 @@
+﻿@model BaseViewModel
+
+<!-- Meta -->
+
+@{
+	Layout = "~/Views/_Layout.cshtml";
+	var pageTitle = Model?.PageLabel ?? string.Empty;
+	var sectionLabel = Model?.SectionLabel ?? pageTitle;
+
+	var hasToolbarClass = Model.HasToolbar ? "has-toolbar" : string.Empty;
+}
+
+<!-- Page Sections -->
+
+@section page_styles {
+
+	@RenderSection("page_styles", required: false)
+
+}
+
+@section page_scripts {
+
+	@RenderSection("page_scripts", required: false)
+
+}
+
+@section page_scripts_init {
+
+	@RenderSection("page_scripts_init", required: false)
+
+	@Scripts.Render(LayoutInternalScriptsInit.BundleVirtualPath)
+
+}
+
+<!-- Page Contents -->
+
+<section class="body">
+
+	<!-- start: header -->
+	<header class="header">
+
+		<div class="logo-container">
+
+			<a href="@Url.Action(nameof(HomeController.Index), nameof(HomeController).RemoveControllerSuffix())" class="logo">
+				<img src="@Url.Content("~/contents/logo.png")" height="35" alt="@WebUIResources.DefaultPageTile" />
+			</a>
+
+			<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+				<i class="fa fa-bars" aria-label="@WebUIResources.SidebarToggleLabel"></i>
+			</div>
+
+		</div>
+
+		<!-- start: search & user box -->
+		<div class="header-right">
+
+			@Html.Action(nameof(SearchController.BoxTop), nameof(SearchController).RemoveControllerSuffix())
+					
+			<span class="separator"></span>
+
+			@Html.Action(nameof(UsersController.Box), nameof(UsersController).RemoveControllerSuffix())
+
+		</div>
+		<!-- end: search & user box -->
+
+	</header>
+	<!-- end: header -->
+
+	<div class="inner-wrapper">
+
+		<!-- start: sidebar -->
+		<aside id="sidebar-left" class="sidebar-left">
+
+			<div class="sidebar-header">
+
+				<div class="sidebar-title">
+					@WebUIResources.SidebarLeftHeaderTitle
+				</div>
+
+				<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+					<i class="fa fa-bars" aria-label="@WebUIResources.SidebarToggleLabel"></i>
+				</div>
+
+			</div>
+
+			<div class="nano">
+
+				<div class="nano-content">
+
+					<!-- start:menuy -->
+
+					@Html.Partial("Menu")
+
+					<!-- end:menuy -->
+
+				</div>
+
+				<script>
+					// Maintain Scroll Position
+					if (typeof localStorage !== 'undefined') {
+						if (localStorage.getItem('sidebar-left-position') !== null) {
+							var initialPosition = localStorage.getItem('sidebar-left-position');
+							var sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+							sidebarLeft.scrollTop = initialPosition;
+						}
+					}
+				</script>
+
+			</div>
+
+		</aside>
+		<!-- end: sidebar -->
+
+		<section role="main" class="content-body @hasToolbarClass">
+
+			<header class="page-header">
+
+				<h2>@sectionLabel</h2>
+
+				<div class="right-wrapper pull-right">
+
+					<ol class="breadcrumbs">
+						<li>
+							<a href="@Url.Action(nameof(HomeController.Index), nameof(HomeController).RemoveControllerSuffix())">
+								<i class="fa fa-home"></i>
+							</a>
+						</li>
+
+						<!-- start: breadcrumb items -->
+						@RenderSection("breadcrumb_items", required: false)
+						<!-- end: breadcrumb items -->
+
+					</ol>
+
+					<a class="sidebar-right-toggle" data-open="sidebar-right">
+						<i class="fa fa-chevron-left"></i>
+					</a>
+
+				</div>
+
+			</header>
+
+			<!-- start: page -->
+			@RenderBody()
+			<!-- end: page -->
+
+		</section>
+
+	</div>
+
+	<aside id="sidebar-right" class="sidebar-right">
+
+		<div class="nano">
+
+			<div class="nano-content">
+
+				<a href="#" class="mobile-close visible-xs">
+					@WebUIResources.SidebarCollapseLabel <i class="fa fa-chevron-right"></i>
+				</a>
+
+				<div class="sidebar-right-wrapper">
+
+					@Html.Action(nameof(CalendarController.EventsSidebar), nameof(CalendarController).RemoveControllerSuffix())
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</aside>
+
+</section>

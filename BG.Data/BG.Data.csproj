@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C19A6EDC-23BE-46A9-BF19-1024D5421A5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sibur.Data</RootNamespace>
+    <AssemblyName>Sibur.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.40\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventTracking\Create.cs" />
+    <Compile Include="EventTracking\DeleteAll.cs" />
+    <Compile Include="EventTracking\Delete.cs" />
+    <Compile Include="EventTracking\GetAll.cs" />
+    <Compile Include="EventTracking\GetById.cs" />
+    <Compile Include="EventTracking\Search.cs" />
+    <Compile Include="EventTracking\Update.cs" />
+    <Compile Include="EventTracking\_EntityMaps.cs" />
+    <Compile Include="EventTracking\_SqlScripts.cs" />
+    <Compile Include="EventTracking\__EventTrackingRepository.cs" />
+    <Compile Include="EventTrackingType\Create.cs" />
+    <Compile Include="EventTrackingType\DeleteAll.cs" />
+    <Compile Include="EventTrackingType\Delete.cs" />
+    <Compile Include="EventTrackingType\GetAll.cs" />
+    <Compile Include="EventTrackingType\GetById.cs" />
+    <Compile Include="EventTrackingType\Search.cs" />
+    <Compile Include="EventTrackingType\Update.cs" />
+    <Compile Include="EventTrackingType\_SqlScripts.cs" />
+    <Compile Include="EventTrackingType\__EventTrackingTypeRepository.cs" />
+    <Compile Include="EventTrackingParameter\Create.cs" />
+    <Compile Include="EventTrackingParameter\DeleteAll.cs" />
+    <Compile Include="EventTrackingParameter\Delete.cs" />
+    <Compile Include="EventTrackingParameter\GetAll.cs" />
+    <Compile Include="EventTrackingParameter\GetById.cs" />
+    <Compile Include="EventTrackingParameter\Search.cs" />
+    <Compile Include="EventTrackingParameter\Update.cs" />
+    <Compile Include="EventTrackingParameter\_SqlScripts.cs" />
+    <Compile Include="EventTrackingParameter\__EventTrackingParameterRepository.cs" />
+    <Compile Include="EventTrackingUnitLoad\Create.cs" />
+    <Compile Include="EventTrackingUnitLoad\DeleteAll.cs" />
+    <Compile Include="EventTrackingUnitLoad\Delete.cs" />
+    <Compile Include="EventTrackingUnitLoad\GetAll.cs" />
+    <Compile Include="EventTrackingUnitLoad\GetById.cs" />
+    <Compile Include="EventTrackingUnitLoad\Search.cs" />
+    <Compile Include="EventTrackingUnitLoad\Update.cs" />
+    <Compile Include="EventTrackingUnitLoad\_SqlScripts.cs" />
+    <Compile Include="EventTrackingUnitLoad\__EventTrackingUnitLoadRepository.cs" />
+    <Compile Include="StateHistory\Create.cs" />
+    <Compile Include="StateHistory\Delete.cs" />
+    <Compile Include="StateHistory\DeleteAll.cs" />
+    <Compile Include="StateHistory\GetAll.cs" />
+    <Compile Include="StateHistory\GetListByDPDParam.cs" />
+    <Compile Include="StateHistory\GetById.cs" />
+    <Compile Include="StateHistory\Search.cs" />
+    <Compile Include="StateHistory\Update.cs" />
+    <Compile Include="StateHistory\_SqlScripts.cs" />
+    <Compile Include="StateHistory\__StateHistoryRepository.cs" />
+    <Compile Include="StateUnited\Create.cs" />
+    <Compile Include="StateUnited\Delete.cs" />
+    <Compile Include="StateUnited\DeleteAll.cs" />
+    <Compile Include="StateUnited\GetAll.cs" />
+    <Compile Include="StateUnited\GetById.cs" />
+    <Compile Include="StateUnited\GetByDPDParam.cs" />
+    <Compile Include="StateUnited\Search.cs" />
+    <Compile Include="StateUnited\Update.cs" />
+    <Compile Include="StateUnited\_SqlScripts.cs" />
+    <Compile Include="StateUnited\__StateUnitedRepository.cs" />
+    <Compile Include="StateParcelsUnited\Create.cs" />
+    <Compile Include="StateParcelsUnited\Delete.cs" />
+    <Compile Include="StateParcelsUnited\DeleteAll.cs" />
+    <Compile Include="StateParcelsUnited\GetAll.cs" />
+    <Compile Include="StateParcelsUnited\GetById.cs" />
+    <Compile Include="StateParcelsUnited\Search.cs" />
+    <Compile Include="StateParcelsUnited\Update.cs" />
+    <Compile Include="StateParcelsUnited\_SqlScripts.cs" />
+    <Compile Include="StateParcelsUnited\__StateParcelsUnitedRepository.cs" />
+    <Compile Include="StateParcels\Create.cs" />
+    <Compile Include="StateParcels\DeleteAll.cs" />
+    <Compile Include="StateParcels\Delete.cs" />
+    <Compile Include="StateParcels\GetAll.cs" />
+    <Compile Include="StateParcels\GetById.cs" />
+    <Compile Include="StateParcels\Search.cs" />
+    <Compile Include="StateParcels\Update.cs" />
+    <Compile Include="StateParcels\_SqlScripts.cs" />
+    <Compile Include="StateParcels\__StateParcelsRepository.cs" />
+    <Compile Include="State\Create.cs" />
+    <Compile Include="State\DeleteAll.cs" />
+    <Compile Include="State\Delete.cs" />
+    <Compile Include="State\GetAll.cs" />
+    <Compile Include="State\GetById.cs" />
+    <Compile Include="State\Search.cs" />
+    <Compile Include="State\Update.cs" />
+    <Compile Include="State\_SqlScripts.cs" />
+    <Compile Include="State\__StateRepository.cs" />
+    <Compile Include="Article\Create.cs" />
+    <Compile Include="Article\Delete.cs" />
+    <Compile Include="Article\GetAll.cs" />
+    <Compile Include="Article\GetById.cs" />
+    <Compile Include="Article\GetPublishedArticles.cs" />
+    <Compile Include="Article\Update.cs" />
+    <Compile Include="Article\_EntityMaps.cs" />
+    <Compile Include="Article\_SqlScripts.cs" />
+    <Compile Include="Article\__ArticlesRepository.cs" />
+    <Compile Include="Category\Create.cs" />
+    <Compile Include="Category\Delete.cs" />
+    <Compile Include="Category\GetAll.cs" />
+    <Compile Include="Category\GetAllChild.cs" />
+    <Compile Include="Category\GetAllParent.cs" />
+    <Compile Include="Category\GetById.cs" />
+    <Compile Include="Category\Update.cs" />
+    <Compile Include="Category\_EntityMaps.cs" />
+    <Compile Include="Category\_SqlScripts.cs" />
+    <Compile Include="Category\__CategoryRepository.cs" />
+    <Compile Include="Contacts\GetByIdOld.cs" />
+    <Compile Include="EventType\Create.cs" />
+    <Compile Include="EventType\Delete.cs" />
+    <Compile Include="EventType\GetAll.cs" />
+    <Compile Include="EventType\GetById.cs" />
+    <Compile Include="EventType\Update.cs" />
+    <Compile Include="EventType\_EntityMaps.cs" />
+    <Compile Include="EventType\_SqlScripts.cs" />
+    <Compile Include="EventType\__EventTypeRepository.cs" />
+    <Compile Include="IPagination.cs" />
+    <Compile Include="Logs\GetAll.cs" />
+    <Compile Include="Logs\_SqlScripts.cs" />
+    <Compile Include="Logs\__LogsRepository.cs" />
+    <Compile Include="Blobs\Create.cs" />
+    <Compile Include="Blobs\Delete.cs" />
+    <Compile Include="Blobs\GetAll.cs" />
+    <Compile Include="Blobs\GetById.cs" />
+    <Compile Include="Blobs\__BlobsRepository.cs" />
+    <Compile Include="Blobs\_EntityMaps.cs" />
+    <Compile Include="Blobs\_SqlScripts.cs" />
+    <Compile Include="Contacts\Search.cs" />
+    <Compile Include="Events\Create.cs" />
+    <Compile Include="Events\Search.cs" />
+    <Compile Include="Events\GetAll.cs" />
+    <Compile Include="Events\GetById.cs" />
+    <Compile Include="Events\Update.cs" />
+    <Compile Include="Events\Delete.cs" />
+    <Compile Include="Events\EventImagesSet.cs" />
+    <Compile Include="Events\__EventsRepository.cs" />
+    <Compile Include="Events\_EntityMaps.cs" />
+    <Compile Include="Events\_SqlScripts.cs" />
+    <Compile Include="Contacts\GetAllByType.cs" />
+    <Compile Include="Contacts\Update.cs" />
+    <Compile Include="Contacts\GetById.cs" />
+    <Compile Include="Contacts\Delete.cs" />
+    <Compile Include="Contacts\Create.cs" />
+    <Compile Include="Contacts\GetAll.cs" />
+    <Compile Include="Contacts\_SqlScripts.cs" />
+    <Compile Include="Contacts\_EntityMaps.cs" />
+    <Compile Include="Activities\Create.cs" />
+    <Compile Include="Activities\GetByUserId.cs" />
+    <Compile Include="Activities\_EntityMaps.cs" />
+    <Compile Include="Activities\_SqlScripts.cs" />
+    <Compile Include="Activities\__ActivitiesRepository.cs" />
+    <Compile Include="Locations\Create.cs" />
+    <Compile Include="Locations\Search.cs" />
+    <Compile Include="Locations\GetAll.cs" />
+    <Compile Include="Locations\GetById.cs" />
+    <Compile Include="Locations\Update.cs" />
+    <Compile Include="Locations\Delete.cs" />
+    <Compile Include="Locations\_EntityMaps.cs" />
+    <Compile Include="Locations\__LocationsRepository.cs" />
+    <Compile Include="Contacts\__ContactsRepository.cs" />
+    <Compile Include="Locations\_SqlScripts.cs" />
+    <Compile Include="Pagination.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryException.cs" />
+    <Compile Include="TagResult\AddTagToArticle.cs" />
+    <Compile Include="TagResult\DeleteTagResult.cs" />
+    <Compile Include="TagResult\GetAll.cs" />
+    <Compile Include="TagResult\GetTagResultById.cs" />
+    <Compile Include="TagResult\GetTagsIdsByArticleId.cs" />
+    <Compile Include="TagResult\_SqlScripts.cs" />
+    <Compile Include="TagResult\__TagResultRepository.cs" />
+    <Compile Include="Tag\Create.cs" />
+    <Compile Include="Tag\Delete.cs" />
+    <Compile Include="Tag\GetAll.cs" />
+    <Compile Include="Tag\GetById.cs" />
+    <Compile Include="Tag\Search.cs" />
+    <Compile Include="Tag\Update.cs" />
+    <Compile Include="Tag\_SqlScripts.cs" />
+    <Compile Include="Tag\__TagRepository.cs" />
+    <Compile Include="Token\Create.cs" />
+    <Compile Include="Token\Delete.cs" />
+    <Compile Include="Token\GetAll.cs" />
+    <Compile Include="Token\GetById.cs" />
+    <Compile Include="Token\Update.cs" />
+    <Compile Include="Token\_SqlScripts.cs" />
+    <Compile Include="Token\__TokenRepository.cs" />
+    <Compile Include="Users\Search.cs" />
+    <Compile Include="Users\UpdateIdentity.cs" />
+    <Compile Include="Users\UserRolesSet.cs" />
+    <Compile Include="Users\UserClaimsSet.cs" />
+    <Compile Include="Users\GetByUserName.cs" />
+    <Compile Include="Users\GetByEmail.cs" />
+    <Compile Include="Users\GetById.cs" />
+    <Compile Include="Users\Delete.cs" />
+    <Compile Include="Users\UpdateProfile.cs" />
+    <Compile Include="Users\GetAll.cs" />
+    <Compile Include="Users\Create.cs" />
+    <Compile Include="Users\_EntityMaps.cs" />
+    <Compile Include="Users\_SqlScripts.cs" />
+    <Compile Include="Users\__UsersRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BG.Core\BG.Core.csproj">
+      <Project>{de65e9db-c6c8-4740-a8dd-5ae72dab560b}</Project>
+      <Name>BG.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

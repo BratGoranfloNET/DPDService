@@ -1,0 +1,33 @@
+﻿using Dapper;
+using BG.Core.Entities;
+using System.Collections.Generic;
+using System.Data;
+
+namespace BG.Data.Users
+{
+	/// <summary>
+	/// Partial users repository implementation.
+	/// </summary>
+	public partial class UsersRepository
+	{
+		/// <summary>
+		/// Get all entities.
+		/// </summary>
+		public IEnumerable<User> GetAll()
+		{
+			var parameters = new DynamicParameters();
+
+			parameters.Add("@IsDeleted", false, DbType.Boolean);
+
+			using (var connection = _dbConnectionFactory.CreateConnection())
+			{
+				using (var reader = connection.QueryMultiple(sql: UsersSelect_Proc, commandType: CommandType.StoredProcedure, param: parameters))
+				{
+					var entities = BuildEntitiesList(reader);
+
+					return entities;
+				}
+			}
+		}
+	}
+}

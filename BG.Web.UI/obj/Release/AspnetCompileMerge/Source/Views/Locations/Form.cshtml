@@ -1,0 +1,117 @@
+﻿@model LocationViewModel
+
+<!-- Page Contents -->
+
+<div class="mt-lg mb-xlg">
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">
+            @Html.DisplayNameFor(model => model.ImageBlobId)
+            <br />
+            <span class="text-muted text-sm">Max file size @Model.ImageUploadMaxLengthInBytes.ToByteSizeLabel()</span>
+            <br />
+            <a href="#" class="add-extra-data pb-xs pr-xs upload-image-location" tabindex="0">
+                <i class="fa fa-folder-open"></i> @LocationResources.UploadImageLabel
+            </a>
+            <br />
+            <small class="uploading-status-location hidden"><i class="fa fa-spinner fa-pulse mr-xs"></i>@LocationResources.UploadSendingLabel</small>
+        </label>
+        <div class="col-md-6">
+            <input id="imageFileInputLocation" name="imageFile" type="file" class="hidden" accept="image/*" data-msg-error-title="@LocationResources.UploadErrorMessageTitle" />
+            <img id="thumbPreviewLocation" class="img-responsive" src="@Url.Image(Model.ImageBlobName, Model.Name, width: 160, height: 182)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-check-circle"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Type, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                @Html.EnumDropDownListFor(model => model.Type, new { @class = "form-control" })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TimeZoneId, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            @Html.DropDownListFor(model => model.TimeZoneId, Model.TimeZones, new { @class = "form-control" })
+            <div class="text-muted text-sm">@LocationResources.TimeZoneIdHint</div>
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.ContactId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input-group">
+                    @Html.DropDownListFor(model => model.ContactId, Model.Contacts, string.Empty, new { @class = "form-control" })
+                    <div class="input-group-btn">
+                        <button class="btn btn-success contacts-modal-opener" type="button" href="#contactsModalWrapper">Добавить&nbsp;новый</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Notes, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input">
+                    @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", @rows = 5 })
+                </div>
+            </div>
+        </div>*@
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.City, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-compass"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.City, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Latitude, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-compass"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Longitude, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-compass"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Longitude, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

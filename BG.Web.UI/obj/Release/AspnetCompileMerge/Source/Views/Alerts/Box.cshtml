@@ -1,0 +1,53 @@
+﻿@model AlertBoxViewModel
+
+<!-- Meta -->
+
+@{ 
+	var count = Model.Alerts.Count;
+}
+
+<li>
+
+	<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+		<i class="fa fa-bell"></i>
+		<span class="badge">@count</span>
+	</a>
+
+	<div class="dropdown-menu notification-menu">
+
+		<div class="notification-title">
+			<span class="pull-right label label-default">@count</span>
+			@AlertResources.BoxInfoLabel
+		</div>
+
+		<div class="content">
+
+			<ul>
+				@if (count > 0)
+				{
+					foreach (var alert in Model.Alerts)
+					{
+						<li>
+							<a href="@alert.Href" target="@(alert.HrefTarget)" class="clearfix">
+								<div class="image">
+									<i class="@alert.Icon"></i>
+								</div>
+								<span class="title">@alert.Label</span>
+								<span class="message">@Globalization.GetLocalDateTime(alert.UTCCreation).DateTime.ToShortDateString()</span>
+							</a>
+						</li>
+					}
+				}
+				else
+				{
+					<li>
+						<p class="text-center text-sm mt-md text-muted">@AlertResources.NoAlertsMessage</p>
+					</li>
+				}
+			</ul>
+
+		</div>
+
+	</div>
+
+</li>

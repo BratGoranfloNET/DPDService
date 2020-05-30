@@ -1,0 +1,73 @@
+﻿@model LockScreenViewModel
+
+<!-- Meta -->
+
+@{
+	Layout = "~/Views/_Layout.cshtml";
+}
+
+<!-- Page Sections -->
+
+@section page_scripts_init {
+
+	@Scripts.Render(LockScreenScriptsInit.BundleVirtualPath)
+
+}
+
+<!-- Page Contents -->
+
+<section class="body-sign body-locked">
+
+	<div class="center-sign">
+
+		<div class="panel panel-sign">
+
+			<div class="panel-body">
+
+				<form id="lockScreenForm" action="@Url.Action(nameof(UsersController.LockScreen), nameof(UsersController).RemoveControllerSuffix())" method="post">
+
+					<div class="current-user text-center">
+						<img src="@Url.Image(User.ImageBlobName, User.UserName)" alt="@User.UserName" class="img-circle user-image" />
+						<h2 class="user-name text-dark m-none">@User.UserName</h2>
+						<p class="user-email m-none">@User.Email</p>
+					</div>
+
+					<div class="alert alert-danger hidden">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						Invalid message here...
+					</div>
+
+					@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Alert)
+
+					<div class="form-group mb-lg">
+						<div class="input-group input-group-icon">
+							@Html.PasswordFor(model => model.Password, new { @class = "form-control input-lg", @placeholder = UserResources.Password })
+							<span class="input-group-addon">
+								<span class="icon icon-lg">
+									<i class="fa fa-lock"></i>
+								</span>
+							</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6">
+							<p class="mt-xs mb-none">
+								<a href="@Url.Action(nameof(UsersController.LogOff), nameof(UsersController).RemoveControllerSuffix())">@(string.Format(UserResources.UnlockScreenQuestionTemplate, User.UserName))</a>
+							</p>
+						</div>
+						<div class="col-xs-6 text-right">
+							<button type="submit" class="btn btn-primary">@UserResources.UnlockLabel</button>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</section>
+

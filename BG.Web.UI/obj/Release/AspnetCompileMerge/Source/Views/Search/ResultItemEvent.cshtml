@@ -1,0 +1,30 @@
+﻿@model CalendarEventViewModel
+
+@{
+	var item = Model;
+}
+
+<li>
+	<p class="result-type">
+		<span class="label label-dark">@SearchResources.EventItemLabel</span>
+	</p>
+	<a href="@Url.Action(nameof(CalendarController.EventsEdit), nameof(CalendarController).RemoveControllerSuffix(), new { @id = item.Id })" class="has-thumb">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="result-thumb pull-left">
+					@if (item.Images.Count > 0)
+					{
+						var firstImage = item.Images.First();
+						<img class="img-thumbnail" src="@Url.Image(firstImage.ImageBlobName, firstImage.ImageLabel, 75, 75)" alt="@firstImage.ImageLabel" />
+					}
+					else
+					{
+						<i class="fa fa-calendar"></i>
+					}
+				</div>
+				<p class="h3 title text-primary">@item.Name</p>
+				<p class="description">@item.Description.WhenNullOrWhiteSpace(SearchResources.SearchEmptyDescriptionMessage).</p>
+			</div>
+		</div>
+	</a>
+</li>

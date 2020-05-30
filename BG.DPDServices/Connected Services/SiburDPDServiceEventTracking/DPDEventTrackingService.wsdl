@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://dpd.ru/ws/event-tracking/2016-02-15" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="DPDEventTrackingService" targetNamespace="http://dpd.ru/ws/event-tracking/2016-02-15" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://ws.dpd.ru:80/services/event-tracking?xsd=1" namespace="http://dpd.ru/ws/event-tracking/2016-02-15" />
+    </xsd:schema>
+  </types>
+  <message name="confirm">
+    <part name="parameters" element="tns:confirm" />
+  </message>
+  <message name="confirmResponse">
+    <part name="parameters" element="tns:confirmResponse" />
+  </message>
+  <message name="WSFault">
+    <part name="fault" element="tns:WSFault" />
+  </message>
+  <message name="getEvents">
+    <part name="parameters" element="tns:getEvents" />
+  </message>
+  <message name="getEventsResponse">
+    <part name="parameters" element="tns:getEventsResponse" />
+  </message>
+  <message name="getTrakingOrderLink">
+    <part name="parameters" element="tns:getTrakingOrderLink" />
+  </message>
+  <message name="getTrakingOrderLinkResponse">
+    <part name="parameters" element="tns:getTrakingOrderLinkResponse" />
+  </message>
+  <portType name="DPDEventTracking">
+    <operation name="confirm">
+      <input wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/confirmRequest" message="tns:confirm" />
+      <output wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/confirmResponse" message="tns:confirmResponse" />
+      <fault wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/confirm/Fault/WSFault" name="WSFault" message="tns:WSFault" />
+    </operation>
+    <operation name="getEvents">
+      <input wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/getEventsRequest" message="tns:getEvents" />
+      <output wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/getEventsResponse" message="tns:getEventsResponse" />
+      <fault wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/getEvents/Fault/WSFault" name="WSFault" message="tns:WSFault" />
+    </operation>
+    <operation name="getTrakingOrderLink">
+      <input wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/getTrakingOrderLinkRequest" message="tns:getTrakingOrderLink" />
+      <output wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/getTrakingOrderLinkResponse" message="tns:getTrakingOrderLinkResponse" />
+      <fault wsam:Action="http://dpd.ru/ws/event-tracking/2016-02-15/DPDEventTracking/getTrakingOrderLink/Fault/WSFault" name="WSFault" message="tns:WSFault" />
+    </operation>
+  </portType>
+  <binding name="DPDEventTrackingPortBinding" type="tns:DPDEventTracking">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="confirm">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSFault">
+        <soap:fault use="literal" name="WSFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getEvents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSFault">
+        <soap:fault use="literal" name="WSFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getTrakingOrderLink">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSFault">
+        <soap:fault use="literal" name="WSFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="DPDEventTrackingService">
+    <port name="DPDEventTrackingPort" binding="tns:DPDEventTrackingPortBinding">
+      <soap:address location="http://ws.dpd.ru:80/services/event-tracking" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,20 @@
+{
+  "main": {
+    "smn": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12740 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "smn"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "metrisâš",
+          "UK": "brittilâš",
+          "US": "ameriklâš"
+        }
+      }
+    }
+  }
+}

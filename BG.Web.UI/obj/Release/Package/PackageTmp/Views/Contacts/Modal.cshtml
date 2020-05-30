@@ -1,0 +1,47 @@
+﻿@model ContactViewModel
+
+<!-- Page Contents -->
+
+<div id="contactsModalWrapper" data-msg-error-title="@ContactResources.ModalErrorMessageTitle" data-msg-error-content="@ContactResources.ModalErrorMessageContent" class="modal-block modal-block-lg mfp-hide">
+
+	<section class="panel">
+
+		<header class="panel-heading">
+			<h2 class="panel-title">@ContactResources.ModalHeader</h2>
+		</header>
+
+		<div class="panel-body">
+
+			<form id="contactsModalForm" data-window-mode="@Model.ViewMode.ToLowerCaseString()" method="post" action="@Url.Action(nameof(ContactsController.Modal), nameof(ContactsController).RemoveControllerSuffix())" class="form-horizontal form-bordered">
+
+				@Html.AntiForgeryToken()
+
+				@Html.HiddenFor(model => model.ImageBlobId, new { @id = "imageBlobIdContact" })
+				@Html.HiddenFor(model => model.ImageBlobName, new { @id = "imageBlobNameContact" })
+
+				@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Panel)
+
+				@Html.Partial("Form", Model)
+
+			</form>
+
+		</div>
+
+		<footer class="panel-footer">
+			<div class="row">
+				<div class="col-md-11 col-md-offset-1">
+					<div class="form-buttons">
+						<div class="form-group">
+							<div class="col-md-12 text-right">
+								<a href="#" class="btn btn-link contacts-modal-dismiss">@ContactResources.CancelLabel</a>
+								<a class="btn btn-primary btn-lg mr-sm contacts-modal-confirm">@ContactResources.SaveLabel</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</section>
+
+</div>

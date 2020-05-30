@@ -1,0 +1,69 @@
+﻿@model ContactViewModel
+
+<!-- Meta -->
+
+@{
+    var pageLabel = "Визирующие";
+    var indexSectionLabel = "Визирующие";
+
+    var headingTitle = Model.Id <= 0 ? "Добавить визирующего" : "Редактировать визирующего";
+    var headingLeadInfo = Model.Id <= 0 ? "Новый визирующий" : "Изменить информацию о визирующем";
+
+    var sectionLabel = Model.Id <= 0 ? "Добавить визирующего" : "Редактировать визирующего";
+
+    Model.PageLabel = pageLabel;
+    Model.SectionLabel = sectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+
+	<li><a href="@Url.Action(nameof(ContactsController.IndexVizier), nameof(ContactsController).RemoveControllerSuffix())">@indexSectionLabel</a></li>
+	<li><span>@Model.SectionLabel</span></li>
+
+}
+
+@section page_scripts_init {
+
+	@Scripts.Render(ContactsManagerScriptsInit.BundleVirtualPath)
+
+}
+
+<!-- Page Contents -->
+
+<form id="contactsForm" data-window-mode="@Model.ViewMode.ToLowerCaseString()" method="post" class="form-horizontal form-bordered">
+
+	<section class="panel">
+
+		<header class="panel-heading">
+			<h2 class="panel-title">@headingTitle</h2>
+			<p class="panel-subtitle">@headingLeadInfo</p>
+		</header>
+
+		<div class="panel-body">
+
+			@Html.AntiForgeryToken()
+
+			@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Panel)
+
+			@Html.HiddenFor(model => model.Id)
+			@Html.HiddenFor(model => model.ImageBlobId, new { @id = "imageBlobIdContact" })
+			@Html.HiddenFor(model => model.ImageBlobName, new { @id = "imageBlobNameContact" })
+
+			@Html.Partial("Form", Model)
+
+		</div>
+
+		<footer class="panel-footer">
+			<div class="row">
+				<div class="col-md-offset-3 col-md-6 mr-none text-right">
+					<a href="@Url.Action(nameof(ContactsController.IndexVizier), nameof(ContactsController).RemoveControllerSuffix())" class="btn btn-link">@ContactResources.CancelLabel</a>
+					<button type="submit" class="btn btn-primary btn-lg">@ContactResources.SaveLabel</button>
+				</div>
+			</div>
+		</footer>
+
+	</section>
+
+</form>

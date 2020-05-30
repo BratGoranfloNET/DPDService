@@ -1,0 +1,23 @@
+﻿@model UserViewModel
+
+<!-- Page Contents -->
+
+<h4 class="mb-md">Общая информация</h4>
+
+<ul class="simple-card-list mb-xlg">
+
+	@if (Model.Roles.Count > 0)
+	{
+		<li class="dark">
+			<h3>Роли</h3>
+			<p>@string.Join(", ", Model.Roles) </p>
+		</li>
+	}
+
+	<li class="primary">
+		<h3>Зарегистрирован</h3>
+		<p>@Model.UTCCreation.ToLongDateString()</p>
+	</li>
+
+</ul>
+

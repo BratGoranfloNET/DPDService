@@ -1,0 +1,103 @@
+﻿@model BaseViewModel
+
+<!-- Meta -->
+
+@{
+	var region = Globalization.RegionCulture;
+	var language = Globalization.LanguageCulture;
+
+	var pageTitle = Model?.PageLabel ?? string.Empty;
+
+	var metaDescription = Model?.PageMetaDescription ?? string.Empty;
+	var searchHtmlClass = Model.IsSearchResultsContext ? "search-results" : string.Empty;
+
+	var overlayBodyClass = Model.IsOverlayLoaderEnabled ? "loading-overlay-showing" : string.Empty;
+	var overlayBodyData = Model.IsOverlayLoaderEnabled ? "data-loading-overlay" : string.Empty;
+
+	pageTitle = pageTitle.IsNullOrEmpty() ? WebUIResources.DefaultPageTile : $"{pageTitle} | {WebUIResources.AppName}";
+}
+
+<!-- Page Contents -->
+
+<!doctype html>
+
+@*<html class="fixed @searchHtmlClass sidebar-left-collapsed" data-region="@region.Name" lang="@language.TwoLetterISOLanguageName">*@
+
+
+<html class="fixed @searchHtmlClass" data-region="@region.Name" lang="@language.TwoLetterISOLanguageName">
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    @*<meta charset="windows-1251">*@
+
+
+    <title>@pageTitle</title>
+
+    <meta name="author" content="humans.txt">
+
+    <meta name="description" content="@metaDescription">
+
+    <!-- Mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor css -->
+    @Styles.Render(CoreStyles.BundleVirtualPath)
+
+    <!-- Specific page vendor css -->
+    @RenderSection("page_styles", required: false)
+
+    <!-- Theme css -->
+    @Styles.Render(ThemeStyles.BundleVirtualPath)
+
+    <!-- Admin custom css -->
+    @Styles.Render(AdminStyles.BundleVirtualPath)
+
+    <!-- Head libs -->
+    @Scripts.Render(HeadScripts.BundleVirtualPath)
+
+</head>
+
+<body class="@overlayBodyClass" @overlayBodyData>
+
+    @if (Model.IsOverlayLoaderEnabled)
+    {
+        <div class="loading-overlay">
+            <div class="bounce-loader">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    }
+
+    @RenderBody()
+
+    <!-- Vendor -->
+    @Scripts.Render(CoreScripts.BundleVirtualPath)
+
+    <!-- Specific page vendor -->
+    @RenderSection("page_scripts", required: false)
+
+    <!-- Theme base, components and settings -->
+    @Scripts.Render(ThemeScripts.BundleVirtualPath)
+
+    <!-- Admin scripts -->
+    @Scripts.Render(AdminScripts.BundleVirtualPath)
+
+    <!-- Scripts initialization -->
+    @RenderSection("page_scripts_init", required: false)
+
+    <!-- Feedback messages -->
+    @Feedback.RenderMessages()
+
+</body>
+
+</html>

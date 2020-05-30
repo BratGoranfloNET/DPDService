@@ -1,0 +1,121 @@
+﻿@model UserRegisterViewModel
+
+<!-- Meta -->
+
+@{
+	Layout = "~/Views/_LayoutAuth.cshtml";
+
+	Model.PageLabel = UserResources.RegisterPageLabel;
+}
+
+<!-- Page Sections -->
+
+@section page_scripts_init {
+
+	@Scripts.Render(UserRegisterScriptsInit.BundleVirtualPath)
+
+}
+
+<!-- Page Contents -->
+
+<div class="panel panel-sign">
+
+	<div class="panel-title-sign mt-xl text-right">
+		<h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> @Model.PageLabel</h2>
+	</div>
+
+	<div class="panel-body">
+
+		<form id="registerForm" method="post" action="@Url.Action(nameof(UsersController.RegisterNewUser), nameof(UsersController).RemoveControllerSuffix())">
+
+			@Html.AntiForgeryToken()
+
+			@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Panel)
+
+			<div class="form-group">
+				@Html.LabelFor((model) => model.Name)
+				<div class="input-group input-group-icon">
+					@Html.TextBoxFor((model) => model.Name, new { @tabindex = 1, @class = "form-control input-lg", @required = "required", @autofocus = "autofocus" })
+					<span class="input-group-addon">
+						<span class="icon icon-lg">
+							<i class="fa fa-user"></i>
+						</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor((model) => model.Email)
+				<div class="input-group input-group-icon">
+					@Html.TextBoxFor((model) => model.Email, new { @tabindex = 2, @class = "form-control input-lg", @required = "required" })
+					<span class="input-group-addon">
+						<span class="icon icon-lg">
+							<i class="fa fa-envelope"></i>
+						</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-6 mb-lg">
+						@Html.LabelFor((model) => model.Password)
+						<div class="input-group input-group-icon">
+							@Html.PasswordFor((model) => model.Password, new { @tabindex = 3, @class = "form-control input-lg", @required = "required" })
+							<span class="input-group-addon">
+								<span class="icon icon-lg">
+									<i class="fa fa-lock"></i>
+								</span>
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-6 mb-lg">
+						@Html.LabelFor((model) => model.ConfirmPassword)
+						<div class="input-group input-group-icon">
+							@Html.PasswordFor((model) => model.ConfirmPassword, new { @tabindex = 4, @class = "form-control input-lg", @required = "required" })
+							<span class="input-group-addon">
+								<span class="icon icon-lg">
+									<i class="fa fa-lock"></i>
+								</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-10">
+					@*<div class="form-group">
+						<div class="checkbox-custom checkbox-default">
+							@Html.BootstrapCheckboxFor(model => model.TermsOfUse, new { @tabindex = 5 })
+							<label for="@Html.IdFor(model => model.TermsOfUse)">
+								@(Html.Raw(
+								string.Format(
+									UserResources.TermsOfUseSentenceTemplate,
+									string.Format(
+										"<a class=\"terms-dialog-action\" href=\"#terms-dialog-content\">{0}</a>",
+										Html.DisplayNameFor(model => model.TermsOfUse)
+									)
+								)
+							))
+							</label>
+						</div>
+					</div>*@
+				</div>
+				<div class="col-sm-3 text-right">
+					<button type="submit" tabindex="6" class="btn btn-primary hidden-xs">@UserResources.RegisterButtonLabel</button>
+					<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">@UserResources.RegisterButtonLabel</button>
+				</div>
+			</div>
+
+		</form>
+
+		@*<hr class="separator" />
+
+		<p class="text-center">@UserResources.LoginCallOutLabel <a href="@Url.Action(nameof(UsersController.Login), nameof(UsersController).RemoveControllerSuffix())">@UserResources.LoginLabel</a></p>*@
+
+		@*@Html.Action(nameof(UsersController.TermsOfUse), nameof(UsersController).RemoveControllerSuffix())*@
+
+	</div>
+
+</div>

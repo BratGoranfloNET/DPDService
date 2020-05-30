@@ -1,0 +1,115 @@
+﻿@model UserViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = UserResources.AccountPageLabel;
+	Model.SectionLabel = UserResources.AccountSectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_scripts_init {
+	@Scripts.Render(UserAccountScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<form id="accountForm" class="form-horizontal" method="post">
+
+	@Html.AntiForgeryToken()
+
+	@Feedback.ValidationSummary(FeedbackHelper.VisualizationMode.Alert)
+
+	@Html.HiddenFor(model => model.Id)
+	@Html.HiddenFor(model => model.StatusMessage)
+	@Html.HiddenFor(model => model.CurrentTab, new { @id = "currentTab" })
+	@Html.HiddenFor(model => model.ImageBlobId, new { @id = "imageBlobIdProfile" })
+	@Html.HiddenFor(model => model.ImageBlobName, new { @id = "imageBlobNameProfile" })
+
+	<div class="row">
+
+		<div class="col-md-4 col-lg-3">
+
+			<section class="panel">
+
+				@Html.Partial("AccountColLeft")
+
+			</section>
+
+		</div>
+
+		<div class="col-md-8 col-lg-6">
+
+			<div class="tabs">
+
+				<ul class="nav nav-tabs tabs-primary">
+
+					@{
+						var currentTab = Model.CurrentTab;
+
+						var tab1Id = UserAccountTabs.Overview;
+						var tab1State = Url.Action(nameof(UsersController.Account), nameof(UsersController).RemoveControllerSuffix());
+
+						var tab2Id = UserAccountTabs.ProfileInfo;
+						var tab2Slug = tab2Id.ToSlug();
+						var tab2State = $"?tab={tab2Slug}";
+
+						var tab3Id = UserAccountTabs.GeneralSettings;
+						var tab3Slug = tab3Id.ToSlug();
+						var tab3State = $"?tab={tab3Slug}";
+					}
+
+					<li class="@(currentTab == tab1Id ? "active": string.Empty)">
+						<a href="#@tab1Id" data-id="@tab1Id" data-state="@tab1State" data-toggle="tab">@tab1Id.GetDisplayName()</a>
+					</li>
+
+					<li class="@(currentTab == tab2Id ? "active": string.Empty)">
+						<a href="#@tab2Id" data-id="@tab2Id" data-state="@tab2State" data-toggle="tab">@tab2Id.GetDisplayName()</a>
+					</li>
+
+					<li class="@(currentTab == tab3Id ? "active": string.Empty)">
+						<a href="#@tab3Id" data-id="@tab3Id" data-state="@tab3State" data-toggle="tab">@tab3Id.GetDisplayName()</a>
+					</li>
+
+				</ul>
+
+				<div class="tab-content">
+
+					<div id="@tab1Id" class="tab-pane @(currentTab == tab1Id ? "active": string.Empty)">
+
+						@Html.Partial("AccountTab1Contents")
+
+					</div>
+
+					<div id="@tab2Id" class="tab-pane @(currentTab == tab2Id ? "active": string.Empty)">
+
+						@Html.Partial("AccountTab2Contents")
+
+					</div>
+
+					<div id="@tab3Id" class="tab-pane @(currentTab == tab3Id ? "active": string.Empty)">
+
+						@Html.Partial("AccountTab3Contents")
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-12 col-lg-3">
+
+			@Html.Partial("AccountColRight")
+
+		</div>
+
+	</div>
+
+</form>

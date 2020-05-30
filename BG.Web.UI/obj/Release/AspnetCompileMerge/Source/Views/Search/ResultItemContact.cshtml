@@ -1,0 +1,29 @@
+﻿@model ContactViewModel
+
+@{ 
+	var item = Model;
+}
+
+<li>
+	<p class="result-type">
+		<span class="label label-info">@SearchResources.ContactItemLabel</span>
+	</p>
+	<a href="@Url.Action(nameof(ContactsController.Edit), nameof(ContactsController).RemoveControllerSuffix(), new { @id = item.Id })" class="has-thumb">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="result-thumb pull-left">
+					@if (item.ImageBlobId.HasValue)
+					{
+						<img class="img-thumbnail" src="@Url.Image(item.ImageBlobName, item.Name, 75, 75)" alt="@item.Name" />
+					}
+					else
+					{
+						<i class="fa fa-smile-o"></i>
+					}
+				</div>
+				<p class="h3 title text-primary">@item.Name</p>
+				<p class="description">@item.Notes.WhenNullOrWhiteSpace(SearchResources.SearchEmptyDescriptionMessage).</p>
+			</div>
+		</div>
+	</a>
+</li>

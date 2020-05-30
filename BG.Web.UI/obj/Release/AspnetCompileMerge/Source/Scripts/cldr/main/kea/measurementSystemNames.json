@@ -1,0 +1,20 @@
+{
+  "main": {
+    "kea": {
+      "identity": {
+        "version": {
+          "_number": "$Revision: 12746 $",
+          "_cldrVersion": "30.0.3"
+        },
+        "language": "kea"
+      },
+      "localeDisplayNames": {
+        "measurementSystemNames": {
+          "metric": "Métriku",
+          "UK": "Ingles",
+          "US": "Merkanu"
+        }
+      }
+    }
+  }
+}

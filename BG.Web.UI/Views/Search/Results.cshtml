@@ -1,0 +1,89 @@
+﻿@model SearchViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = SearchResources.PageLabel;
+	Model.SectionLabel = SearchResources.ResultsSectionLabel;
+
+	Model.IsSearchResultsContext = true;
+}
+
+<!-- Page Contents -->
+
+<div class="search-content">
+
+	@Html.Partial("BoxResults")
+
+	<div class="search-toolbar">
+
+		<ul class="list-unstyled nav nav-pills">
+			<li class="active">
+				<a href="#all" data-toggle="tab">@SearchResources.AllResultsLabel</a>
+			</li>
+			@if (Model.Medias.Count > 0)
+			{
+				<li>
+					<a href="#medias" data-toggle="tab">@SearchResources.MediaResultsLabel</a>
+				</li>
+			}
+		</ul>
+
+	</div>
+
+	@if (Model.Items.Count > 0)
+	{
+		<div class="tab-content">
+
+			<div id="all" class="tab-pane active">
+
+				<ul class="list-unstyled search-results-list">
+					@foreach (var item in Model.Items)
+					{
+						if (item is ContactViewModel)
+						{
+							@Html.Partial("ResultItemContact", item)
+						}
+						else if (item is LocationViewModel)
+						{
+							@Html.Partial("ResultItemLocation", item)
+						}
+						else if (item is CalendarEventViewModel)
+						{
+							@Html.Partial("ResultItemEvent", item)
+						}
+						else if (item is UserViewModel)
+						{
+							@Html.Partial("ResultItemUser", item)
+						}
+					}
+				</ul>
+
+				<hr class="solid mb-xlg" />
+
+			</div>
+
+			@if (Model.Medias.Count > 0)
+			{
+				<div id="medias" class="tab-pane">
+
+					<div class="row">
+
+						@foreach(var media in Model.Medias)
+						{
+							@Html.Partial("ResultItemMedia", media)
+						}
+
+					</div>
+
+				</div>
+			}
+
+		</div>
+	}
+	else
+	{
+		<p class="text-center text-muted">@SearchResources.SearchEmptyResultsMessage</p>
+	}
+
+</div>

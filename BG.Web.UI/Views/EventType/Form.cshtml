@@ -1,0 +1,19 @@
+﻿@model EventTypeViewModel
+
+<!-- Page Contents -->
+
+<div class="mt-lg mb-xlg">
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-check-circle"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+</div>

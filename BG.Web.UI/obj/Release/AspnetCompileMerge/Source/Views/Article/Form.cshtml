@@ -1,0 +1,127 @@
+﻿@model ArticleViewModel
+
+@{
+    var datePickerFormat = Globalization.RegionCulture.DateTimeFormat.ShortDatePattern.ToLowerCaseString();
+    var timePickerMeridiem = !Globalization.Is24HoursTimeFormat;
+}
+
+<!-- Page Contents -->
+
+<div class="mt-lg mb-xlg">
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.CategoryId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-6">
+                <div class="input-group">
+                    @Html.DropDownListFor(model => model.CategoryId, Model.Categories, string.Empty, new { @class = "form-control" })
+
+                </div>
+            </div>
+        </div>
+
+
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">
+            @Html.DisplayNameFor(model => model.ImageBlobId)
+            <br />
+            <span class="text-muted text-sm">Max file size @Model.ImageUploadMaxLengthInBytes.ToByteSizeLabel()</span>
+            <br />
+            <a href="#" class="add-extra-data pb-xs pr-xs upload-image-article" tabindex="0">
+                <i class="fa fa-folder-open"></i> @LocationResources.UploadImageLabel
+            </a>
+            <br />
+            <small class="uploading-status-article hidden"><i class="fa fa-spinner fa-pulse mr-xs"></i>@LocationResources.UploadSendingLabel</small>
+        </label>
+        <div class="col-md-6">
+            <input id="imageFileInputArticle" name="imageFile" type="file" class="hidden" accept="image/*" data-msg-error-title="@LocationResources.UploadErrorMessageTitle" />
+            <img id="thumbPreviewArticle" class="img-responsive" src="@Url.Image(Model.ImageBlobName, Model.Title, width: 160, height: 182)" />
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="icon"><i class="fa fa-arrow-right"></i></span>
+                </span>
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.Abstract, new { @class = "col-md-3 control-label" })
+        <div class="col-md-6">
+            <div class="input">
+                @Html.TextAreaFor(model => model.Abstract, new { @class = "form-control", @rows = 5 })
+            </div>
+        </div>
+    </div>*@
+
+
+    <script src="/scripts/ckeditor/ckeditor.js"></script>
+    <script src="/scripts/ckfinder/ckfinder.js"></script>
+
+
+    @Html.TextAreaFor(model => model.Body, new { @class = "form-control", style = "height: 500px", @id = "body2" })
+
+    <p></p>
+
+    @*<div class="form-group">
+
+              <div class="col-sm-9">
+
+
+                  @Html.LabelFor(model => model.ReleaseDate, new { @class = "col-md-3 control-label" })
+                  <div class="col-md-3">
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                          </span>
+                          @Html.TextBoxFor(model => model.ReleaseDate, "{0:d}", new { @class = "form-control date-picker", @data_format = datePickerFormat })
+                      </div>
+                  </div>
+
+
+                  @Html.LabelFor(model => model.ExpireDate, new { @class = "col-md-3 control-label" })
+                  <div class="col-md-3">
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                          </span>
+                          @Html.TextBoxFor(model => model.ExpireDate, "{0:d}", new { @class = "form-control date-picker", @data_format = datePickerFormat })
+                      </div>
+                  </div>
+
+              </div>
+
+        </div>*@
+
+
+    @*<div class="form-group">
+
+            <div class="col-sm-9">
+
+                <div class="checkbox-custom chekbox-primary">
+
+                    @Html.BootstrapCheckboxFor(model => model.CommentsEnabled, new { @tabindex = 5 })
+
+                    <label for="for-project">Комментарии возможны</label>
+                </div>
+                <div class="checkbox-custom chekbox-primary">
+                    @Html.BootstrapCheckboxFor(model => model.Approved, new { @tabindex = 5 })
+                    <label for="for-website">Одобрена для публикации</label>
+                </div>
+
+            </div>
+        </div>*@
+
+
+
+</div>

@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE65E9DB-C6C8-4740-A8DD-5AE72DAB560B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sibur.Core</RootNamespace>
+    <AssemblyName>Sibur.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.3.0, Culture=neutral, PublicKeyToken=5692a4ecdffbe736, processorArchitecture=MSIL">
+      <HintPath>..\packages\ValueInjecter.3.1.3\lib\net45\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\CheckListResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckListResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\EventTypeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventTypeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ExtraWorkResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExtraWorkResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\PointResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PointResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\PointValueResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PointValueResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\StateUnitedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateUnitedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SurveyResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SurveyResponseResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyResponseResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SurveySuccessResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveySuccessResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TagResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TagResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="_Entities\StateHistory\StateHistory.cs" />
+    <Compile Include="_Entities\StateParcelsUnited\StateParcelsUnited.cs" />
+    <Compile Include="_Entities\StateUnited\StateUnited.cs" />
+    <Compile Include="_Entities\State\State.cs" />
+    <Compile Include="_Entities\StateParcels\StateParcels.cs" />
+    <Compile Include="_Entities\Activities\ActivityType.cs" />
+    <Compile Include="_Entities\Activities\Activity.cs" />
+    <Compile Include="_Entities\Article\Article.cs" />
+    <Compile Include="_Entities\Article\ArticleImage.cs" />
+    <Compile Include="_Entities\Category\Category.cs" />
+    <Compile Include="_Entities\EventTrackingUnitLoad\EventTackingUnitLoad.cs" />
+    <Compile Include="_Entities\EventTrackingParameter\EventTackingParameter.cs" />
+    <Compile Include="_Entities\EventTrackingType\EventTackingType.cs" />
+    <Compile Include="_Entities\Season.cs" />
+    <Compile Include="_Entities\Logs\LogEntry.cs" />
+    <Compile Include="_Entities\Role.cs" />
+    <Compile Include="_Entities\EventType\EventType.cs" />
+    <Compile Include="_Entities\EventTracking\EventTacking.cs" />
+    <Compile Include="_Entities\TagResult\TagResult.cs" />
+    <Compile Include="_Entities\Tag\Tag.cs" />
+    <Compile Include="_Entities\Token\Token.cs" />
+    <Compile Include="Principal\ClaimTypes.cs" />
+    <Compile Include="Principal\_CorePrincipal.cs" />
+    <Compile Include="_Entities\Users\UserClaimMaps.cs" />
+    <Compile Include="IWebContext.cs" />
+    <Compile Include="_Entities\Blobs\Blob.cs" />
+    <Compile Include="_Entities\Events\EventImage.cs" />
+    <Compile Include="_Entities\Events\Event.cs" />
+    <Compile Include="_Entities\Contacts\Contact.cs" />
+    <Compile Include="_Entities\Contacts\ContactType.cs" />
+    <Compile Include="_Entities\Gender.cs" />
+    <Compile Include="_Entities\IEntity.cs" />
+    <Compile Include="_Entities\Realm.cs" />
+    <Compile Include="_Entities\Locations\Location.cs" />
+    <Compile Include="_Entities\Locations\LocationType.cs" />
+    <Compile Include="_Entities\Users\UserRole.cs" />
+    <Compile Include="_Entities\Users\User.cs" />
+    <Compile Include="_Entities\Users\UserClaim.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Providers\Email\EmailProviderParameters.cs" />
+    <Compile Include="Providers\Images\ImageStorageProviderParameters.cs" />
+    <Compile Include="Providers\Images\IImageStorageProvider.cs" />
+    <Compile Include="Providers\Email\IEmailProvider.cs" />
+    <Compile Include="Providers\ProviderParameters.cs" />
+    <Compile Include="_Repositories\EventTacking\IEventTackingRepository.cs" />
+    <Compile Include="_Repositories\EventTackingType\IEventTackingTypeRepository.cs" />
+    <Compile Include="_Repositories\EventTackingParameter\IEventTackingParameterRepository.cs" />
+    <Compile Include="_Repositories\EventTackingUnitLoad\IEventTackingUnitLoadRepository.cs" />
+    <Compile Include="_Repositories\StateHistory\IStateHistoryRepository.cs" />
+    <Compile Include="_Repositories\StateUnited\IStateUnitedRepository.cs" />
+    <Compile Include="_Repositories\StateParcelsUnited\IStateParcelsUnitedRepository.cs" />
+    <Compile Include="_Repositories\StateParcels\IStateParcelsRepository.cs" />
+    <Compile Include="_Repositories\State\IStateRepository.cs" />
+    <Compile Include="_Repositories\Article\IArticleRepository.cs" />
+    <Compile Include="_Repositories\Article\ISimpleArticleRepository.cs" />
+    <Compile Include="_Repositories\Blobs\IBlobsRepository.cs" />
+    <Compile Include="_Repositories\ISimplePlusRepository.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_GetListByDPDParam.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_GetByDPDParam.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_SizExtraWorkResult.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_TagResult.cs" />
+    <Compile Include="_Repositories\Category\ICategoryRepository.cs" />
+    <Compile Include="_Repositories\Category\ISimpleCategoryRepository.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_SoutResult.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_SizResult.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_PositionResult.cs" />
+    <Compile Include="_Repositories\EventType\IEventTypeRepository.cs" />
+    <Compile Include="_Repositories\Events\IEventsRepository.cs" />
+    <Compile Include="_Repositories\Contacts\IContactsRepository.cs" />
+    <Compile Include="_Repositories\IDbConnectionFactory.cs" />
+    <Compile Include="Mappers\IClassMapper.cs" />
+    <Compile Include="_Repositories\ISearchableRepository.cs" />
+    <Compile Include="_Repositories\ISimpleRepository_GetByAutorId.cs" />
+    <Compile Include="_Repositories\ISimpleRepository.cs" />
+    <Compile Include="_Repositories\Locations\ILocationsRepository.cs" />
+    <Compile Include="_Repositories\Activities\IActivitiesRepository.cs" />
+    <Compile Include="_Repositories\Logs\ILogsRepository.cs" />
+    <Compile Include="_Repositories\TagResult\ITagResultRepository.cs" />
+    <Compile Include="_Repositories\Tag\ITagRepository.cs" />
+    <Compile Include="_Repositories\Token\ITokenRepository.cs" />
+    <Compile Include="_Repositories\Users\IUsersRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegularExpressions.cs" />
+    <Compile Include="Resources\AlertResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ArticleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticleResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CalendarResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CategoryResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoryResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CheckListCategoryResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckListCategoryResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CheckListParameterResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckListParameterResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CheckListTypeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckListTypeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ContactResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CoreResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DashboardResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashboardResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DepartmentResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ErrorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\FeedbackResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\FluentValidationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FluentValidationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LocationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LogResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\PositionCategoryResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PositionCategoryResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\PositionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PositionResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ProductionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SearchResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SizResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SizResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SoutResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoutResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TermsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TermsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TimelineResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimelineResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WebApiResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApiResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WebUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebUIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ByteSize.cs" />
+    <Compile Include="__QueryOptions.cs" />
+    <Compile Include="DPDActionResult.cs" />
+    <Compile Include="__SortOrder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AlertResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AlertResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ArticleResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ArticleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CalendarResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CalendarResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CategoryResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CategoryResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CheckListCategoryResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CheckListCategoryResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CheckListParameterResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CheckListParameterResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CheckListResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CheckListResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CheckListTypeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CheckListTypeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ContactResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CoreResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DashboardResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DashboardResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DepartmentResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DepartmentResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ErrorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\EventTypeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EventTypeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ExtraWorkResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExtraWorkResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FeedbackResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeedbackResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FluentValidationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FluentValidationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LocationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LogResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PointResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PointResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PointValueResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PointValueResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PositionCategoryResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PositionCategoryResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PositionResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PositionResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ProductionResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductionResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SearchResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SizResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SizResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SoutResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoutResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StateUnitedResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StateUnitedResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SurveyResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SurveyResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SurveyResponseResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SurveyResponseResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SurveySuccessResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SurveySuccessResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TagResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TagResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TermsResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TermsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TimelineResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TimelineResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WebApiResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WebApiResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UserResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WebUIResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WebUIResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

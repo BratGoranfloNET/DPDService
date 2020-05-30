@@ -1,0 +1,116 @@
+﻿@model CalendarEventsIndexViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = CalendarResources.EventsPageLabel;
+	Model.SectionLabel = CalendarResources.EventsSectionLabel;
+
+	var dateTimeFormat = Globalization.RegionCulture.DateTimeFormat;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+
+	<li><a href="@Url.Action(nameof(CalendarController.Index), nameof(CalendarController).RemoveControllerSuffix())">@CalendarResources.IndexSectionLabel</a></li>
+	<li><span>@Model.SectionLabel</span></li>
+
+}
+
+@section page_styles {
+	@Styles.Render(CalendarEventsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+	@Scripts.Render(CalendarEventsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+	@Scripts.Render(CalendarEventsIndexScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">@CalendarResources.EventsHeader</h3>
+
+<p>@CalendarResources.EventsLeadInfo</p>
+
+<p class="mt-md">
+	<a href="@Url.Action(nameof(CalendarController.Index), nameof(CalendarController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-default">
+		<i class="fa fa-arrow-left mr-md"></i>@CalendarResources.ActionLabelBackToCalendar
+	</a>
+	<a href="@Url.Action(nameof(CalendarController.EventsAdd), nameof(CalendarController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+		<i class="fa fa-plus mr-md"></i>@CalendarResources.ActionLabelAddEvent
+	</a>
+</p>
+
+<section class="panel mt-md">
+
+	<div class="panel-body">
+
+		<table id="eventsTable" class="table table-hover">
+			<thead>
+                <tr>
+                    <th>#</th>
+                    <th>@CalendarResources.EventName</th>
+                    <th>@CalendarResources.EventStartDate</th>
+                    <th>@CalendarResources.EventStartTime</th>
+                    <th>@CalendarResources.EventEndDate</th>
+                    <th>@CalendarResources.EventEndTime</th>                    
+                    <th>@CalendarResources.EventDescription</th>
+                    <th class="nosort"></th>
+                </tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.Events)
+				{
+					var editUrl = Url.Action(nameof(CalendarController.EventsEdit), nameof(CalendarController).RemoveControllerSuffix(), new { @id = item.Id });
+
+                <tr data-item-id="@item.Id" data-item-label="@item.Name">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.StartDate.ToString(dateTimeFormat.ShortDatePattern)</td>
+                    <td>@item.StartDate.ToString(dateTimeFormat.ShortTimePattern)</td>
+                    <td>@item.EndDate.ToString(dateTimeFormat.ShortDatePattern)</td>
+                    <td>@item.EndDate.ToString(dateTimeFormat.ShortTimePattern)</td>
+                   
+                    <td>@item.Description</td>
+                    <td class="actions-hover actions-fade text-right">
+                        <div class="table-row-actions">
+                            <a href="#" class="btn btn-xs btn-default edit" title="@CalendarResources.EventsEditLabel" data-edit-url="@editUrl">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="#" class="btn btn-xs btn-default delete" title="@CalendarResources.EventsDeleteLabel" data-msg-success-title="@CalendarResources.EventDeleteSuccessMessageTitle" data-msg-success-content="@CalendarResources.EventDeleteSuccessMessageContent" data-msg-error-title="@CalendarResources.EventDeleteErrorMessageTitle" data-msg-error-content="@CalendarResources.EventDeleteErrorMessageContent">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+</section>
+
+<!-- Delete Dialog -->
+<div class="modal-dialog mfp-hide" id="eventsDeleteDialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">@CalendarResources.EventDeleteDialogTitle</h4>
+		</div>
+		<div class="modal-body">
+			@Html.Raw(
+				string.Format(
+					CalendarResources.EventDeleteDialogTemplateMessage,
+					"<strong class=\"item-label\"></strong>"
+				)
+			)
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-link cancel">@CalendarResources.EventsCancelLabel</button>
+			<button type="button" class="btn btn-danger confirm">@CalendarResources.EventsConfirmLabel</button>
+		</div>
+	</div>
+</div>

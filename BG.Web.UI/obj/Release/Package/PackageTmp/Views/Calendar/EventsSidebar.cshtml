@@ -1,0 +1,39 @@
+﻿@model CalendarEventsSidebarViewModel
+
+<!-- Meta -->
+
+@{ 
+	var dateTimeFormat = Globalization.RegionCulture.DateTimeFormat;
+	var eventDatePattern = $"{dateTimeFormat.LongDatePattern} {dateTimeFormat.ShortTimePattern}";
+}
+
+<!-- Page contents -->
+
+<div class="row mb-md">
+	<div class="col-md-12">
+		<a class="mb-xs mt-xs mr-xs btn btn-link btn-block" href="@Url.Action(nameof(CalendarController.EventsAdd), nameof(CalendarController).RemoveControllerSuffix())">
+			<i class="fa fa-calendar-plus-o mr-md"></i>@CalendarResources.ActionLabelAddEvent
+		</a>
+	</div>
+</div>
+
+<div class="sidebar-widget widget-calendar">
+
+	<h6>@CalendarResources.SidebarCalendarLabel</h6>
+
+	<div id="sidebarCalendar"></div>
+
+	<ul>
+
+		@foreach (var ucEvent in Model.UpcomingEvents)
+		{
+			<li class="mb-md calendar-event-item" data-full-year="@ucEvent.StartDate.Date.Year" data-month="@ucEvent.StartDate.Date.Month" data-day="@ucEvent.StartDate.Date.Day">
+				<time datetime="@ucEvent.StartDate.DateTime">@Globalization.GetLocalDateTime(ucEvent.StartDate).ToString(eventDatePattern)</time>
+				<span>@ucEvent.Name</span>
+			</li>
+		}
+
+	</ul>
+
+</div>
+

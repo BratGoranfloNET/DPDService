@@ -1,0 +1,983 @@
+﻿@model EmptyViewModel
+
+@{
+	string title = "Elusive";
+	Model.PageLabel = title;
+}
+
+@section breadcrumb_items{
+	<li><span>Static</span></li>
+	<li><span>UI Elements</span></li>
+	<li><span>Icons</span></li>
+	<li><span>Elusive</span></li>
+}
+
+@section page_styles{
+	<link rel="stylesheet" href="~/assets/vendor/elusive-icons/css/elusive-icons.css" />
+	<style>
+		.icons-demo-page .demo-icon-hover {
+			cursor: pointer;
+			font-size: 15px;
+		}
+		.icons-demo-page .demo-icon-hover:hover {
+			color: #111;
+		}
+		.icons-demo-page .demo-icon-hover i {
+			min-width: 40px;
+			padding-right: 15px;
+		}
+		html.dark .icons-demo-page .demo-icon-hover:hover {
+			color: #FEFEFE;
+		}
+	</style>
+}
+
+@Html.Partial("~/Views/Static/TopAlert.cshtml")
+
+<div class="icons-demo-page">
+	<section class="panel">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+				<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+			</div>
+			<h2 class="panel-title">Un-Categorized Icons</h2>
+		</header>
+		<div class="panel-body">
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-address-book"></i> address-book
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-address-book-alt"></i> address-book-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-adjust"></i> adjust
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-adjust-alt"></i> adjust-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-adult"></i> adult
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-align-center"></i> align-center
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-align-justify"></i> align-justify
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-align-left"></i> align-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-align-right"></i> align-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-arrow-down"></i> arrow-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-arrow-left"></i> arrow-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-arrow-right"></i> arrow-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-arrow-up"></i> arrow-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-asl"></i> asl
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-asterisk"></i> asterisk
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-backward"></i> backward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-ban-circle"></i> ban-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-barcode"></i> barcode
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-bell"></i> bell
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-blind"></i> blind
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-bold"></i> bold
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-book"></i> book
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-bookmark"></i> bookmark
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-bookmark-empty"></i> bookmark-empty
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-braille"></i> braille
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-briefcase"></i> briefcase
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-broom"></i> broom
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-brush"></i> brush
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-bulb"></i> bulb
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-bullhorn"></i> bullhorn
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-calendar"></i> calendar
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-calendar-sign"></i> calendar-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-camera"></i> camera
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-car"></i> car
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-caret-down"></i> caret-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-caret-left"></i> caret-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-caret-right"></i> caret-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-caret-up"></i> caret-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-cc"></i> cc
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-certificate"></i> certificate
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-check"></i> check
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-chevron-down"></i> chevron-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-chevron-left"></i> chevron-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-chevron-right"></i> chevron-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-chevron-up"></i> chevron-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-child"></i> child
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-circle-arrow-down"></i> circle-arrow-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-circle-arrow-left"></i> circle-arrow-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-circle-arrow-right"></i> circle-arrow-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-circle-arrow-up"></i> circle-arrow-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-cloud"></i> cloud
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-cloud-alt"></i> cloud-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-cog"></i> cog
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-cog-alt"></i> cog-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-cogs"></i> cogs
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-comment"></i> comment
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-comment-alt"></i> comment-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-compass"></i> compass
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-compass-alt"></i> compass-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-credit-card"></i> credit-card
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-css"></i> css
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-dashboard"></i> dashboard
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-download"></i> download
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-download-alt"></i> download-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-dribbble"></i> dribbble
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-edit"></i> edit
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-eject"></i> eject
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-envelope"></i> envelope
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-envelope-alt"></i> envelope-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-error"></i> error
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-error-alt"></i> error-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-eur"></i> eur
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-exclamation-sign"></i> exclamation-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-eye-close"></i> eye-close
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-eye-open"></i> eye-open
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-facetime-video"></i> facetime-video
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-fast-backward"></i> fast-backward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-fast-forward"></i> fast-forward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-female"></i> female
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-file"></i> file
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-file-alt"></i> file-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-file-edit"></i> file-edit
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-file-edit-alt"></i> file-edit-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-file-new"></i> file-new
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-file-new-alt"></i> file-new-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-film"></i> film
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-filter"></i> filter
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-fire"></i> fire
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-flag"></i> flag
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-flag-alt"></i> flag-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-flickr"></i> flickr
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-folder"></i> folder
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-folder-close"></i> folder-close
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-folder-open"></i> folder-open
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-folder-sign"></i> folder-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-font"></i> font
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-fontsize"></i> fontsize
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-fork"></i> fork
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-forward"></i> forward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-forward-alt"></i> forward-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-foursquare"></i> foursquare
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-friendfeed"></i> friendfeed
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-friendfeed-rect"></i> friendfeed-rect
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-fullscreen"></i> fullscreen
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-gbp"></i> gbp
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-gift"></i> gift
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-github"></i> github
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-github-text"></i> github-text
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-glass"></i> glass
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-glasses"></i> glasses
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-globe"></i> globe
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-globe-alt"></i> globe-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-googleplus"></i> googleplus
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-graph"></i> graph
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-graph-alt"></i> graph-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-group"></i> group
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-group-alt"></i> group-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-guidedog"></i> guidedog
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hand-down"></i> hand-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hand-left"></i> hand-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hand-right"></i> hand-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hand-up"></i> hand-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hdd"></i> hdd
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-headphones"></i> headphones
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hearing-impaired"></i> hearing-impaired
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-heart"></i> heart
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-heart-alt"></i> heart-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-heart-empty"></i> heart-empty
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-home"></i> home
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-home-alt"></i> home-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-hourglass"></i> hourglass
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-idea"></i> idea
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-idea-alt"></i> idea-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-inbox"></i> inbox
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-inbox-alt"></i> inbox-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-inbox-box"></i> inbox-box
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-indent-left"></i> indent-left
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-indent-right"></i> indent-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-info-circle"></i> info-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-iphone-home"></i> iphone-home
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-italic"></i> italic
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-key"></i> key
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-laptop"></i> laptop
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-laptop-alt"></i> laptop-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-leaf"></i> leaf
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-lines"></i> lines
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-link"></i> link
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-list"></i> list
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-list-alt"></i> list-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-lock"></i> lock
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-lock-alt"></i> lock-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-magic"></i> magic
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-magnet"></i> magnet
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-male"></i> male
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-map-marker"></i> map-marker
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-map-marker-alt"></i> map-marker-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-mic"></i> mic
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-mic-alt"></i> mic-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-minus"></i> minus
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-minus-sign"></i> minus-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-move"></i> move
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-music"></i> music
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-network"></i> network
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-off"></i> off
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-ok"></i> ok
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-ok-circle"></i> ok-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-ok-sign"></i> ok-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-opensource"></i> opensource
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-paper-clip"></i> paper-clip
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-paper-clip-alt"></i> paper-clip-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-path"></i> path
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-pause"></i> pause
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-pause-alt"></i> pause-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-pencil"></i> pencil
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-pencil-alt"></i> pencil-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-person"></i> person
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-phone"></i> phone
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-phone-alt"></i> phone-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-photo"></i> photo
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-photo-alt"></i> photo-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-picture"></i> picture
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-pinterest"></i> pinterest
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-plane"></i> plane
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-play"></i> play
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-play-alt"></i> play-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-play-circle"></i> play-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-plus"></i> plus
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-plus-sign"></i> plus-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-podcast"></i> podcast
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-print"></i> print
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-puzzle"></i> puzzle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-qrcode"></i> qrcode
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-question"></i> question
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-question-sign"></i> question-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-quote-alt"></i> quote-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-quote-right"></i> quote-right
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-quote-right-alt"></i> quote-right-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-quotes"></i> quotes
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-random"></i> random
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-record"></i> record
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-refresh"></i> refresh
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-remove"></i> remove
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-remove-circle"></i> remove-circle
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-remove-sign"></i> remove-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-repeat"></i> repeat
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-repeat-alt"></i> repeat-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-resize-full"></i> resize-full
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-resize-horizontal"></i> resize-horizontal
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-resize-small"></i> resize-small
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-resize-vertical"></i> resize-vertical
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-return-key"></i> return-key
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-retweet"></i> retweet
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-reverse-alt"></i> reverse-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-road"></i> road
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-rss"></i> rss
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-scissors"></i> scissors
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-screen"></i> screen
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-screen-alt"></i> screen-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-screenshot"></i> screenshot
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-search"></i> search
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-search-alt"></i> search-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-share"></i> share
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-share-alt"></i> share-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-shopping-cart"></i> shopping-cart
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-shopping-cart-sign"></i> shopping-cart-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-signal"></i> signal
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-smiley"></i> smiley
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-smiley-alt"></i> smiley-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-speaker"></i> speaker
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-stackoverflow"></i> stackoverflow
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-star"></i> star
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-star-alt"></i> star-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-star-empty"></i> star-empty
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-step-backward"></i> step-backward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-step-forward"></i> step-forward
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-stop"></i> stop
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-stop-alt"></i> stop-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-tag"></i> tag
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-tags"></i> tags
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-tasks"></i> tasks
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-text-height"></i> text-height
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-text-width"></i> text-width
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-th"></i> th
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-th-large"></i> th-large
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-th-list"></i> th-list
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-thumbs-down"></i> thumbs-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-thumbs-up"></i> thumbs-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-time"></i> time
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-time-alt"></i> time-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-tint"></i> tint
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-torso"></i> torso
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-trash"></i> trash
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-trash-alt"></i> trash-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-universal-access"></i> universal-access
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-unlock"></i> unlock
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-unlock-alt"></i> unlock-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-upload"></i> upload
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-usd"></i> usd
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-user"></i> user
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-video"></i> video
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-video-alt"></i> video-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-video-chat"></i> video-chat
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-view-mode"></i> view-mode
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-volume-down"></i> volume-down
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-volume-off"></i> volume-off
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-volume-up"></i> volume-up
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-warning-sign"></i> warning-sign
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-website"></i> website
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-website-alt"></i> website-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-wheelchair"></i> wheelchair
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-wordpress"></i> wordpress
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-wrench"></i> wrench
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-wrench-alt"></i> wrench-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-zoom-in"></i> zoom-in
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-zoom-out"></i> zoom-out
+			</div>
+		</div>
+	</section>
+	<section class="panel">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+				<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+			</div>
+			<h2 class="panel-title">Web Application Icons</h2>
+		</header>
+		<div class="panel-body">
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-check-empty"></i> check-empty
+			</div>
+		</div>
+	</section>
+	<section class="panel">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+				<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+			</div>
+			<h2 class="panel-title">Brand Icons</h2>
+		</header>
+		<div class="panel-body">
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-behance"></i> behance
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-blogger"></i> blogger
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-delicious"></i> delicious
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-deviantart"></i> deviantart
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-digg"></i> digg
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-facebook"></i> facebook
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-instagram"></i> instagram
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-lastfm"></i> lastfm
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-linkedin"></i> linkedin
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-livejournal"></i> livejournal
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-myspace"></i> myspace
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-picasa"></i> picasa
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-plurk"></i> plurk
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-plurk-alt"></i> plurk-alt
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-reddit"></i> reddit
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-redux"></i> redux
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-skype"></i> skype
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-slideshare"></i> slideshare
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-soundcloud"></i> soundcloud
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-spotify"></i> spotify
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-stumbleupon"></i> stumbleupon
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-tumblr"></i> tumblr
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-twitter"></i> twitter
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-viadeo"></i> viadeo
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-vimeo"></i> vimeo
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-vkontakte"></i> vkontakte
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-w3c"></i> w3c
+			</div>
+			<div class="demo-icon-hover mb-sm mt-sm col-md-6 col-lg-4 col-xl-3">
+				<i class="el el-youtube"></i> youtube
+			</div>
+		</div>
+	</section>
+</div>

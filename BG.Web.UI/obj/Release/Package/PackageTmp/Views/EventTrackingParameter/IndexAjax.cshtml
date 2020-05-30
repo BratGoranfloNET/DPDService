@@ -1,0 +1,91 @@
+﻿@model EventTrackingParameterIndexViewModel
+
+<!-- Meta -->
+
+@{
+    Model.PageLabel = "Эвенты";
+    Model.SectionLabel = "Запросы на обновление статусов";
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+    <li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+    @Styles.Render(LocationsIndexStyles.BundleVirtualPath)
+}
+
+@section page_scripts {
+    @Scripts.Render(LocationsIndexScripts.BundleVirtualPath)
+}
+
+@section page_scripts_init {
+    @Scripts.Render(EventTrackingParameterIndexAjaxScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+    <h3 class="mt-none">EventTrackingParameter</h3>
+
+    <p>EventTrackingParameter</p>
+
+@*<p class="mt-md">
+    <a href="@Url.Action(nameof(TagController.Add), nameof(TagController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+        <i class="fa fa-plus mr-md"></i>@TagResources.ActionLabelAdd
+    </a>
+</p>*@
+
+<section class="panel mt-md">
+
+    <div class="panel-body">
+
+        <table id="eventTable" class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th>#</th>
+                    <th>Name</th>
+
+                    <th>EventTrackingTypeId</th>
+
+                    <th>paramName</th>
+                    <th>valueString</th>
+                    <th>valueDecimal</th>
+                    <th>valueDecimalSpecified</th>
+                    <th>valueDateTime</th>
+                    <th>valueDateTimeSpecified</th>
+                    <th>type</th>
+
+                      @*<th class="nosort"></th>*@
+
+                </tr>
+            </thead>
+            
+        </table>
+
+    </div>
+
+</section>
+
+<!-- Delete Dialog -->
+@*<div class="modal-dialog mfp-hide" id="tagDeleteDialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">@TagResources.DeleteDialogTitle</h4>
+        </div>
+        <div class="modal-body">
+            @Html.Raw(
+                string.Format(
+                    TagResources.DeleteDialogTemplateMessage,
+                    "<strong class=\"item-label\"></strong>"
+                )
+            )
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link cancel">@LocationResources.CancelLabel</button>
+            <button type="button" class="btn btn-danger confirm">@LocationResources.ConfirmLabel</button>
+        </div>
+    </div>
+</div>*@

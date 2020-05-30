@@ -1,0 +1,56 @@
+﻿@model EventTypeIndexViewModel
+
+
+<div id="eventtypeselectModalWrapper" class="modal-block modal-block-lg mfp-hide">
+
+    <section class="panel">
+
+        <header class="panel-heading">
+            <h2 class="panel-title">Выбрать СИЗ</h2>
+        </header>
+
+        <div class="panel-body">
+
+            <table id="eventtypeselectTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Наименование</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.EventTypes)
+                    {
+                        <tr id="@item.Id" data-item-id="@item.Id" data-item-label="@item.Name">
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="form-buttons">
+                        <div class="form-group">
+                            <div class="col-md-12 text-right">
+                                <a href="#" class="btn btn-link eventtypeselect-modal-dismiss">@ContactResources.CancelLabel</a>
+                                <a id="eventtypeselect-modal-confirm" class="btn btn-primary btn-lg mr-sm eventtypeselect-modal-confirm22">Привязать СИЗ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </section>
+
+</div>

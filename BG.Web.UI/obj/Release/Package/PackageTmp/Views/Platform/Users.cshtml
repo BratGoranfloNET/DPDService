@@ -1,0 +1,84 @@
+﻿@model PlatformUsersViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageLabel = UserResources.PageLabel;
+	Model.SectionLabel = UserResources.SectionLabel;
+}
+
+<!-- Page Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.SectionLabel</span></li>
+}
+
+@section page_styles {
+	@Styles.Render(PlatformUsersStyles.BundleVirtualPath)
+@*<link href="~/assets/vendor/lou-multi-select/css/multi-select.dist.css" rel="stylesheet" />*@
+}
+
+@section page_scripts {
+	@Scripts.Render(PlatformUsersScripts.BundleVirtualPath)
+@*<script src="~/assets/vendor/lou-multi-select/js/jquery.multi-select.js"></script>*@
+}
+
+@section page_scripts_init {
+	@Scripts.Render(PlatformUsersScriptsInit.BundleVirtualPath)
+}
+
+<!-- Page Contents -->
+
+<h3 class="mt-none">@UserResources.Header</h3>
+
+<p>@UserResources.LeadInfo</p>
+
+
+@*<p class="mt-md">
+    <a href="@Url.Action(nameof(UsersController.RegisterNewUser), nameof(UsersController).RemoveControllerSuffix())" class="mb-xs mt-xs mr-xs btn btn-primary">
+        <i class="fa fa-plus mr-md"></i>Добавить пользователя
+    </a>
+</p>*@
+
+<section class="panel mt-md">
+
+	<div class="panel-body">
+
+		<table id="usersTable" class="table table-hover">
+			<thead>
+                <tr>
+                    <th>#</th>
+                    <th>@UserResources.Name</th>
+                    <th>@UserResources.UserName</th>
+                    <th>Роли</th>
+                    <th>@UserResources.Email</th>
+
+                    <th class="nosort"></th>
+                </tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.Users)
+				{
+					var editUrl = Url.Action(nameof(PlatformController.UsersEdit), nameof(PlatformController).RemoveControllerSuffix(), new { @id = item.Id });
+
+                <tr data-item-id="@item.Id" data-item-label="@item.Name">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.UserName</td>
+                    <td>@item.AllRoles</td>
+                    <td>@item.Email</td>
+
+                    <td class="actions-hover actions-fade text-right">
+                        <div class="table-row-actions">
+                            <a href="#" class="btn btn-xs btn-default edit" title="@UserResources.EditLabel" data-edit-url="@editUrl">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+</section>
