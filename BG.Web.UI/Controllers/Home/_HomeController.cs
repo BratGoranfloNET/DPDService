@@ -8,6 +8,6 @@ namespace BG.Web.UI.Controllers
 	[RoutePrefix("")]
 	public partial class HomeController : BaseController
 	{
-		//test commit
+		//test commit --
 	}
 }
